@@ -8,7 +8,7 @@ set -euo pipefail
 : "${TARGET_JSON:?TARGET_JSON (one plan.py entry) is required}"
 : "${IMAGE:?IMAGE is required}"
 OUT="${OUT:-$PWD/out}"; CACHE="${CACHE:-$PWD/cache}"
-mkdir -p "$OUT" "$CACHE"
+mkdir -p "$OUT" "$CACHE" "$CACHE/.tmp"   # stage-1 scratch is disk-backed: dependency trees can exceed any sane tmpfs
 coord=$(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys;print(json.load(sys.stdin)["coordinate"])')
 lock_rel=$(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys;print(json.load(sys.stdin)["lock_rel"])')
 mapfile -t spawn < <(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys;[print(a) for a in json.load(sys.stdin)["spawn"]]')
@@ -21,11 +21,11 @@ echo "== [$coord] stage 1: pre-fetch (network on, --ignore-scripts / --only-bina
 case "$eco" in
   npm)
     docker run --rm --network bridge --user "$uid:$gid" -e HOME=/tmp -e npm_config_cache=/tmp/npm-cache \
-      --tmpfs /tmp:rw,nosuid,size=256m -v "$CACHE:/cache" "$IMAGE" \
+      -v "$CACHE/.tmp:/tmp" -v "$CACHE:/cache" "$IMAGE" \
       npm install --prefix "/cache/npm/$segment" --ignore-scripts --no-audit --no-fund --no-package-lock --loglevel=error "$name@$version" ;;
   pypi)
     docker run --rm --network bridge --user "$uid:$gid" -e HOME=/tmp \
-      --tmpfs /tmp:rw,nosuid,size=256m -v "$CACHE:/cache" "$IMAGE" \
+      -v "$CACHE/.tmp:/tmp" -e TMPDIR=/tmp -v "$CACHE:/cache" "$IMAGE" \
       pip install --quiet --no-cache-dir --only-binary :all: --target "/cache/pypi/$segment" "$name==$version" ;;
   *) echo "unknown ecosystem $eco" >&2; exit 2 ;;
 esac
