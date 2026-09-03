@@ -1,0 +1,594 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-everything",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-everything/node_modules",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-everything/node_modules/.bin/mcp-server-everything"
+    ],
+    "url": null,
+    "command_digest": "sha256:00186e2c5955fdc8a8e9149620d110c9920038e9175745ccdcc93821ee7288e6"
+  },
+  "tools": [
+    {
+      "name": "echo",
+      "description_hash": "sha256:f550aa9a1ad707bafbb48a7668e1f0e18b5ff340e48211d0fdf6a30d8fffa936",
+      "input_schema_hash": "sha256:469e5fe39f8aca53300e488b3cedeab32025468f056d512277d8dcf716e03f64",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "message": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6b7d01dd90e627803f18b3f6af355a65dc03311bcfafaa0f84fed79cc2a356f9"
+    },
+    {
+      "name": "get-annotated-message",
+      "description_hash": "sha256:f3d82e6717c5450fe121f6cf06a1a4ee1524954033a82b5dac7fbfcfa67f2ac4",
+      "input_schema_hash": "sha256:f43b7279025b7cc0dc00cada999017a280561688e5b25edfe6111c706053fd2b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeImage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "messageType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "debug",
+              "error",
+              "success"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7380906cb981d04be951a541621df3ae80fc1b1a06d1b84fbb6195c0c22a5432"
+    },
+    {
+      "name": "get-env",
+      "description_hash": "sha256:211c44d80a1dd743eafe5b98cec3bbaf421a01726a16a4dee470abe0be2e6e52",
+      "input_schema_hash": "sha256:7a014b717a77aac971ea0ab5c0ff47bb13e6cae7ef9442d9dedb15ce36381b15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e459a105b99abfe16880dfb8126a94df1ec7b4b2814347f5be6f72cd6e1ed0cc"
+    },
+    {
+      "name": "get-resource-links",
+      "description_hash": "sha256:f5dd3591fb4b2597599b2dc25e8d4cfebb2d43badcea8181eefb1a6c63724976",
+      "input_schema_hash": "sha256:f6902c0a723f7f414d714b8d6caa728d6ef5fdc26ee5e264044ddcaf5dcf9270",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "count": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10,
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4c9681cda4d04cc9524093135cfced651d059721fe4e32db94b1e49316a9a7d1"
+    },
+    {
+      "name": "get-resource-reference",
+      "description_hash": "sha256:297994cb2700da993fee27041be76c7f1a01f5ef699efee3d2c1243af3ca5f65",
+      "input_schema_hash": "sha256:2b8561d5917c981548134f2102328051e14b2f208a59ad67f58b84004c12fd1f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "resourceId": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "resourceType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "Blob",
+              "Text"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:addf5b3c08f78420f08eaafcda85a3b1baffd1c9d6d5acd4fb0fa7d1b1206496"
+    },
+    {
+      "name": "get-structured-content",
+      "description_hash": "sha256:ab99a06b94229cc28c3333a30e81c5b282ee0cc6c304969857efa2c2d9662ac9",
+      "input_schema_hash": "sha256:3818e3fec2dd3ae54324a0ff72fda89b8a6ed438e0dce30bbc819a14d27e3d94",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "location": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "Chicago",
+              "Los Angeles",
+              "New York"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f4d42be1069f530b70cd330cadb4de8bf320337bae62db35916fa7530af62b4a"
+    },
+    {
+      "name": "get-sum",
+      "description_hash": "sha256:24bbf51e2d435fa95e3484f11ae116167c95f5a1f34033f0e61d76e0f05c8632",
+      "input_schema_hash": "sha256:140a7b5bd6582f2e5026e88fc70f513b6e9cb88b906de776c061f52172c657ff",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "a": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "b": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c6e15aa5875e8a16fac59e7bebaff4736255e58c7580879ab4d78c78ae59c670"
+    },
+    {
+      "name": "get-tiny-image",
+      "description_hash": "sha256:875f85ab28aaca78727e74afb127d68defc85ba253d6f1379bb8a8011f3e884e",
+      "input_schema_hash": "sha256:7a014b717a77aac971ea0ab5c0ff47bb13e6cae7ef9442d9dedb15ce36381b15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0e36b63338a6be99547aba091ff43817b4fcbd0d563f5824d6315c3b969c34b9"
+    },
+    {
+      "name": "gzip-file-as-resource",
+      "description_hash": "sha256:99364465537c78b16ab1185267671ed8b1526b46e93e576368f145ece83df2db",
+      "input_schema_hash": "sha256:0e511013db9be6f8d43186381730efa4be4748416b603cc0bae1474cb6bc945d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "data": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "outputType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "resource",
+              "resourceLink"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8f825000f5e793105a5ba72e3c60886f2f9f2f8f55a28ba5519eb7a2360f4e2a"
+    },
+    {
+      "name": "simulate-research-query",
+      "description_hash": "sha256:65e5cce859b455383515dd153761ec236079ba5f6b58d76ce60a75c1e9d43874",
+      "input_schema_hash": "sha256:dbd971702320465eb36f59e2e4cab79f91ea6d070ff70afcff1b19058a44eb1d",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ambiguous": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "topic": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1944fd201156f99317d3da79d2ea06193055b761176394613fdfa5d00949d528"
+    },
+    {
+      "name": "toggle-simulated-logging",
+      "description_hash": "sha256:8170115927b420444bb66859011c6a4f9433130f9d6997750bebedf4221ab7b1",
+      "input_schema_hash": "sha256:7a014b717a77aac971ea0ab5c0ff47bb13e6cae7ef9442d9dedb15ce36381b15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a3c18cf55f3830356e5b41427564573c986d6b6ce1db448d687f02ca4337945d"
+    },
+    {
+      "name": "toggle-subscriber-updates",
+      "description_hash": "sha256:8319b807a34c7b07cfd984302f2b7b0c213662ffe2d20e91c2d83a0bf1fd21d9",
+      "input_schema_hash": "sha256:7a014b717a77aac971ea0ab5c0ff47bb13e6cae7ef9442d9dedb15ce36381b15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2c2788b6edf991c3feb6b1a7e86563684f0b350deb5d07269c729b03c0aa6bed"
+    },
+    {
+      "name": "trigger-long-running-operation",
+      "description_hash": "sha256:450f382fafd14e63236a84a5d328a8f35456a76715adbf22ae56da5ad3e5f03f",
+      "input_schema_hash": "sha256:ad07d741b959654717dfe89d81e40bc8bd687c69ecc2278dc5ec728e0bf6413e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "duration": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "steps": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:97b951ea5f90870ea7cc0286795ffb211dc2f88b7dbe8179606073a20d81e6d5"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "demo://resource/static/document/architecture.md",
+      "name": "architecture.md",
+      "description_hash": "sha256:0d803ed9ccd258e966e27b416ae96f655dd4ef8e77805a58f372eb1406eff7a4",
+      "mime_type": "text/markdown",
+      "entry_digest": "sha256:a3c22c8a8198ab6fa548888be3ca4392b518ca182e0b26436c678004e93834e9"
+    },
+    {
+      "uri": "demo://resource/static/document/extension.md",
+      "name": "extension.md",
+      "description_hash": "sha256:b5d099be9e8358f27b6d261583822afdb678a3a87a3feee9dd72e309ad5d9d39",
+      "mime_type": "text/markdown",
+      "entry_digest": "sha256:74614f5450bd7286e93e62e43db8ab8745a3aca5aff45d3d23dbf64df4cbba61"
+    },
+    {
+      "uri": "demo://resource/static/document/features.md",
+      "name": "features.md",
+      "description_hash": "sha256:37d73029a9092d3384eb91fa8ab14b1608b45d77d8d0063bd13b995b361931b1",
+      "mime_type": "text/markdown",
+      "entry_digest": "sha256:a50778ce6cfcbf9b5b12e95bc112c0b2e9b08e8d56a9a4c5b27db7ff66f4359a"
+    },
+    {
+      "uri": "demo://resource/static/document/how-it-works.md",
+      "name": "how-it-works.md",
+      "description_hash": "sha256:50e3d1d4e0fefc66f64e2aae54c360a4fdd41bc1b256d8a323fc78f8e8fdb224",
+      "mime_type": "text/markdown",
+      "entry_digest": "sha256:7da2a4ea0f6701f91c267cf194f4bc7020cc23b767acfe699bfba2e44ab7cef9"
+    },
+    {
+      "uri": "demo://resource/static/document/instructions.md",
+      "name": "instructions.md",
+      "description_hash": "sha256:c5cd053454004a95d02f7ff6dc0a423979f4ab7ab65c8df0fa7f2070d040ab81",
+      "mime_type": "text/markdown",
+      "entry_digest": "sha256:8952f55ca69225d2e3cc8bda3682b48f741ac845aa92800576619081380594cf"
+    },
+    {
+      "uri": "demo://resource/static/document/startup.md",
+      "name": "startup.md",
+      "description_hash": "sha256:e9815d8bb51e18d7211f4a0c8d32ec6cdfff0aaf5198c1aa17134e2e2deabcf5",
+      "mime_type": "text/markdown",
+      "entry_digest": "sha256:15747d5d313b0eaedd5576eed6cbc4cdc107264ccf9cd36973f3cb6378bd2ef0"
+    },
+    {
+      "uri": "demo://resource/static/document/structure.md",
+      "name": "structure.md",
+      "description_hash": "sha256:1ddd39d32f343825018f28a6cc0e6b491ec7e6d908e61425ba2ef2f423ae6336",
+      "mime_type": "text/markdown",
+      "entry_digest": "sha256:e07a62e6f663fe83c1ee8f78ac19e0d7cb1fa7ebc7fc86b9809df52d8f6fc9e4"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "args-prompt",
+      "description_hash": "sha256:54f314e1a816f0bdd4eb86d9a75221bd480a364f5ffcb07ea869243c0458663f",
+      "arguments_hash": "sha256:08820ac8043955cef7e719dd5b5f2268dab09d37baa71310935fab2663adccab",
+      "entry_digest": "sha256:05fc0f81defe7ece97d592c6ebf93b53cd611de34b2dea3c2cd9dd1071b0d159"
+    },
+    {
+      "name": "completable-prompt",
+      "description_hash": "sha256:688ad72e6bf18d09689b420f45f52f2a00a14d7c184b4695068b2bd4f6a40abe",
+      "arguments_hash": "sha256:6986d8a6b071b9cfbb6d76d7c71f2a56da3d1a27a1c9a681c6dd826fa6e7c3dc",
+      "entry_digest": "sha256:29e2177c642091326bf8cdeefea0afaaf04316a719919c31a7b57d2706555fb3"
+    },
+    {
+      "name": "resource-prompt",
+      "description_hash": "sha256:acd5b6e111d9c06f89c60e33d34d83cfbed9dbd98c6b9167dcdd8eb6781b1b23",
+      "arguments_hash": "sha256:1ebd74276e5b3d6737b4f1206e50aa62184a2aaff3d75588ee3cef9ce4774b63",
+      "entry_digest": "sha256:4c06afd9d4efe76cd5e811f4afa5c4b3d0ddedbc0e88bfd866445377646c0eeb"
+    },
+    {
+      "name": "simple-prompt",
+      "description_hash": "sha256:fd403b410706e188608f3f7d3d0af01f493581057c93bc99577344ec465c8ec1",
+      "arguments_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "entry_digest": "sha256:02a095763c92da7b66af7db2d6a0692ea722836a27425e435a1514b989c8e219"
+    }
+  ],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=52)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/simulate-research-query",
+      "message": "Tool derives capability 'sql-query' (name token 'query')",
+      "snippet": "name token 'query'"
+    }
+  ],
+  "overall_digest": "sha256:2afcaec092c7f7f7bababe35022ead78b06f8db9eff9eaec79b87c447b31d7f3",
+  "pin": {
+    "created_at": "2026-09-03T11:43:40Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:43:42Z",
+        "bound_digest": "sha256:2afcaec092c7f7f7bababe35022ead78b06f8db9eff9eaec79b87c447b31d7f3",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}
