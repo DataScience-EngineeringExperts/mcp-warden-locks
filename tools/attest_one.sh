@@ -30,13 +30,17 @@ case "$eco" in
   *) echo "unknown ecosystem $eco" >&2; exit 2 ;;
 esac
 echo "== [$coord] stage 2: sandboxed capture (network none, non-root, read-only, cap-drop ALL)"
-envflags=(); for kv in "${envkv[@]:-}"; do [ -n "$kv" ] && envflags+=(-e "$kv"); done
+# The MCP SDK spawns stdio servers with a MINIMAL default environment (HOME, PATH,
+# USER…), not the parent's — so the target's env, and PYTHONPATH for PyPI targets, are
+# delivered by wrapping the spawn in `env K=V …` inside the sandbox. The lock records
+# `env` as the command; the surface digest consensus compares excludes `server`.
+wrap=(env "HOME=/tmp" "PYTHONDONTWRITEBYTECODE=1" "PYTHONPATH=/cache/pypi/$segment" "NODE_PATH=/cache/npm/$segment/node_modules")
+for kv in "${envkv[@]:-}"; do [ -n "$kv" ] && wrap+=("$kv"); done
 docker run --rm --network none --user "$uid:$gid" --read-only --cap-drop ALL \
   --security-opt no-new-privileges --pids-limit 256 --memory 512m \
-  --tmpfs /tmp:rw,noexec,nosuid,size=64m -e HOME=/tmp -e PYTHONDONTWRITEBYTECODE=1 \
-  -e "PYTHONPATH=/cache/pypi/$segment" -e "NODE_PATH=/cache/npm/$segment/node_modules" "${envflags[@]}" \
+  --tmpfs /tmp:rw,noexec,nosuid,size=64m -e HOME=/tmp \
   -v "$CACHE:/cache:ro" -v "$OUT:/out" "$IMAGE" \
-  timeout 120 mcp-warden pin --lock "/out/$lock_rel" -- "${spawn[@]}"
+  timeout 120 mcp-warden pin --lock "/out/$lock_rel" -- "${wrap[@]}" "${spawn[@]}"
 test -s "$lock_path"
 if [ "${SIGN:-0}" = "1" ]; then
   echo "== [$coord] stage 3: sign on host (v2 statement, ambient OIDC)"

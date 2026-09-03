@@ -34,6 +34,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--attester", default="dse-nightly")
     ap.add_argument("--all", action="store_true", help="ignore existing locks (dry runs)")
+    ap.add_argument("--limit", type=int, default=0, help="attest at most N targets (0 = all)")
     ns = ap.parse_args()
     doc = yaml.safe_load((ROOT / "targets.yaml").read_text(encoding="utf-8"))
     out = []
@@ -49,6 +50,8 @@ def main() -> int:
             "env": t.get("env", {}),
             "lock_rel": str((d / f"{ns.attester}.lock").relative_to(ROOT)),
         })
+    if ns.limit > 0:
+        out = out[: ns.limit]
     json.dump(out, sys.stdout, separators=(",", ":"))
     return 0
 
