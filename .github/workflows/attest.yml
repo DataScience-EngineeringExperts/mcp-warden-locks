@@ -78,21 +78,27 @@ jobs:
       - name: Build attester image (digest-pinned base, pinned mcp-warden)
         run: docker build -q --build-arg "WARDEN_REF=$WARDEN_REF" -t attester:local .
 
+      # The matrix entry is only the coordinate; spawn/env come from the checked-out
+      # targets.yaml so dummy credentials never pass through a job output.
       - name: Attest one target (pre-fetch → sandboxed capture → sign)
         env:
-          TARGET_JSON: ${{ toJSON(matrix.target) }}
+          COORD: ${{ matrix.target }}
           IMAGE: attester:local
           SIGN: "1"
           OUT: ${{ github.workspace }}/out
           CACHE: ${{ github.workspace }}/cache
-        run: bash tools/attest_one.sh
+        run: |
+          pip install --quiet "pyyaml==6.0.3"
+          TARGET_JSON=$(python3 tools/plan.py --attester "$ATTESTER_ID" --one "$COORD")
+          export TARGET_JSON
+          bash tools/attest_one.sh
 
       - name: Artifact name
         id: name
         env:
-          TARGET_JSON: ${{ toJSON(matrix.target) }}
+          COORD: ${{ matrix.target }}
         run: |
-          n=$(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys,re;print(re.sub(r"[^A-Za-z0-9._-]","_",json.load(sys.stdin)["coordinate"]))')
+          n=$(printf '%s' "$COORD" | python3 -c 'import sys,re;print(re.sub(r"[^A-Za-z0-9._-]","_",sys.stdin.read()))')
           echo "name=lock-$n" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
