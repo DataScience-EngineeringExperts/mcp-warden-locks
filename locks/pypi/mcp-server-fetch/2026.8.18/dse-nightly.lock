@@ -1,0 +1,148 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-server-fetch",
+      "NODE_PATH=/cache/npm/mcp-server-fetch/node_modules",
+      "python3",
+      "-c",
+      "from mcp_server_fetch import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:b5c83e5163771a79248fa4c478317160299b44248be582d2920fe41a6833a201"
+  },
+  "tools": [
+    {
+      "name": "fetch",
+      "description_hash": "sha256:b5e5efbd3ff0d4dcbd32d22c88b867a16cb54040b02262eef30d9194224285f7",
+      "input_schema_hash": "sha256:ccf108c2895e365b58df3e083b0785ce492eb987a0ca1f44c710ee1056927b4f",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_length": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "raw": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_index": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:588f72aa2852090544272104e9ceeeb2c98d2f679a5e0908184d1c3615d203a4"
+    }
+  ],
+  "resources": [],
+  "prompts": [
+    {
+      "name": "fetch",
+      "description_hash": "sha256:4862c81040fd90217406ab890ef673bd9c316c13a197d201700e79fef09d96b8",
+      "arguments_hash": "sha256:3e79d0ba2be834144a2f105bb1eff225577e9598f80efd1464eb2b7258d7b099",
+      "entry_digest": "sha256:10d49302e39825a25e77fb0f84832391420bb3cf9cd01c6541c6c705f800763e"
+    }
+  ],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=50)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=39)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/fetch",
+      "message": "Tool derives capability 'http-request' (name token 'fetch')",
+      "snippet": "name token 'fetch'"
+    }
+  ],
+  "overall_digest": "sha256:49453ac6daae7fb6b15fb9118de82347bbcb85f392ce1d5c3ac83aed75add71a",
+  "pin": {
+    "created_at": "2026-09-03T11:54:42Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:54:44Z",
+        "bound_digest": "sha256:49453ac6daae7fb6b15fb9118de82347bbcb85f392ce1d5c3ac83aed75add71a",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

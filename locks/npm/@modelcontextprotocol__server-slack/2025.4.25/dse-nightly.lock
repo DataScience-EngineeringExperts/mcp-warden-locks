@@ -1,0 +1,400 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-slack",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-slack/node_modules",
+      "SLACK_BOT_TOKEN=xoxb-DUMMY",
+      "SLACK_TEAM_ID=T00000000",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-slack/node_modules/.bin/mcp-server-slack"
+    ],
+    "url": null,
+    "command_digest": "sha256:ac2220b6241d7d816126571f833aeada81cfa8d8d5ca1b95702a6a0ced4c5032"
+  },
+  "tools": [
+    {
+      "name": "slack_add_reaction",
+      "description_hash": "sha256:9ef731548d5413cafa2e41a500c98ae78fa116f3ecadd9ea9fa3e73b628bdf71",
+      "input_schema_hash": "sha256:3c600a9bb773c81e7d744c39e2ff8145f25c475708ccbff0849c7d3cf449ea8a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "channel_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "reaction": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timestamp": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:94729eb30acbb5a66e4c3a92470b8d9268a5657e5138dd6b836ee8aef1d6d65e"
+    },
+    {
+      "name": "slack_get_channel_history",
+      "description_hash": "sha256:6202ea1d2dfc795d4f48ca0dc8468fa3d27db715aa62dbd38b68497a5ed301a7",
+      "input_schema_hash": "sha256:57e8cb1e88f072f5f159d41e73f2d34ffb0c4ceef8009c16e387bc703d0f3b94",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "channel_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2d27619bbdea459139dea1f63c83c8a2244950ff81ecafda5be1e2765cb206d6"
+    },
+    {
+      "name": "slack_get_thread_replies",
+      "description_hash": "sha256:719ea164a0cb48844df67b6aec6ea5c75a320fcbeb7510a3a54d4f9194e1dcee",
+      "input_schema_hash": "sha256:4e5a7e791057d28553b152f2957c1b87c6d9bd77b3f299678c591dcb0a94841c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "channel_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "thread_ts": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5b9a91d59185ecaee18c5015680adcb8ac53fcf4bd0b0de74073a48eac1ee921"
+    },
+    {
+      "name": "slack_get_user_profile",
+      "description_hash": "sha256:d04fcbc957c4755d4d3a2569f896815ab22ef61e2991e6cf08ddaede3c7394b7",
+      "input_schema_hash": "sha256:918d05e26d73e0adb56f9fa2d46d731cfed578bb0e3c257d907c6a068e0955c1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "user_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e77e7435afe537d8591a30bddea63d635f458d392855ab7dba93b94ae9e34e69"
+    },
+    {
+      "name": "slack_get_users",
+      "description_hash": "sha256:797b3358de2eed19f98ef823847cf2a7a36c3bc707e71ab9f3f65f026ab8fec3",
+      "input_schema_hash": "sha256:6c2ed60e0941b89f868e56803cb30aa85e8dc6e7c6f249879cbc9460c31ffdca",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8c3b39bc6529e8f0733b08b525dfe8fb4766f028ed86335eb5ace7747367dc10"
+    },
+    {
+      "name": "slack_list_channels",
+      "description_hash": "sha256:5d8b91a4fd92d1b00efd56e1005df32852ccbd7907d649b3215f0bb2cd686f1d",
+      "input_schema_hash": "sha256:5ce4237c7eaf50289fa9218527257a1807e2b4b120f8b1334784552c803bad68",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a71803c22b0bcd1db34979045959e880ae475577ac41c67b95f6d2c7aef16ae1"
+    },
+    {
+      "name": "slack_post_message",
+      "description_hash": "sha256:f590603479fa3d7e53e19a88d150b5fe2f6a621b24ffe7140cbc2928e638baef",
+      "input_schema_hash": "sha256:ffa06b3a5dca3461162847d48c3c10db05baff1e6b34b678f5b2ccbe1f07470e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "channel_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1c844437d9a22d95a3b0aa3894c7b9b91c60e95596c85fb11fb4918345546284"
+    },
+    {
+      "name": "slack_reply_to_thread",
+      "description_hash": "sha256:a9d2d30521e2302e459602a0fa56e8a00e6815a04b50b415dfdc11631ac5e98c",
+      "input_schema_hash": "sha256:a3867620f65ecc56e383dd0b82e229db194f568963d436e05ef7a4fad2026650",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "channel_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "thread_ts": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a130da174db62691cbdf1ff4e9fef1330af5d86fb217df508c7c6c26e22c5d66"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "SLAC…(len=26)"
+    }
+  ],
+  "overall_digest": "sha256:5ac553b02fffeca84a64006fe47f73ef5a52dc0d50bbe948b62d734ab168f76d",
+  "pin": {
+    "created_at": "2026-09-03T11:50:26Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:50:28Z",
+        "bound_digest": "sha256:5ac553b02fffeca84a64006fe47f73ef5a52dc0d50bbe948b62d734ab168f76d",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

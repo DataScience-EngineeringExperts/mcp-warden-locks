@@ -1,0 +1,742 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/tavily-mcp",
+      "NODE_PATH=/cache/npm/tavily-mcp/node_modules",
+      "TAVILY_API_KEY=tvly-DUMMY",
+      "node",
+      "/cache/npm/tavily-mcp/node_modules/.bin/tavily-mcp"
+    ],
+    "url": null,
+    "command_digest": "sha256:3b7b7e4b985b5d3f4be3879a39862ff2c6bda05f6e822ea5b8af9281ef8f9eb3"
+  },
+  "tools": [
+    {
+      "name": "tavily_crawl",
+      "description_hash": "sha256:9339d7edd4272559648ac6d7cef23f07a485ff4bd87e6838a259f193f67e4599",
+      "input_schema_hash": "sha256:a70615eefbf466c33fcee7fbba578f7ef4ab5450b0a5823536d0f1d16a33327f",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "allow_external": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "extract_depth": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "advanced",
+              "basic"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "format": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "markdown",
+              "text"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_favicon": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "instructions": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "max_breadth": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "max_depth": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "select_domains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "select_domains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "select_paths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "select_paths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7ac18ab2cf1af3ec74c9addb51046f717067386389ad78df59b83398c46fec08"
+    },
+    {
+      "name": "tavily_extract",
+      "description_hash": "sha256:02e94f5b34e5af6e3a478011a0164be81282b7e235dece0df95d272d3f6b6ddc",
+      "input_schema_hash": "sha256:adec28a05f0ff266e9dadb1a5b84964971904cd728940342cf1798523ae6311c",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "extract_depth": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "advanced",
+              "basic"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "format": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "markdown",
+              "text"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_favicon": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_images": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "urls": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "urls[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5581a33213998fbc34ec533a42f44872c894d1fdc8eba80ca11d34bad083c098"
+    },
+    {
+      "name": "tavily_map",
+      "description_hash": "sha256:165209db9812ea14d00e679e94453f3f29dcaf09c5520d386765e6b897b964cd",
+      "input_schema_hash": "sha256:850771e01b84e05c03160388aab481bfecfa69f1a20e4e922ee6ff688c2b1691",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "allow_external": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "instructions": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "max_breadth": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "max_depth": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "select_domains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "select_domains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "select_paths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "select_paths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:36d3178f1df96965a8c7813b256281fad8852426f5b2c861677dc4fc6bc5b2d6"
+    },
+    {
+      "name": "tavily_research",
+      "description_hash": "sha256:2ed1ac4dee2c7e06e71a94ab09a80206c65f6119ce75b56df39dfb3c6b5c2e72",
+      "input_schema_hash": "sha256:bef6d62ef6df956ab1ea7fad75b81183495ec2b877d0dbcf51dd7bca2417664e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "input": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "model": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "auto",
+              "mini",
+              "pro"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:28dee12993b0f12f0e7552af8cbcee546421ac6255123526cc716b5e5cd712f4"
+    },
+    {
+      "name": "tavily_search",
+      "description_hash": "sha256:f163d221ddf1dcd532cfddac7641a515c023ed6773db002b8f899117594a4e25",
+      "input_schema_hash": "sha256:2196dd84627417e820c2300477fc6e4a4a3ce4dc418a6e7869306e94bf605689",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "country": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "end_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "exact_match": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "exclude_domains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "exclude_domains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_domains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_domains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_favicon": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_image_descriptions": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_images": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_raw_content": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_results": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 20,
+              "minimum": 5
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "search_depth": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "advanced",
+              "basic",
+              "fast",
+              "ultra-fast"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "time_range": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "day",
+              "month",
+              "week",
+              "year"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "topic": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "general"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e270326d323c8e7f56c4b166e396e628c442918c010c1f8cec8b7084bcb0bde3"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=44)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=33)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "TAVI…(len=25)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/tavily_crawl",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/tavily_extract",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/tavily_map",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/tavily_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:e27c09d9668d35a5504c9f3c405370085463a0f6bf9754f0ebfe9302d9030ff1",
+  "pin": {
+    "created_at": "2026-09-03T11:53:39Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:53:41Z",
+        "bound_digest": "sha256:e27c09d9668d35a5504c9f3c405370085463a0f6bf9754f0ebfe9302d9030ff1",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

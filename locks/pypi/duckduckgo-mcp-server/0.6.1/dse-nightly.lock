@@ -1,0 +1,196 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/duckduckgo-mcp-server",
+      "NODE_PATH=/cache/npm/duckduckgo-mcp-server/node_modules",
+      "python3",
+      "-c",
+      "from duckduckgo_mcp_server.server import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:4e32f5795fd7808572731e2487c3423a5be4eb49d6c163ce8c7dbe43f18e95af"
+  },
+  "tools": [
+    {
+      "name": "fetch_content",
+      "description_hash": "sha256:8745989a1ca3623123abaaef4777c7e93abb6c10bb15d6896b224d33059a8290",
+      "input_schema_hash": "sha256:c83624e6570c9ab19b35579856d83b72512dafba17ac827b7b005d85943d0107",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "backend": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_length": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_index": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8ba28f40f7292388462117b48af426df040557835d7517d202a7380b9169f7d2"
+    },
+    {
+      "name": "search",
+      "description_hash": "sha256:ddc0a23511cc0d6654bcd7acb886ab52e9c0897650c035b689e8cab907822f7f",
+      "input_schema_hash": "sha256:1484bb8d7a94e621a34718fe80ee4da5600d572c7cd42f2af82ac2860e9d7e1b",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_results": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "region": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:de5907521da1fbcca089d6d636291386a40f2d85a39b833d34f928e2835c2ec6"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=55)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=44)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/fetch_content",
+      "message": "Tool derives capability 'http-request' (name token 'fetch')",
+      "snippet": "name token 'fetch'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:4968bd1b07e71b24974e5e2cd45d90fdaef0ddc5bcc5517e6920df4ca11f63a9",
+  "pin": {
+    "created_at": "2026-09-03T11:55:48Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:55:50Z",
+        "bound_digest": "sha256:4968bd1b07e71b24974e5e2cd45d90fdaef0ddc5bcc5517e6920df4ca11f63a9",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

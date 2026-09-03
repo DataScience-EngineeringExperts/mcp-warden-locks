@@ -1,0 +1,215 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-server-motherduck",
+      "NODE_PATH=/cache/npm/mcp-server-motherduck/node_modules",
+      "python3",
+      "-c",
+      "from mcp_server_motherduck import main; main()",
+      "--db-path",
+      "/tmp/attest.duckdb"
+    ],
+    "url": null,
+    "command_digest": "sha256:1fe5d67605ba95b7312ded8d2cdc621a686f851d2602c6b77f4f6e0564397a31"
+  },
+  "tools": [
+    {
+      "name": "execute_query",
+      "description_hash": "sha256:ee74216c1621b798b5245bf29d1a584c3f00197ce855699b58147b0b97c0b918",
+      "input_schema_hash": "sha256:841b86a574c839b19f01feea87bfcbcdde40b71c927672b71c4c9197cf5effce",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "sql": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b9e61146c14f27fef56d1b69a0d1a6f9a66f9b3b3eb83bb30d9f0dcf8a7fc303"
+    },
+    {
+      "name": "list_columns",
+      "description_hash": "sha256:6ada55a76f204304acfa09394a4d2c5fa0ce6c3413cbbc6b3c865b98a3ecffef",
+      "input_schema_hash": "sha256:4af6d7f465d74eed63aa4c6a3892164bd4addace87775697b6af3e11f7b17a93",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "database": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "schema": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "table": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ec09ff300a90966d3e6f83245e58f3936ffe9abb5ed88717e137c6065003df2f"
+    },
+    {
+      "name": "list_databases",
+      "description_hash": "sha256:c9c16e396f19742b31cf1310724caae73f465035f1876e467ad05a53e87b355b",
+      "input_schema_hash": "sha256:99334726611ccf58a148b0814696bfa6fe08c1b2d027e946beccf5a74331c9aa",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:42bd25c0e4933e8307f808beb4e6ea4d8f05da5705e585cb730bbc321dba78d5"
+    },
+    {
+      "name": "list_tables",
+      "description_hash": "sha256:d3d06ff115cd9d015d580484798d28b553efcee1e52b471b0bb8ea1c5d591fc5",
+      "input_schema_hash": "sha256:7e2b7f53895d961f5afad21baba1c0afe647e3fa1e89972abe82952f753743c8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "database": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "schema": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:58513ca1f6e5e3d007fa418b4c38db8ee3319116c421715f403de072cbfbfdda"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=55)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=44)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/execute_query",
+      "message": "Tool derives capability 'sql-query' (name token 'execute')",
+      "snippet": "name token 'execute'"
+    }
+  ],
+  "overall_digest": "sha256:629c7b48d3773c6cb2005d530851ede2024ac8fe9a352f6dd5661d8618b5d12e",
+  "pin": {
+    "created_at": "2026-09-03T11:55:42Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:55:44Z",
+        "bound_digest": "sha256:629c7b48d3773c6cb2005d530851ede2024ac8fe9a352f6dd5661d8618b5d12e",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

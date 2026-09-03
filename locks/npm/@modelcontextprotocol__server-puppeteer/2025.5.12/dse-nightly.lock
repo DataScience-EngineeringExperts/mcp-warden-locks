@@ -1,0 +1,377 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-puppeteer",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-puppeteer/node_modules",
+      "PUPPETEER_SKIP_DOWNLOAD=1",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-puppeteer/node_modules/.bin/mcp-server-puppeteer"
+    ],
+    "url": null,
+    "command_digest": "sha256:35a172fd16edf680a1010b6bc2331a736c72b6dd876d6763171880546a824918"
+  },
+  "tools": [
+    {
+      "name": "puppeteer_click",
+      "description_hash": "sha256:4528c82a52d750b37f7fa369e8c0b507c356e0f5676820ce38c716fdc27d4bc2",
+      "input_schema_hash": "sha256:8d17faa220ff345fa8bf04c26794a094ce7518098362e300d3bd4c33ad4b4f13",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:3ba90caa4eb8001a76eb97fd0683716c81d42746dd999eb630dd78e5cc206ba2"
+    },
+    {
+      "name": "puppeteer_evaluate",
+      "description_hash": "sha256:b00e5dcf23853b462ac32749570ddc55bef82afa4310903ab35ea322dc2f30dc",
+      "input_schema_hash": "sha256:04d6f1dffde518899fc76eb713dae3b6ee44d36ad09482e1a373fd3139068e6e",
+      "capabilities": [
+        "shell-exec"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "script": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:97e89187650d4c2585b77351d398da3da08b326d847a4b68e1489afec9f52422"
+    },
+    {
+      "name": "puppeteer_fill",
+      "description_hash": "sha256:5bf19b42b1607100f9e322fe635110756d4ce8a065c291082d2e4afb9dddb45a",
+      "input_schema_hash": "sha256:5b34dcced7c50165ff42b3934d97ff748d3dac5733673f89034dac5fbdae418f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f601a91a28edb03e76bb0ccd1e0bd3b06350e7c0776334525bce7df2560d5fdc"
+    },
+    {
+      "name": "puppeteer_hover",
+      "description_hash": "sha256:6c370eb9d9da59af0621a288f57830a26008f05a7ed585c60c57c5ec1ceff705",
+      "input_schema_hash": "sha256:ee23b8b2bb16b7d10ae1324f48a1a93a921af09067c752576abd9a16b227c3ff",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:3cdcdadaab88ecd2480370000da6272181300c0a3d3737fecd9829bfbd0ff1b5"
+    },
+    {
+      "name": "puppeteer_navigate",
+      "description_hash": "sha256:c47ab66fe06057eac7d17f9233c88a8293d91f4c7c1bc92c233d08de01bb5ad6",
+      "input_schema_hash": "sha256:a52d2625bcd00744141c77303685da6745fd7d916696f2fc8752d50c66193d8a",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "allowDangerous": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "launchOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1439da23bcbc1191f207e0efecf122dd646248959c9d31250c79510dc3a7b60f"
+    },
+    {
+      "name": "puppeteer_screenshot",
+      "description_hash": "sha256:fe2baa00c6c5c8c210ccc260dff190b2a9b36b99f4f504dcdf943875c78a7acd",
+      "input_schema_hash": "sha256:0925c80afa7b3f8f478c5fc63ee14db73d39f085b3ac4ba41db45299eadd42f2",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "encoded": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "height": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "width": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6e49a359408da887891d286a769f94fa2ae16b4f05d8752a8953962060f1ce0a"
+    },
+    {
+      "name": "puppeteer_select",
+      "description_hash": "sha256:1706b826412b5737583de3df8a053266c07bfe80d286b438909cd2c87ce006e4",
+      "input_schema_hash": "sha256:42208b19499bd8183fd6cdb8043683038c3fc04b87f68fb3a7271848a7bb99cf",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:293b47271a7f21d32471f412284d97b18cc3313266571a48ccaeebf377c63b95"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "console://logs",
+      "name": "Browser console logs",
+      "description_hash": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+      "mime_type": "text/plain",
+      "entry_digest": "sha256:19300803892770f5af5b8125c0485cc13c321a433deb8c9f790cb37529d44a5e"
+    }
+  ],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-CAP-SHELL",
+      "severity": "critical",
+      "target": "tools/puppeteer_evaluate",
+      "message": "Tool derives capability 'shell-exec' (property 'script')",
+      "snippet": "property 'script'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/puppeteer_navigate",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    }
+  ],
+  "overall_digest": "sha256:92a3613018cc775792b153b783348fe963a7f7cd6bac0740b4d7fe9c27a0b4ce",
+  "pin": {
+    "created_at": "2026-09-03T11:50:11Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:50:13Z",
+        "bound_digest": "sha256:92a3613018cc775792b153b783348fe963a7f7cd6bac0740b4d7fe9c27a0b4ce",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

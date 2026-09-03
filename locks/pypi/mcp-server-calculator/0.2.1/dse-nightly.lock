@@ -1,0 +1,99 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-server-calculator",
+      "NODE_PATH=/cache/npm/mcp-server-calculator/node_modules",
+      "python3",
+      "-c",
+      "from mcp_server_calculator import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:e75cdff389d38cf41850c195ff597d72be74c743d06fea885e55def25da4ec91"
+  },
+  "tools": [
+    {
+      "name": "calculate",
+      "description_hash": "sha256:4d1c71e9edf9b0597f1b3173e8532b554dc53f70f9d912aba8ab90c40492d4bd",
+      "input_schema_hash": "sha256:44685fad61ad1104e043ce30a7f0f483ec31889f3eb6eeafb9773763329d8bf0",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "expression": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:3430334ee5f580fd3d6e424b127260e5a414b7e10c34af8bd147c1cce8255b16"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=55)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=44)"
+    }
+  ],
+  "overall_digest": "sha256:c9c200d9def18083a44de14b79f9a91cdf3b9d6feaaeba27ac0b070269a6d741",
+  "pin": {
+    "created_at": "2026-09-03T11:56:48Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:56:50Z",
+        "bound_digest": "sha256:c9c200d9def18083a44de14b79f9a91cdf3b9d6feaaeba27ac0b070269a6d741",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

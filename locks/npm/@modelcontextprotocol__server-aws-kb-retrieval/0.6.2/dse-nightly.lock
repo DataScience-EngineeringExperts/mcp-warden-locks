@@ -1,0 +1,137 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-aws-kb-retrieval",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-aws-kb-retrieval/node_modules",
+      "AWS_ACCESS_KEY_ID=AKIADUMMYDUMMYDUMMY0",
+      "AWS_SECRET_ACCESS_KEY=DUMMY",
+      "AWS_REGION=us-east-1",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-aws-kb-retrieval/node_modules/.bin/mcp-server-aws-kb-retrieval"
+    ],
+    "url": null,
+    "command_digest": "sha256:6f62153d4f9429346c2fec3608dcc3a53fd11dc4c6a05c49d55b0d99bb3690e9"
+  },
+  "tools": [
+    {
+      "name": "retrieve_from_aws_kb",
+      "description_hash": "sha256:64943d1dad5eb1b9b76f527e4c0ffa8fa6dd3e11fa6daf6ce248aa963c612ae6",
+      "input_schema_hash": "sha256:ba97950f20f287f9ead28b918529b51464fdf356196c01f47cf146d14f67fe84",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "knowledgeBaseId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "n": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:dad513dd2a0adf6d43902067a1f4775d156bfa01c341f4ae0b212fd9271606fa"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-AWS-AKID",
+      "severity": "critical",
+      "target": "launch/command",
+      "message": "WRD-SEC-AWS-AKID: possible secret in field",
+      "snippet": "AKIA…(len=20)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=45)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=58)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/retrieve_from_aws_kb",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:dfd130271eaa87df906231ee90c6f96a4f3c10575ddbe685750b5bcbb6931291",
+  "pin": {
+    "created_at": "2026-09-03T11:51:09Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:51:10Z",
+        "bound_digest": "sha256:dfd130271eaa87df906231ee90c6f96a4f3c10575ddbe685750b5bcbb6931291",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

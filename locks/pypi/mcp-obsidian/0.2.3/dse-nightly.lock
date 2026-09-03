@@ -1,0 +1,727 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-obsidian",
+      "NODE_PATH=/cache/npm/mcp-obsidian/node_modules",
+      "OBSIDIAN_API_KEY=DUMMY",
+      "OBSIDIAN_HOST=127.0.0.1",
+      "python3",
+      "-c",
+      "from mcp_obsidian import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:4b2732560db948b6e2ca070e198c4f36788965efed2cfde1f494d523975db398"
+  },
+  "tools": [
+    {
+      "name": "obsidian_append_content",
+      "description_hash": "sha256:9275d53b7da8da7b26daaa3dd2a71ee313e090f0542b8681aa2b669fbc5a40c4",
+      "input_schema_hash": "sha256:934b6e2ff36b5f4ba972bcdfe30dfee86791b405b4ac18eec35710eede31393b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "path"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c661f5893dd50591e86bc3a3e582d970d093534db085fe5c44564f5cd93f1981"
+    },
+    {
+      "name": "obsidian_batch_get_file_contents",
+      "description_hash": "sha256:ab21e0294b577e9f55d18b72ad5e317cbf28c469d3ca5e5d12e2b154fe914900",
+      "input_schema_hash": "sha256:3df8f2f6fe2c0577ad1b2a4048f217b5a36c6d0e866ee3592681d127bf1b4185",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepaths": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepaths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "path"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7bcb0cc84e3c9a87d6da0904a292bbdfa5b68f5640d42ef01933b0e9249f6936"
+    },
+    {
+      "name": "obsidian_complex_search",
+      "description_hash": "sha256:88e948dc73625b648e3c377187a3456a42f068a587e7b1fbef9666925beb0c26",
+      "input_schema_hash": "sha256:588bb09165caa2f60731740d83fe1c2e50ad9f05a129b04537c4f24e529bc0cf",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9b952c4c0f12ad0f3a634dd73a413ea1c7d0946e04ea874b332926d018ab0d3d"
+    },
+    {
+      "name": "obsidian_delete_file",
+      "description_hash": "sha256:1841a4537d7c1e9800ee62be81bf9701f3d4eafafdff2e0de673424db6453f84",
+      "input_schema_hash": "sha256:cfc1ff819ac408b084199379971aff9ae0e36aca7cef7e2d65a369ba1e0a5709",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "confirm": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "path"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1f3080516f1deb439f5b6254fa3d34d1b6f275447f233dc5a4185c9707386051"
+    },
+    {
+      "name": "obsidian_get_file_contents",
+      "description_hash": "sha256:74726ffe8dd313edadfb4fed9cea510c31a3cc7a01861df42b4ef18e87cc9b66",
+      "input_schema_hash": "sha256:1102575cc0cb71764ea69b1f6e7182c812ea0e7e12baf5719ae9ede218df5f82",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "path"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1c2ded5044ab970730677feabaf3073c71312649ccca2217647b155d52d3c7bb"
+    },
+    {
+      "name": "obsidian_get_frontmatter",
+      "description_hash": "sha256:41525cf7358f11b3c3c8fb9cfd31b91849302bbdce2f6713bcac6ffb22443e85",
+      "input_schema_hash": "sha256:924ac4b5c8377d26c7a8cc6ab09df73e66511f5d5fcea78b19d6721abed85aed",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "path"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b41fbaa43ea2edc5b9d1e72c46dabd9e67b3c2ea8b614d1bc817ac604d79ebe6"
+    },
+    {
+      "name": "obsidian_get_periodic_note",
+      "description_hash": "sha256:49b8c1e3ed10a081d1cc399cdb32d8bed6748bec3379a49afd506bc2f0cb90bb",
+      "input_schema_hash": "sha256:a1ea5fd5fad0363473cab05c00e9c241cb7faa3aa06b43585ee053746bc7a142",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "period": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "daily",
+              "monthly",
+              "quarterly",
+              "weekly",
+              "yearly"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "content",
+              "metadata"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0dc227d1dd15791d9d25ee9f856c86abf7b1c86f0adc6bec8f9a8fa5391d8233"
+    },
+    {
+      "name": "obsidian_get_recent_changes",
+      "description_hash": "sha256:d27cfcfe4fbd6fa9ff01d27d3eba719b652a9de4a4ae13a569f5cb2950516d02",
+      "input_schema_hash": "sha256:cc5ccc82770eea8407d2aa5a4e7c72bd6c55f52896f241ad99207e3b429f9081",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "days": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ca779ff0bd3dc86e7e2d107ae9307128b50e3fcb1be8522719af8da7426f2705"
+    },
+    {
+      "name": "obsidian_get_recent_periodic_notes",
+      "description_hash": "sha256:1bbffee5cd44234945df82a7935ff0bbcc9a9a868605c55f250ae9d909fd5270",
+      "input_schema_hash": "sha256:f8087e81372178e6aed158462d265a996663f2817f5df3f6af075eed76577182",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_content": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "period": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "daily",
+              "monthly",
+              "quarterly",
+              "weekly",
+              "yearly"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a087aefaefefb7daecd7e70f92a4c63eb567436ab14ba5aad4cbe7506319b57d"
+    },
+    {
+      "name": "obsidian_list_files_in_dir",
+      "description_hash": "sha256:62e2f531de9e4cb1e3ab21b60d83138e68db9a269373e966cdeb89dcbcd17fdd",
+      "input_schema_hash": "sha256:c8d723b1eba63357ac887c426de881c4cd003be5d755a0cfe52cb1ceda616736",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "dirpath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4c671210e4f9c28077f572a0638b0a367a51038cdfa23218a79cd138f70c0e8a"
+    },
+    {
+      "name": "obsidian_list_files_in_vault",
+      "description_hash": "sha256:bec85ace7e45e07edb70b1a5b3bffa3966d83bc3196cfe9153d44f80d4204bbf",
+      "input_schema_hash": "sha256:c8a1ac469a826ea3547ac220c7bbfdcd6b58080d4ec596ff2a0149c5ccb9b699",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:790f2c68c022ef12a41f2a0af106e316103dd36367da46e1b3adf218b65a2656"
+    },
+    {
+      "name": "obsidian_patch_content",
+      "description_hash": "sha256:e1d90717d7490606095a3a357a087814197f2b88010d03ba033455e6b33479fc",
+      "input_schema_hash": "sha256:695e46b912e14a5c44a549a2fe2ed6509b3a7e303b505a248538aef85a06024b",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "path"
+            }
+          },
+          "operation": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "append",
+              "prepend",
+              "replace"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target_type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "block",
+              "frontmatter",
+              "heading"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e6909f1c895f43bb4ad67687193710e64dad11078a03577fbfebeb1deb5d15c4"
+    },
+    {
+      "name": "obsidian_put_content",
+      "description_hash": "sha256:b554ad21bf63fc50abfa4da0be90274da5290b61dfeeea6a996af68724fa07e0",
+      "input_schema_hash": "sha256:4d38a9a907affb5f1378f20e8bb18c2f0209cbd0cb931bfac189c5803fc3795f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filepath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "path"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:50f27f1e33680835671f1894e22deb052e05b9078e166a4623d6783afd90815a"
+    },
+    {
+      "name": "obsidian_search_by_tag",
+      "description_hash": "sha256:e175f66a403f3678e860e32a443859b92e004f2278bd008e01ecbe7a876597fb",
+      "input_schema_hash": "sha256:e3fc4fba4e3be6a20b8d03fae6653ff32e7848306e9b5179cdc99cf561b9f322",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "dirpath": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "tag": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:87a0aa30ee774533f298ecad5ce3673338ccbbc80f04b3330b49968a7c090c6f"
+    },
+    {
+      "name": "obsidian_simple_search",
+      "description_hash": "sha256:c2263b756947ec81ba71c84e223f95277fb36d381fcf8b7f57561e96a052bae5",
+      "input_schema_hash": "sha256:59d076317236278bc8bdb4e8a5bb8d643c2bd18471145845f23eb8d4df2cf540",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "context_length": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:aa04350de01a0e673b6f3828a772560d1e3d5ae265c271e296cdd356705027b2"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=46)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=35)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/obsidian_complex_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/obsidian_patch_content",
+      "message": "Tool derives capability 'fs-write' (property 'target_type')",
+      "snippet": "property 'target_type'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/obsidian_simple_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:74b863ae530b46770a298df8ae731e3ab06b491f2054a1c64820acd848e5aa6c",
+  "pin": {
+    "created_at": "2026-09-03T11:55:47Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:55:49Z",
+        "bound_digest": "sha256:74b863ae530b46770a298df8ae731e3ab06b491f2054a1c64820acd848e5aa6c",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

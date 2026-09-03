@@ -1,0 +1,780 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/chroma-mcp",
+      "NODE_PATH=/cache/npm/chroma-mcp/node_modules",
+      "python3",
+      "-c",
+      "from chroma_mcp import main; main()",
+      "--client-type",
+      "ephemeral"
+    ],
+    "url": null,
+    "command_digest": "sha256:86de5821bb63e70b2049e803e3963734691a396a698c72bdfe079546c1d5ae51"
+  },
+  "tools": [
+    {
+      "name": "chroma_add_documents",
+      "description_hash": "sha256:a46947c2515079e2c326dbe6c501f4798dddac02959839381d4f1452e5d13679",
+      "input_schema_hash": "sha256:949333ce3181d4d8229af565766b86452bc17be3b74dfbb63ee5689c589757cd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "documents": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "documents[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ids": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ids[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "metadatas": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7073f2fa1f3f630d3c4a14e13b28096fe0dd20ff2e02a9e1f3e2f0455bdb0c69"
+    },
+    {
+      "name": "chroma_create_collection",
+      "description_hash": "sha256:1084fb28c5e052ede56e66d52a9e0ada0825ab97e2ec193159f3985c89a5e0f0",
+      "input_schema_hash": "sha256:1a6823c50e1b33bda16acd04a7421adef26d4aa3259f17d9e943d6af56cc6d03",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "embedding_function_name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "metadata": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:78d71f2ad27d1ed50613b5e074055e6299f38209671abea9a7118c8059db76d6"
+    },
+    {
+      "name": "chroma_delete_collection",
+      "description_hash": "sha256:6084f4262a7c220209d77e03f1585004e8fa2a97850b91b2b7ffa69579801a9a",
+      "input_schema_hash": "sha256:a8c7a135ef2e2d0254ba7240bddb6568daff0be9fb6725720daabe2fdb6dc5f5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:48b5580969e9ae647ff90531535e783c2a307decb2ce4368f4ceb87e97595275"
+    },
+    {
+      "name": "chroma_delete_documents",
+      "description_hash": "sha256:55812764ba8c0263f222f914acd2d6f09cce077df6fa5807fb021a742f1cd2aa",
+      "input_schema_hash": "sha256:1b06a0385785093d86eb4978665750930236c299fbdfb9daabc69f7cd8a24be1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ids": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ids[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7cfe77cdecba58d4c2afa3f7cee00af39d697143e391ed5cd4be52497af8e111"
+    },
+    {
+      "name": "chroma_fork_collection",
+      "description_hash": "sha256:488f2757cc70547252c26243369cbc518a4a44c241d24ec5f5ffa6796f18c505",
+      "input_schema_hash": "sha256:a9a81d4826abeff94782a4454aabb322873fe3761cf5f2586c6a61e2b6c815c3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "new_collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:32f3c5b8d534961101900f961ea3c80a4fb6bc16f9a1c5de6fb67c51d3ada341"
+    },
+    {
+      "name": "chroma_get_collection_count",
+      "description_hash": "sha256:f577356a80ed7614403b6d3074c753b7ebba302cc297b0a89f9c7c7da8b00228",
+      "input_schema_hash": "sha256:e9b18b645e721ab4160ed307e82cfdad3669131a2339b53d5c391ee6c8479322",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:bb320ed2164fd3188b9ac1967792d931e4cbe927fdcf708ab38c303e78aa0daa"
+    },
+    {
+      "name": "chroma_get_collection_info",
+      "description_hash": "sha256:96a02ad38a8436d9db60250203fff859285fee83453be758e9edbed495f6edbf",
+      "input_schema_hash": "sha256:61937d85bd556f97513cf25573875623efd9ec3a31f5bb3a5d2ec96c6fa586e3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:401411d76b40110990eca7c626562510069359fa06e37c4a2ec0152999ad4b2e"
+    },
+    {
+      "name": "chroma_get_documents",
+      "description_hash": "sha256:7d9658ccd93aeaa947750f900bda5c4531819ff271bd0cef66f030c82770449c",
+      "input_schema_hash": "sha256:3fa157059022ac48fa7776380f1f09ec58ab9c210c6e9311fe8027d6527eb058",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ids": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "offset": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "where": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "where_document": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2598e5c6fa9fdbad67dcc8b2b8742a70018afbd5b7875c7de190bfdee025b4c4"
+    },
+    {
+      "name": "chroma_list_collections",
+      "description_hash": "sha256:29bfba3495d3172b08ff8038275ba260557cc1c7e87d3e26b967c73a0da41a5d",
+      "input_schema_hash": "sha256:a317dc5565bb52307607da58a6af3e4aac578754d041e5fc2d6f243cc2028ab7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "offset": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2251434bce2c94669f9d57c954443e535f9c2159c46cf8ae9e224b08524e8552"
+    },
+    {
+      "name": "chroma_modify_collection",
+      "description_hash": "sha256:3e1877a646a21d9a851f68d95403ec2f0a344ac36f5e6d4051c08d8c4caf260a",
+      "input_schema_hash": "sha256:8b5006f74c51b13ccc76aef5a5fe28a7ff76392b66fa3c717a86a33139c9bbc8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "new_metadata": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "new_name": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cf90204b1a85821392efb2e5298c120a5cbc4a59f7f1237f8d1742115baf8de6"
+    },
+    {
+      "name": "chroma_peek_collection",
+      "description_hash": "sha256:1ea740be476f32eb00be0993476d10f897459a13aa8bde01ed3e542188a47358",
+      "input_schema_hash": "sha256:0c6241f28c7c8bea3b5c3fa97cbdf8753bbead37bc16c451ea71911dc567d46e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:318805eae0a856fa552ad06727e3d7616d4f3ed75df3b9e2d0213c19f6126798"
+    },
+    {
+      "name": "chroma_query_documents",
+      "description_hash": "sha256:0808efb319afa0a331fb918d39358d5217ecdfa0c5b3b0fea84fe720778a1cd3",
+      "input_schema_hash": "sha256:c697ad7d163b556e79924e4e2e6d246f5436e677279ddd1dceacd95a2b3d129b",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "n_results": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query_texts": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query_texts[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "where": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "where_document": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ae19a22678bd235ad18bc6356378952f61539280569a706df545b1dc6b1ffba6"
+    },
+    {
+      "name": "chroma_update_documents",
+      "description_hash": "sha256:ffa9bbf00ca989f8ac3ac1985167e1d4a7d1a50482dde03171c160fb7b941200",
+      "input_schema_hash": "sha256:86f3715eb211d0d4d7620534609227d8438c49992368344726abffb89f7b6658",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "collection_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "documents": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "embeddings": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ids": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ids[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "metadatas": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:de911b30937d7c7646b13ff7a98487abe968816585386c03f4019491314e43d6"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=44)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=33)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/chroma_query_documents",
+      "message": "Tool derives capability 'sql-query' (name token 'query')",
+      "snippet": "name token 'query'"
+    }
+  ],
+  "overall_digest": "sha256:8c7598fa66144929df5311627fb1036fb7a37825e84cf7623e548f864e920a4e",
+  "pin": {
+    "created_at": "2026-09-03T11:56:58Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:57:00Z",
+        "bound_digest": "sha256:8c7598fa66144929df5311627fb1036fb7a37825e84cf7623e548f864e920a4e",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

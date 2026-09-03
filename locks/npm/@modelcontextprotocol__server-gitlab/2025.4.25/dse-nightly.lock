@@ -1,0 +1,248 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-gitlab",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-gitlab/node_modules",
+      "GITLAB_PERSONAL_ACCESS_TOKEN=DUMMY",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-gitlab/node_modules/.bin/mcp-server-gitlab"
+    ],
+    "url": null,
+    "command_digest": "sha256:8530215429699cd9977358f0b11907b2bf34e4254adceaf619b1828d68e5c3be"
+  },
+  "tools": [
+    {
+      "name": "create_branch",
+      "description_hash": "sha256:d5b6ccf5d21d248e5397c6b9f5b02fd665815c57dbf882a64dbcd11c031230fa",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:03aae682c684507be937110969a5ed616339527c12c4f76907554985e9390e4a"
+    },
+    {
+      "name": "create_issue",
+      "description_hash": "sha256:89daf47d105359d894905a09e326ea864efceb96d7ea959282396b725f374d4a",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7a6da3fdc1eaeb2dec3068dc15353fe9b5ffcae0a8d735cf5974774a8b4a8231"
+    },
+    {
+      "name": "create_merge_request",
+      "description_hash": "sha256:b4494f16b7224611bcc03f453e54d688151ca47bcd9a392ee87b5a325972dbd7",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:476c52aa39198f5caf14c0345cb4d51ef8ed0622c6636d7a91a9845313b5c891"
+    },
+    {
+      "name": "create_or_update_file",
+      "description_hash": "sha256:8eb15b3522c65575e3790914cd187c12a67b55ec87c924e241d8007e507bf377",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:003e81a313935b6f4435d85f271da2ddc1f930c7cbcf7b7a2cfab7f198e80302"
+    },
+    {
+      "name": "create_repository",
+      "description_hash": "sha256:77e1cc93d1cb2be1b1b8c235e45b732b1bd5e6e26103f745992276744362a8df",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:da0876b6993d65cab0cc71d516e232d5996e0a43fc847e3d5e6bd581842e6e26"
+    },
+    {
+      "name": "fork_repository",
+      "description_hash": "sha256:ad9de22a2db1f518b3e7d2f604df3c30d46896432df75b5ef0e4a8636fca73e5",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ab1cceafd3114d47dc8e90e0f85fe56739796b0845c281e9eea5dfe7fae19354"
+    },
+    {
+      "name": "get_file_contents",
+      "description_hash": "sha256:517398bc4f72d221df57438bc6fc9f3b18216b559a7af31080edb033cd621c31",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2578dd095a49f350e9568de53a99efa43be7b404cfc63ab3cf467300bf56aed3"
+    },
+    {
+      "name": "push_files",
+      "description_hash": "sha256:a785a26b4f2cd96543bf0c5041efa0413fabde1accbd52d7fba8b2e815eb6151",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:55d1063b7a8b669838833b3f30097e37a851622bafec3ec6020cbe4101effe60"
+    },
+    {
+      "name": "search_repositories",
+      "description_hash": "sha256:10cb7197ca587b13739881227b12aabc5d4f5e361f906740e4c1e65dd4d4a973",
+      "input_schema_hash": "sha256:d03c54f3209978faa97a15da835462ec5e01a40c5e9d54bb6d859999ac2ccd22",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:aeac54eb25d1015a24f0e54ec7b784a9a300ea91c7d55c71a22606938f292411"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "GITL…(len=34)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=48)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/create_merge_request",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    }
+  ],
+  "overall_digest": "sha256:d3b0d39a6d6e37d679369b9e50cac1cf63e3cb08903d1d246a7aaeac48400541",
+  "pin": {
+    "created_at": "2026-09-03T11:51:43Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:51:46Z",
+        "bound_digest": "sha256:d3b0d39a6d6e37d679369b9e50cac1cf63e3cb08903d1d246a7aaeac48400541",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

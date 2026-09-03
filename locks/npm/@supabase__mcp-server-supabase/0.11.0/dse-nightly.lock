@@ -1,0 +1,53 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@supabase__mcp-server-supabase",
+      "NODE_PATH=/cache/npm/@supabase__mcp-server-supabase/node_modules",
+      "node",
+      "/cache/npm/@supabase__mcp-server-supabase/node_modules/.bin/mcp-server-supabase",
+      "--access-token",
+      "sbp_DUMMY"
+    ],
+    "url": null,
+    "command_digest": "sha256:07736cb4723c1bfd1b57fb34902e835436f6ce007eb63a80a9a1fb94fb443c24"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": [],
+  "findings": [],
+  "overall_digest": "sha256:f7a7c14b844af9f73cae41363e495238a1e7a371c225768f7c15a6b04888130b",
+  "pin": {
+    "created_at": "2026-09-03T11:52:41Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:52:43Z",
+        "bound_digest": "sha256:f7a7c14b844af9f73cae41363e495238a1e7a371c225768f7c15a6b04888130b",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

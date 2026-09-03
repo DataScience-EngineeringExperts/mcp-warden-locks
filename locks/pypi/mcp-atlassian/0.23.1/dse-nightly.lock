@@ -1,0 +1,5646 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-atlassian",
+      "NODE_PATH=/cache/npm/mcp-atlassian/node_modules",
+      "CONFLUENCE_URL=https://example.atlassian.net/wiki",
+      "CONFLUENCE_USERNAME=u@example.com",
+      "CONFLUENCE_API_TOKEN=DUMMY",
+      "JIRA_URL=https://example.atlassian.net",
+      "JIRA_USERNAME=u@example.com",
+      "JIRA_API_TOKEN=DUMMY",
+      "python3",
+      "-c",
+      "from mcp_atlassian import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:05022afca8acff1b5ce505d190bd77e75647cc047a530ec6603a19fbea338920"
+  },
+  "tools": [
+    {
+      "name": "confluence_add_comment",
+      "description_hash": "sha256:0f70f31284bba80e9ffd5859e365e16f30a0d0e2616082e32787e57c20fe9b70",
+      "input_schema_hash": "sha256:0f7d42b57e1fe1400af97385129b9516e55e6b5f5956f11d1002dc2c74ce4fe0",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:82261274c3b8a6f7265c042e45c68f3a571661670388ae185fbcc714aa643b09"
+    },
+    {
+      "name": "confluence_add_inline_comment",
+      "description_hash": "sha256:37094eac44f9d737df435f615a678a3b9c6d1be12ecc3c780210e2d21b9908b4",
+      "input_schema_hash": "sha256:743823c277983e94c75a954a0c8774d29ef7f574d04b37c8a4a192b8d605d48a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text_selection": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text_selection_match_count": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "text_selection_match_index": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ef9483328afe66e3c82642676065c2223f3ca08c5f21278e8bfcc1d48a175b36"
+    },
+    {
+      "name": "confluence_add_label",
+      "description_hash": "sha256:661cb3c90ed947229a95d863560290559a45cf9b72ba2f5ab79220c18d72d07e",
+      "input_schema_hash": "sha256:af3c5192b44a7466b41392ca3f4a02d53f20eea94a2cc267730242d90bcc4a52",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:49ddfdd5a3aa6f4b60077194aba3e87933ca0edb148160bf4387c0eae912675e"
+    },
+    {
+      "name": "confluence_check_content_permissions",
+      "description_hash": "sha256:a9a54511e0a4882af7e481fe3cf0b0f6010e519f8530ca71f4526755a0da8d3c",
+      "input_schema_hash": "sha256:15b3ba4d384c8d5fc746638c76c4abaf14c31a3fe6605eeade00cb6b1b29be46",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "operation": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "subject_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "user_identifier": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1a0c2cfca62d759bc0200fb4b8525eb5cc7c4af2ced55d6fda4e1619b7a4c715"
+    },
+    {
+      "name": "confluence_copy_page",
+      "description_hash": "sha256:7ba4c2a2e19517b2308a1e5b58d5a687d53859b2ca9e0107f342cd56ec1654a8",
+      "input_schema_hash": "sha256:ad325555a1ade81d21424a80a05b58f321062417cbb4173186fd753ea1b5a26a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "copy_attachments": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "destination_parent_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "destination_space_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "new_title": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "source_page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b82e3b07f5ce6f300e296f63b1d3d1535ca4aefe00e5bae20bd151dc3161f7f4"
+    },
+    {
+      "name": "confluence_create_page",
+      "description_hash": "sha256:4ed925ecde7e30d1fc315cc660cded6ae5560c53eb36277e3d38b2c38de978de",
+      "input_schema_hash": "sha256:c95e4b5040bf063b5794a6488602339ec0d1573d30e1e193a57071e8bd8cb01c",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content_file": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content_format": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "emoji": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "enable_heading_anchors": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_content": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_width": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parent_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "space_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "subtype": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "table_layout": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a0b741e10847f9b29fb185595d95aff9800aca60b926985ea0b6f63a8f76e209"
+    },
+    {
+      "name": "confluence_create_page_from_template",
+      "description_hash": "sha256:a0f790d6cc940dd336dd0a8f2e8d9ce498756d043b4f44af5d089182413a776a",
+      "input_schema_hash": "sha256:f997b656ff36aa71e45d40ca8ac8afab3577c7938b09be4ea449cb489e42f683",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "parent_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "space_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "template_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:fd7af2a1711df39fb50b7ecf2226d775fa45762370e0013cd5391bb37f6e4c90"
+    },
+    {
+      "name": "confluence_delete_attachment",
+      "description_hash": "sha256:4c381f66f9622d9f29c825dd088d9e02daab56111602c7439914ce52ca8558dd",
+      "input_schema_hash": "sha256:54c16413e9cd3a9c9a689e160ce99bdacd4b60c010927e44802b482f17669a56",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "attachment_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a3841ccb9120e33e7d2941f664fd174673fba882e9add2a61f9e57d8fe0b2c56"
+    },
+    {
+      "name": "confluence_delete_page",
+      "description_hash": "sha256:5858251425b29ceb9ad0b23fc6a2c63ecd2e4c030df1204ab32f92dc0a304d07",
+      "input_schema_hash": "sha256:90efab3c21f740255078a22a9bb7aa2e88c7fcc1d0fa2625f494965b58600ea6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:32405355c8b72e8eadea45010767b0a89be186c163dd0e2b7750da22fc7e85bb"
+    },
+    {
+      "name": "confluence_download_attachment",
+      "description_hash": "sha256:cb6e78f4c9730adc04c07531c7d4dced9afd74a0758e46b251f432fe9a81383e",
+      "input_schema_hash": "sha256:9f9abc36e75fa5315ff7886383bbb4ae221beb4d4b5248d6fbf600fd46d764c0",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "attachment_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4545ded9dabf5ac8da63941601707d7b4456e9bf4f8e1e0a4bca5e3b8f3d6f98"
+    },
+    {
+      "name": "confluence_download_content_attachments",
+      "description_hash": "sha256:12176c8cd9f31688641d280d93e17f678c1bd55d3ea8e337fe8eac884e50c76f",
+      "input_schema_hash": "sha256:a65994ed0a507e767ec6053203e92722379f666536d4a2eac6112c2c79fdc0b1",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:abd2355fbf51f1d32bec115c0f5539dd8944e080397526176610a2d3eef0a12f"
+    },
+    {
+      "name": "confluence_get_attachments",
+      "description_hash": "sha256:005ea62de9dd1d9dc62d7f43019bb4a02b9d5c33c8d0ac3072a2a4330da09f98",
+      "input_schema_hash": "sha256:060899622587304a20bf465ff757b0b4a9ef90d0acd2daf668ebbbf9e23d1011",
+      "capabilities": [
+        "fs-read",
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "media_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:350830fc26a14f4bef42a5371eaba3461258717e3e0d1dff4496fa3772719d82"
+    },
+    {
+      "name": "confluence_get_comments",
+      "description_hash": "sha256:91398168bc081fa914308ff0c63651011bdd06c52074ecd06f9957acfa30d94a",
+      "input_schema_hash": "sha256:50ae270d34b1146d477a9b42c91e1a598246be325d662d27c1a4336366f16cb7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cb847129a047224ea7917078aa10b2f6dc3088737cb7c23d6fb18be597f7c6c4"
+    },
+    {
+      "name": "confluence_get_inline_comments",
+      "description_hash": "sha256:104290289a8e317b5ca95a90846b27de5457cd7a7945f2c6fa1eee0c3a7d0ae1",
+      "input_schema_hash": "sha256:512aeffe60025e9319fbf1fa29b4338eb7629fb3cc0e4dd399b9adbd52c30ecb",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:01e0a1355f864e4e8bcadabda2feadcc0140da2a33f8179cdba0db7d039f6568"
+    },
+    {
+      "name": "confluence_get_labels",
+      "description_hash": "sha256:68e514cb8f9bfb1c84f0c714e2e7c93deec8e2891add9520168d7eee3cc8d6ab",
+      "input_schema_hash": "sha256:eb46fd0b88ff2cc1bc5747eed71cffe085068428976e53cc8518d37b50d32892",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0369fa85eb66d56c1b320630c08df809a87248b4e8b962886d9a04e954920919"
+    },
+    {
+      "name": "confluence_get_page",
+      "description_hash": "sha256:82dce0d627e89926cc9778c582dba95a27ed706c05a25cd104e087a550a9f396",
+      "input_schema_hash": "sha256:5dc0af2e634bcd0477bf56f1ae7f693dfd071d25a66fc7863aeed33a7213096e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "convert_to_markdown": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_metadata": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "space_key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b765fb9e46b7dc1c2f9acb279284a6746c6c4ce43552c79ef572066a22916d33"
+    },
+    {
+      "name": "confluence_get_page_children",
+      "description_hash": "sha256:bf58bf43ab05ff41d946306fe8fdf5767deb75626ac74feb9232fa5079ca7a91",
+      "input_schema_hash": "sha256:935387c3dcc95ea7bf4d93c4222122e1a876398f2eddef18592743e0828bfe80",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "convert_to_markdown": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "expand": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_content": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_folders": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "parent_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f2c3b03faa7d2ab85e2133edaf4d69eb9bd10eeac45d91e002e969aaca9d08db"
+    },
+    {
+      "name": "confluence_get_page_diff",
+      "description_hash": "sha256:f340eb04a6fdb754e30881f4506a03dc0d039acae214f12f0c15d83dcbf21971",
+      "input_schema_hash": "sha256:9d6a1d4d34a7bf4834c3b9a2cda0a83e2f9a1f5d9891d2f25bad616e26307ad7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "from_version": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "to_version": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d973bf68d20e631855f6ffcae901948aa7a46286372bbbebda612c2300b6e830"
+    },
+    {
+      "name": "confluence_get_page_history",
+      "description_hash": "sha256:0584e2cc6ca319fa27153ac8b80f370cfac4bcf4c3d242d89d2a9c21451065e5",
+      "input_schema_hash": "sha256:b33f860ea429c8fc51bfa408f9dbc19367bed1c18248bc42759119bfce67f9f7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "convert_to_markdown": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "version": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a4e4dc8d3f4e89e06a57c4a8cb585fbb6cb17f85252d26eee197c3770ecd4030"
+    },
+    {
+      "name": "confluence_get_page_images",
+      "description_hash": "sha256:5aa77d9cddc903f5e8936111b1500192726c40dc75aaa7808a30675b993e2d7f",
+      "input_schema_hash": "sha256:2462cb3fc4f57ed80e382d3733247aff9a8c4051f99b5d2e9848191a64d2a7ec",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ce5e6e57ac114c0134c113ce853e1ab8f7af3b3a95a52cd2024b0ab30817fc26"
+    },
+    {
+      "name": "confluence_get_page_restrictions",
+      "description_hash": "sha256:35090a7ce9985fa1d21c22bf5290fa7cb0200f6cde0d40bd4ed832c8def5f39d",
+      "input_schema_hash": "sha256:f90284f4c03289e5cbbd23beaec82cd0175066dc3bce0f2117a80139665ac933",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:30123c8eadf307ea08e833f38c618df1de049eb1d66785ee621f6b03e2c2bb77"
+    },
+    {
+      "name": "confluence_get_page_template",
+      "description_hash": "sha256:6e0cea813407f011408dedac3f0f7c0086d2ebcd1def3103a85377594ea4dcf9",
+      "input_schema_hash": "sha256:0d0380e7fd891ef93be8d46eba9e0bf272d6d25aa1ba73eae4d39079ea7bd975",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "template_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b47a7d08c3158b9aa5ee05e1cd3cab15396eae228ca534af7b745142420cfdd1"
+    },
+    {
+      "name": "confluence_get_page_views",
+      "description_hash": "sha256:5d85485cc99e500e3c1f9d9afb8ca23bf585d706c1b1f3ba89a79ac66c38c6d9",
+      "input_schema_hash": "sha256:54b0f0c3539bf20fa8e1e8fcee54892a2d879f8a4c758c85ec49106d8a729c14",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "include_title": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f949eebcebf48a430c3dc691aa42775ed6911cefea930cbf66826f009f52ed80"
+    },
+    {
+      "name": "confluence_get_space_page_tree",
+      "description_hash": "sha256:a979014a822f09303ec408174494839c16ecddb074c215f32abf4530a1e04d2f",
+      "input_schema_hash": "sha256:4e5e37cd25314ba7b631ae07670ed1a98f59ec5429bae3a33996cfdadc15e5c6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 1000,
+              "minimum": 1
+            }
+          },
+          "space_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6ec65b58e5d1bf2f4cdb86df287ca664cb96e631fc012d6915cc1bc27def315a"
+    },
+    {
+      "name": "confluence_get_space_permissions",
+      "description_hash": "sha256:d8bfe21589dac0cda57d231cb3d89388104d60be809c3116c97e2a8de927b350",
+      "input_schema_hash": "sha256:4cbc8ebab149df24645d5de6f2e8461e80d9a2a23801cfe6993d4dd3456950f4",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "space_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0bef49c3b985eb98e1198baee234dceca0917f6aca38723180738c6acd91e12d"
+    },
+    {
+      "name": "confluence_list_page_templates",
+      "description_hash": "sha256:6af201707031ab2114c168cd88b16394324814e8e44b1b44b51885e5527f47d9",
+      "input_schema_hash": "sha256:a21b9b2b01a3db993165f094f75550abcaf1ccb80fa58ea21fb1b477bbc5241e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 200,
+              "minimum": 1
+            }
+          },
+          "space_key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d4c97f465885b93e7b821ef85a27c9016d930254587e47dd0173473ce7ca1414"
+    },
+    {
+      "name": "confluence_move_page",
+      "description_hash": "sha256:209b9f20029205c2a58a6a2b9199bcc26a540e9d62da6881226a03a6b5f12a31",
+      "input_schema_hash": "sha256:cf9b38d4e02855aec483eae8dcae2a360cdf91881446114987b1eedbedff34e9",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "position": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target_parent_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target_space_key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7bf9e0d138fff7b3d7b4b77b0936b1c4925703f3ddc7fcd6f681e4455036bf2b"
+    },
+    {
+      "name": "confluence_reply_to_comment",
+      "description_hash": "sha256:31848f2264f68a97d353a13ff64f6320f38aada10a8332156cffadce0b318aca",
+      "input_schema_hash": "sha256:9710e4946467635fc24dd50c797084f13dca88625c5b14dd544586fc744ac11a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "comment_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2e01f551d3a7842564fa83d51345ff0d5b86a87db6b7d2fa0738041c596c733e"
+    },
+    {
+      "name": "confluence_search",
+      "description_hash": "sha256:32ac817a37651d180f79d774ecc4affb8e9c7cb909bdd8666e4425950cbfeb46",
+      "input_schema_hash": "sha256:0784ebb7a500e8ea92d7e33b456d26e759090cfd825ce275808046797d0a4001",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "spaces_filter": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c7bb1cc30521e434cdac2d7bcfdb05d652454daf8eed78b8efe67320e9e75416"
+    },
+    {
+      "name": "confluence_search_user",
+      "description_hash": "sha256:e97d50787346ef866537a5519f33d66eb1288c7ed6770ee5df5d9bb56dd5b4ae",
+      "input_schema_hash": "sha256:d7eecf841205b9e3b35fa720fa96919139cbd7c42b8c377b6eecc4a01e5eca0f",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "group_name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6bb7e64492507201a5910782c7ef24fdb0a812ca6dd0d66ec9372292be318bf5"
+    },
+    {
+      "name": "confluence_set_page_restrictions",
+      "description_hash": "sha256:cb43de7df614e28d612d53bfb5f6808f6a8b37d2d485d09854e038daed3452cc",
+      "input_schema_hash": "sha256:990c87bc4d9f92af65f81d0cd7e92ddc1c2b8516af9fb3ad17fb939f870a79b8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "edit_groups": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "edit_groups[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "edit_users": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "edit_users[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "read_groups": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "read_groups[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "read_users": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "read_users[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:3fb96f8c911e848dced8012c24160de6995e99283a16c6ce125f6055ee8ed98a"
+    },
+    {
+      "name": "confluence_update_page",
+      "description_hash": "sha256:7405b7f40bc41899a92d57b3f01bd2cb5ac478581287c759a7b3ad41cee3bb32",
+      "input_schema_hash": "sha256:3b5307ee64662efab02517707f05e8c869e6e8f8702fee13df0ce410abfde5f5",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content_file": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content_format": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "emoji": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "enable_heading_anchors": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_content": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "is_minor_edit": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_width": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parent_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "table_layout": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "version_comment": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:bad2ed85e50285c24ca50e8525724fc1ae14123ea09cda030a01974573514d59"
+    },
+    {
+      "name": "confluence_update_page_section",
+      "description_hash": "sha256:7f2a81c463ae108ba8438e41f6ae2f585b8e239e7676b65ceae1e7eaf614df46",
+      "input_schema_hash": "sha256:31fd54078f6872a1fc90b334187756a7685439560ed4435524c88f084f054196",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content_format": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "heading_text": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "is_minor_edit": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "new_content": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "version_comment": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f3ed0473d40a5660069d41301e225d6caac513f9e5f15ec7180087f6447c83a4"
+    },
+    {
+      "name": "confluence_upload_attachment",
+      "description_hash": "sha256:e73b91778af9796764a4e6edee49b9ef092b0bbede0b724946dbcf6ab43cbcb0",
+      "input_schema_hash": "sha256:2ccf36d73ec7949920a2df7d4abaf87ffe0e7d2860b9d4329fa2c31a18e59bdc",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "comment": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content_base64": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "file_path": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "minor_edit": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:76abcd880bf66c431caa973b4fb4895f3b9285079bbfa78ee820134c49f2b916"
+    },
+    {
+      "name": "confluence_upload_attachments",
+      "description_hash": "sha256:076d667c766f1c74f5da20ccad08b2745e6e28d692ca7930c0704f536512501f",
+      "input_schema_hash": "sha256:387e015daf66797eb97697051569971be0b7e22b8955fa1f3c710a0be7c737b4",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "comment": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "file_paths": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "minor_edit": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:88ddb2b19ac112b3091587d075b307dd66ca047ea84ffe06438333dee7669204"
+    },
+    {
+      "name": "jira_add_comment",
+      "description_hash": "sha256:66a658c5248fd5ad834d53b7a5766ea9c30cf057da07e1edb45160168d08f321",
+      "input_schema_hash": "sha256:330716e23d182cf468be01ea73eadadef3aca8147f1c6fcaa80948b20f674c4f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "public": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "visibility": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:62a209f85466e468e29fbe0afd80f19381da17720529e14adea617a5d70ba5ae"
+    },
+    {
+      "name": "jira_add_issues_to_sprint",
+      "description_hash": "sha256:a338c904f95a7dbf8a96ac24dfdba2a5d72af3b967b5b7510b634b291284843f",
+      "input_schema_hash": "sha256:f6d0391e9b91abf58996e8f26ec25a61a186d897660f0aa231ff86f3c5744b3b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_keys": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sprint_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:de6204fc0a402fc1a62bb41ef8db85ecdc75c5584e6776b5b3d0a93c35e3fd7b"
+    },
+    {
+      "name": "jira_add_watcher",
+      "description_hash": "sha256:35b0c660e5814a39121db61d4c87a32aae37ffa460d565c65dc75c36dd6cb15c",
+      "input_schema_hash": "sha256:86befe093270b0921c1bd6ea80899455170ed3a7d880317888a176f76b61f842",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "user_identifier": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:17f361cc0a3bd6251b5b98743514756ca1fe1fcac16311717a9f7db8494b4967"
+    },
+    {
+      "name": "jira_add_worklog",
+      "description_hash": "sha256:9d65c75f19184cca221ce0575223b8a639af7986ee116053855c32ff2cee4a55",
+      "input_schema_hash": "sha256:b331685ad0cd324b6eef56475fb873c250d165ba0658302d4f3ca0db87935ede",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "comment": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "original_estimate": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "remaining_estimate": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "started": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "time_spent": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a5eb2af100761d8b10cd18235527bcb1c0f3d99d2caaed7c0ea0dd0568268a5f"
+    },
+    {
+      "name": "jira_assign_issue",
+      "description_hash": "sha256:76d8d0752ff18d67d8e1e861b34468986798b64a6b6e6b2ac5f7cc45eba830d8",
+      "input_schema_hash": "sha256:26c47c7354edc858fb6510e80fbfd367aa6d4379623f90e5339b5646883d54d5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "assignee": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:447d3aa8392a90c1a88162e3f458b2e788621855b19a6b3b2d7d09e1468b350f"
+    },
+    {
+      "name": "jira_batch_create_issues",
+      "description_hash": "sha256:187fd44dd2cc3d4729ca2f3717bdfe32e055ebf1b06bfca62f087dd24250efa5",
+      "input_schema_hash": "sha256:afb283d8ea96d34d1330a0b4f8a6efcce70974b83fa17f75033a6af0f1ee614d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issues": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "validate_only": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:267ec1582beed8ecdcb158a11cf415fd6e304de19bf124a77096f8a7bd33a1d5"
+    },
+    {
+      "name": "jira_batch_create_versions",
+      "description_hash": "sha256:eacfc2a5dff8e624164e798d00724945c976d2073dcb86ca049770162849d7ea",
+      "input_schema_hash": "sha256:5c366755246d768783932522b1abb36825c71ed7bd685a27aa9579a560e2ffa9",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          },
+          "versions": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2d8047ce3a59abea858cb5d71f3b64a28d520ae301a4a1f55b88f993ca7d47bb"
+    },
+    {
+      "name": "jira_batch_get_changelogs",
+      "description_hash": "sha256:48be86df48d58ef026f0d5edbdde534e9f2ff2eeb37048fea9c228a19e8278f2",
+      "input_schema_hash": "sha256:e911e6b29faf8178db2c8081220e065f48866976cae066242c33e737948f614f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_ids_or_keys": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8a2ddf2ab4d526cc7be1302bc9583ca5ace44994fb00ec7243c409c77b789d50"
+    },
+    {
+      "name": "jira_create_customer_request",
+      "description_hash": "sha256:7f7eadb3645702945dbc4159fcdad26d4842a48fa88bd950746bc4ba88059445",
+      "input_schema_hash": "sha256:e89c9e705fdd8923adcb7fcaab8578e2bded35b02bd5ecc37cd7c64ffb0c24ab",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "attachments": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "raise_on_behalf_of": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "request_field_values": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "request_participants": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "request_type_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "service_desk_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "strict_on_behalf": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:113dee3fab1dd1032f057d31f70fe9d9d95ebb76fafebc1d4ee5bd5c26da88e3"
+    },
+    {
+      "name": "jira_create_issue",
+      "description_hash": "sha256:51faeb3131e8e2f644708b5bd332028db999b147ebbb193235260512042ebdcb",
+      "input_schema_hash": "sha256:d651fbca41d49a100a5673d58ec30766757e6d2ae5e50209b39a14196d4af96e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "additional_fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "assignee": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "components": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          },
+          "summary": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8e7ac64422150c4e6542a455c44146d6fee334dc4f7c2de5579839fdb9b351d3"
+    },
+    {
+      "name": "jira_create_issue_link",
+      "description_hash": "sha256:140808dedd58b8939111d1d2a8dc2586beffe77755e393ebc7e6cdea1f18ac70",
+      "input_schema_hash": "sha256:7c6d2f18abbd45a47b541fe3f3c59fbec7156b63f7f0535174a226ebd6cca8f1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "comment": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "comment_visibility": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inward_issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "link_type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "outward_issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b8a75be0a68d4a4fd9a490ce6c9920d02da78326389f3ff3cdcc655bdb7f9287"
+    },
+    {
+      "name": "jira_create_remote_issue_link",
+      "description_hash": "sha256:3daadd654bdcc20d21b9b212149bb5a741e6c1c804715cecd27822095a0c54e5",
+      "input_schema_hash": "sha256:b96ea414a52d24254b2ba1c26bdeb58ae0ad4fee5f7cd92e300a3a724aae5bad",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "icon_url": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "relationship": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "summary": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cd491fdb0b8812f14e1bc7b45813d61da369d6d83d7208e69126762aee3bf29b"
+    },
+    {
+      "name": "jira_create_sprint",
+      "description_hash": "sha256:8ff1553f85ea2a4dbe1248c0eda8668dc1ed0feb1d447b29c4c6660b50275cdf",
+      "input_schema_hash": "sha256:d3ad2af6b51fd59afb45cc6f1477a5bf9fe4cff2727adc31b8daaa858995f87e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "board_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "end_date": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "goal": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_date": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:30009173001862c29406dc520131fe8ef31e845cb460a1a40db3fcf5b3efef95"
+    },
+    {
+      "name": "jira_create_version",
+      "description_hash": "sha256:47dd58572ad79fe73c0097e349a66ce2436261a783c9933032b8b43f2efc1b82",
+      "input_schema_hash": "sha256:9cf598ff8d31a47615c51c6635abef8907a6a1a53c6c2d7daa5a3b6cbb16386e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          },
+          "release_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:91a7716782d8cbe475d74b7fe3cc84931d6705a9321c42463156b9e34b005d6f"
+    },
+    {
+      "name": "jira_delete_issue",
+      "description_hash": "sha256:a04c5265b4709ca7b0209a7de22a858fb3b5a3561b6beb5a26ffa49b8df0c4a2",
+      "input_schema_hash": "sha256:9772c0b2aa55a5159fd0edebc352475377303b2917f04a549734697beae565d4",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c9734cf963599184d1f9112f12fcf8d35df6f18dde9ea47502edb1706b20d322"
+    },
+    {
+      "name": "jira_download_attachments",
+      "description_hash": "sha256:41fad430668b9badc18a8e15cf0a62c68f668f2706f3ce3e40ed334f68c79775",
+      "input_schema_hash": "sha256:9772c0b2aa55a5159fd0edebc352475377303b2917f04a549734697beae565d4",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b5a48c3cb0eef68b55494d9af3356905543e01e0f55b0aa9d13826f71f4d70d6"
+    },
+    {
+      "name": "jira_edit_comment",
+      "description_hash": "sha256:30fde1e7089ee3c29f7670ff72c8847d8e49cae490ea3002228c87a36db1127c",
+      "input_schema_hash": "sha256:904539aafa403b2ab1d33ea026922af0885ee73b00356dfc38721bdbbae24120",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "comment_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "visibility": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a17067447d17bf20f1f59df4c102ad4538e29c97edad15209d8627cbebb1948e"
+    },
+    {
+      "name": "jira_get_agile_boards",
+      "description_hash": "sha256:fe9a4826f30f9047ade8de21780f122fe7e61c87bb5908cd53907af00778f80d",
+      "input_schema_hash": "sha256:4057bf9412c72abad953260c7076efb0d05861b38bff6536d992f3bf2af0c876",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "board_name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "board_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4f55c31d9c3b254eb366b75926bb52c2f32fa0d8edaa9866b4098ac6de5261cc"
+    },
+    {
+      "name": "jira_get_all_projects",
+      "description_hash": "sha256:8151266e91593cb37690c8b4f5e4b770003050f49fcf3eff3ea08319ea568ba9",
+      "input_schema_hash": "sha256:1aa457b95b113f2efbbe1051becce8bec8c96a86b78e0d1daf35aa285b0f8e0c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "include_archived": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5974e49e69a4cc592622c74375869a764e0de4f7e6e7365ee6175402cac892af"
+    },
+    {
+      "name": "jira_get_board_issues",
+      "description_hash": "sha256:bc49f17ce2a4405bf346dc815d98017297b5cbec9a8cdd6353e152bec74db445",
+      "input_schema_hash": "sha256:b889b02ca491f405d558acf2c855b647dfb0e01da35c8f4b4c297bb5ad38df16",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "board_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "expand": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "jql": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:55f3e935c1810d5fb2f9ee98729ceff115edd8f2a705ea6bb0f00ae7367e3834"
+    },
+    {
+      "name": "jira_get_create_fields",
+      "description_hash": "sha256:c109553753e1f12b60bd1fff35bcaad905b84804ee4b2daa673e7d7285b09cac",
+      "input_schema_hash": "sha256:5c2536daf0def52c2eb305bb6733d754335d652800abf527cc8cc601d7e4b951",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_type_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9ee0eeab3485e7d3e79d8fa0a5e23bbddb41391ceb093edaf0f4ba8dcdc366c3"
+    },
+    {
+      "name": "jira_get_cross_project_dependencies",
+      "description_hash": "sha256:88d32d400ea50e40baf9eee2d8b0f3fe71100cbc91e2b6448da65acb5f1d512e",
+      "input_schema_hash": "sha256:84ab4c2eaf2b1e22bb9dad8d878c552ebdfb71edae2a32986881136e832a0a1e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_issues": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 500,
+              "minimum": 1
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6a963a67e383370d224c63e58f5165f6e85f91e17c65e695f77181f85f790be3"
+    },
+    {
+      "name": "jira_get_field_options",
+      "description_hash": "sha256:493e569cf4bd6e4ad45ec54bce0e47af8dcbf35f78cc1f199c37ee1f84d5e439",
+      "input_schema_hash": "sha256:88709ab4eddec803e729a7011e203ce831370ffe78dcedf26aa93c587bed5432",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "contains": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "context_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "field_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "return_limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "values_only": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:dbba719ac2361557b2c3ec87794c1f0d42b1cc311dea6585bc884209184db9fc"
+    },
+    {
+      "name": "jira_get_issue",
+      "description_hash": "sha256:f285c0b42cbc2a8177c01c07674090ad015088342d45c9fff2cfb465af8cb381",
+      "input_schema_hash": "sha256:40523ea485e2a70ae0ecac8f9b3fb54e22f9d467cc4af38bc0fc2fa1fe1fd0ae",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "comment_limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 0
+            }
+          },
+          "expand": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "properties": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "update_history": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "use_display_names": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6f4cf6aff99486145259df12198e61c125ab8d202982f1878c6b068cb2abd276"
+    },
+    {
+      "name": "jira_get_issue_dates",
+      "description_hash": "sha256:c86d08d4a64c3fe91c8cb2d3aaf25b2b4e508df79e8c2fa0b12aa4ca3364a850",
+      "input_schema_hash": "sha256:d83b4fc6d6317db1c268ef694d0ffc9b4e5527096bafbe02c021a27981ec3230",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "include_status_changes": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_status_summary": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4543bfb779c0d77f6f32e49df6320a4f02fb9754d34cc8816a7bbd2da02def4d"
+    },
+    {
+      "name": "jira_get_issue_development_info",
+      "description_hash": "sha256:54fac7b11fd2d76d874b1ffaccdb6639241f0c698d3d99ce582412e4e50f6ec2",
+      "input_schema_hash": "sha256:83815904d7b832908152e95571a9407747577d7cf659a88c95fcba7b707413d8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "application_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "data_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:be5ddabbeb035bc19e171b5241e01342fea8be8692151b5c4125fa8ae2de9bab"
+    },
+    {
+      "name": "jira_get_issue_images",
+      "description_hash": "sha256:275c90360e3b03ec8d78b78424fdbc49873a1805f5f692b7856480e40c5d6e0e",
+      "input_schema_hash": "sha256:bff7f66e1ef3b0b173faa01ac4b0ebe4edc21d47aa6ec33da82a73d319144c45",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:af9fd2a207c559d8a9c4b77ff3788ed4ef9d6648303a7a506ccd4c475690f3fd"
+    },
+    {
+      "name": "jira_get_issue_proforma_forms",
+      "description_hash": "sha256:7c0b58e0b8e82726ccc0812320fc8b364cdf4e503d2e74c4c5c109f2a84156be",
+      "input_schema_hash": "sha256:e84cf3528f8a838f68893c7b2433d150bbb14618b3a38f608b19e4661bd54294",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:56aa075944822d0d798a70c4a6158dcf7b1876bb614b4b19e09971de960b8ef9"
+    },
+    {
+      "name": "jira_get_issue_sla",
+      "description_hash": "sha256:02ecea707713feb4da37e337b79bf8a9547560cb0b4eaf62ed5082f5e845750d",
+      "input_schema_hash": "sha256:e4c77ec6bfdccc8cef07b4845ee8fa339d77ee178a14fde47acc77292de1dbab",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "include_raw_dates": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "metrics": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "working_hours_only": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:343c6f3cd982350ae9d5b9a494c285c56f082f15ac1fc819f6f25101bbea3f4b"
+    },
+    {
+      "name": "jira_get_issue_watchers",
+      "description_hash": "sha256:e127bb6ee8df8785aebabedb812118df85e1fcb80e7a7b9a63c6912f255396e8",
+      "input_schema_hash": "sha256:ae4166e756df67dab64eacbce3f1e783fccc1c209f91b472b4a4777899d1c98e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6d8d1ecba334e5fc96a17e5be2ce9344d0cb67569de4f45a5a47e3ad0780ccd5"
+    },
+    {
+      "name": "jira_get_issues_development_info",
+      "description_hash": "sha256:62d8ade000cb1deb4d279ebaf3e873cee67e190d027ab57766401d899702789f",
+      "input_schema_hash": "sha256:bd66172afe8e4a72f0c7ec6d8b407d418409d1b8cd791eef71938b82cc748dd9",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "application_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "data_type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_keys": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:298ed82029849b0094d1409ffd1ea30b0ff15a55fbe99dd8dba2204b53d58af9"
+    },
+    {
+      "name": "jira_get_link_types",
+      "description_hash": "sha256:98151e39bf317cd27437923c58d9b729a2750aaf40516e5ea8b432e0d44a7899",
+      "input_schema_hash": "sha256:754ed4c6e76e0b709a09e95bcd639b258b3cd026691e17a83f30a164a94e8c8d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "name_filter": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4cba1619de42531769604f6cefa95233edcdf7daef3a58d48e3ef9e1cd7cfa54"
+    },
+    {
+      "name": "jira_get_proforma_form_details",
+      "description_hash": "sha256:666b3fd614c4c4bc3d5ad29277b00033154c61dddd0d8d305d2b1d448a2affe8",
+      "input_schema_hash": "sha256:46d25b9ed9146ee02e06a7b95d89d66ee242e80358e803d99eb91459af77b89d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "form_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:40792a8903446b261293e34c9ae4f7b3ecbdeb61e5c7b20ac76223f413a2cc4c"
+    },
+    {
+      "name": "jira_get_project_components",
+      "description_hash": "sha256:746e4ba37647e29d39dccd66504367329daf63f6aa146d0d563eaf4cdf74c08b",
+      "input_schema_hash": "sha256:a70aa50081b1df0b85c71eba5cd6def38a4ab8cbb32ac7b37b4cb4708a692bfa",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ddc94069003b8315727fa302360ad09a7d1d10f24bc6bff74c773e01808edcf0"
+    },
+    {
+      "name": "jira_get_project_epic_hierarchy",
+      "description_hash": "sha256:25664c9f7d061fbf8a0756dd0534be0e1d61607620a8105235117f4e1cc6e8c7",
+      "input_schema_hash": "sha256:19aafacb3af817d10cd0f61bbfc43063548a1b66c1562bed55ca5710cadfb88a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_epics": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 500,
+              "minimum": 1
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:db8d8cea2fdcaca82cc535351e60e86b13f29b035c737fd47bb8845ac6b04a5a"
+    },
+    {
+      "name": "jira_get_project_fields",
+      "description_hash": "sha256:2078532d44d071d2eb40a64629192b1fa2e3dea6adbbc38c847109d8a480531a",
+      "input_schema_hash": "sha256:9c7dbc52837399cc10523faa37f4bf926c17d36abe4bc589229b590d75db4c6c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2cdd212ea4a15aff8085b4d9f54fe71f387461b2d948bda80dd0f475e4abc693"
+    },
+    {
+      "name": "jira_get_project_issue_types",
+      "description_hash": "sha256:26bc32f7b85d1fab785743a098004d10d538dbce98e26c593c21c505bfdf7cd4",
+      "input_schema_hash": "sha256:3769d4ce5fe03760db59454d4e65909f421406037835ab869e856821a659d0d6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:35cbb84fc5a82fea5165ff8121a76ba0b72097b87a056804d7e57627e6b0d551"
+    },
+    {
+      "name": "jira_get_project_issues",
+      "description_hash": "sha256:f34db0b7201858026a264f8ef33398cd99adac5a5fd8487f56a1107ceeef76be",
+      "input_schema_hash": "sha256:dd0b59396fd5042e0d3d8199b96e2ea697552587639fe0a76f03e2788ee16d29",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:23fd4e966702fc99e4e8c609b232f1a97f099214d967c28f57e8af15afca4305"
+    },
+    {
+      "name": "jira_get_project_versions",
+      "description_hash": "sha256:9a70b6286a5543edc1963b9bc900b80040e8bfa321c3e8767fe77d86fae2c2e3",
+      "input_schema_hash": "sha256:a70aa50081b1df0b85c71eba5cd6def38a4ab8cbb32ac7b37b4cb4708a692bfa",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cbdcac16464a3b17ed1bb3e691c34a6ebebf217f28bd680aa071ad4d1f554158"
+    },
+    {
+      "name": "jira_get_queue_issues",
+      "description_hash": "sha256:492a52aa22246e8320ba377aec24cf9fa56010866ca1bed5d56f0b50b2018ea1",
+      "input_schema_hash": "sha256:2771e44ee24629f8598438afad040065222e2985c80540a9b59a328e186171c9",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "queue_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "service_desk_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:aaeb21056517f0e1d6f0607711d9e118718422a87dfaa6de382476690c3f90b2"
+    },
+    {
+      "name": "jira_get_request_type_fields",
+      "description_hash": "sha256:df6bddad8411513387e0367fa360f6f91e8c8714c85aecea13fc390a0e2240bd",
+      "input_schema_hash": "sha256:f773471ea3ccc456893cf452618d29b16f138367b55af179a886768749b45319",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "request_type_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "service_desk_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5c9bae31b3d32e556ad5ba9198a8dab19a61d20e32cf3ba8ad491cad6b3c111f"
+    },
+    {
+      "name": "jira_get_request_types",
+      "description_hash": "sha256:19b33ea3d224609cab59eb2115c1e45549b101976a29956b6c93af3e8c12b7d6",
+      "input_schema_hash": "sha256:77a51683551de2cdb8825bbbe4d70557cf90d987a0b94f7828066dfa73dfebcd",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "service_desk_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e7a218fbb20e6a7a50f17a5c0ed6714629c4547bc7700b73f5776f1fbaf45e8a"
+    },
+    {
+      "name": "jira_get_service_desk_for_project",
+      "description_hash": "sha256:e91421f6e713da464e206889094df5e065948f324f16ce3aeaab60296269e2b4",
+      "input_schema_hash": "sha256:b60a0b4e8496cbf1e1ac8323d4ca9342a174951b68ad59689b89ed0e2f31e6eb",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d6c1ddbb77e41c531615fad5f0d7fef16608808f6421fea855aaad9ef787039c"
+    },
+    {
+      "name": "jira_get_service_desk_queues",
+      "description_hash": "sha256:3e69ec68d82c3f10f13b3e4c38222e08f259662da9fba56fb332b144f3cdb739",
+      "input_schema_hash": "sha256:77a51683551de2cdb8825bbbe4d70557cf90d987a0b94f7828066dfa73dfebcd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "service_desk_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f45eb21aa9e92b3078d077d21471c33f6c7418c105cff1d06ec624c3b9478903"
+    },
+    {
+      "name": "jira_get_sprint_issues",
+      "description_hash": "sha256:e931ca8e085d9ae8c9eeeedcd3b94a7c59d1521ef4440b812c0b1d8a3e8707a4",
+      "input_schema_hash": "sha256:0c717f1b885ae2ba990e83f78d1116c1e15426f59e8e367e4bec57cb9691761b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "sprint_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0d820e5de9aa4d457c2ed5c3c68906dbb2277602419a68d3587927cb74a045a1"
+    },
+    {
+      "name": "jira_get_sprints_from_board",
+      "description_hash": "sha256:e843530f235334ae62cf6c8606ed4f10425138addbdc5b5dce80b73510d58768",
+      "input_schema_hash": "sha256:2d71fd0a9bb04479475420f123e7a8d111be5fe309ea2bc444f3a73928fbd08d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "board_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          },
+          "state": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5c9345f4dffa109b9a5795f7fe283165002f8a1aa3088459f969df745eada96d"
+    },
+    {
+      "name": "jira_get_transitions",
+      "description_hash": "sha256:5ebb662fa6037580cf4e5d1622488c48f233e2ee77b6d3437ea03a4e71e6ca17",
+      "input_schema_hash": "sha256:9772c0b2aa55a5159fd0edebc352475377303b2917f04a549734697beae565d4",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:58ac377af7fb6b47d6a353c243942bb39a41093d89a1d949896219200f4f76cd"
+    },
+    {
+      "name": "jira_get_user_profile",
+      "description_hash": "sha256:90db0d9c90f21aeb2244b18dc81eec7d30e86c447a03c7a471dd07bfc4ad0087",
+      "input_schema_hash": "sha256:ecec9462679e2fc85dfd367e9d417d93e6df3f70b685b996d52b1d83baee059e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "user_identifier": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2fb7626699fc026089bb3587f154a3a4ccbef00f176467be82fb04c7a15c52a3"
+    },
+    {
+      "name": "jira_get_worklog",
+      "description_hash": "sha256:9b06c757b79dc83affdd0548c5e361f8996f74c84a28a13ffd97a72da382dad0",
+      "input_schema_hash": "sha256:9772c0b2aa55a5159fd0edebc352475377303b2917f04a549734697beae565d4",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9cd44938a2445697f7a7948e5cde3f422e4167758ba6e6328d028baee5de8988"
+    },
+    {
+      "name": "jira_link_to_epic",
+      "description_hash": "sha256:3842feaa52cacf65e8c59951aa8cda364f11137e998294236047476a572cd4d7",
+      "input_schema_hash": "sha256:d1addf6e4258e3b849bb191f4be33c28fdf163c93c21021bd6cf15221af6bcb1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "epic_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c0e969e81c80d3cc9b4f2267599b96564714d9619b7f20a1b93937e20b022b7d"
+    },
+    {
+      "name": "jira_move_issue",
+      "description_hash": "sha256:c4ac33e9adcaa64654fa4aba569d8a14593082e74e6631bf6e988da0a2a3695e",
+      "input_schema_hash": "sha256:0324926b13fa122fea4699daf8207c44afb0b382292cfd9e14692a12b00d18e8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "target_project_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+$"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f08d52a718c99009cb444f8d597f604d61cdbabd3fb783c77b6b344e7fcba68c"
+    },
+    {
+      "name": "jira_move_issues_to_backlog",
+      "description_hash": "sha256:97e1664b75d545ac0451f8e1cb79287e386892688270adb2b7f069e438318105",
+      "input_schema_hash": "sha256:e995b7ecdb3d02c5864b07d05832e25bda5bd1bfbfc44ee80a08975fcd7542be",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_keys": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9bac4103b8c164f85d99e31b33a377c7c0a30f61981d5ea2bb8bd9d5136cde91"
+    },
+    {
+      "name": "jira_remove_issue_link",
+      "description_hash": "sha256:bcee9bf93a4ee987263afb8b2689779b6f3161a40340bec44cc3dca9a6bbe853",
+      "input_schema_hash": "sha256:557c7147dd43f53ca4d72370007022294c2a5163054fce48cf3694ab2110be70",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "link_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d2b36c70e78be65b2cda78e7d8c47b0b2b419063f7d3cbeb223ee7c23ab04cd5"
+    },
+    {
+      "name": "jira_remove_watcher",
+      "description_hash": "sha256:ab9d48e9451166fc145b27337570cbeeaf9825e83c841e7e15671fdebad8fa29",
+      "input_schema_hash": "sha256:10c859e2edb576561bdc16f6dec134a2d1fcf16f04d982508cb0f98d578d7cd5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "account_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "username": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e9bce230b2fd194077d6759336afdbfe105e8f967a6f57ee354d3d5d2dc8febe"
+    },
+    {
+      "name": "jira_search",
+      "description_hash": "sha256:199dfb45df2e5aa58d7928818e68d46f16771a8c42c3e11023a09ec1a7f0668f",
+      "input_schema_hash": "sha256:57ab0c0c1823be6810aac2f1e0aaa7f18973414c696dd016a9db577560d227d6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "expand": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "jql": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "page_token": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "projects_filter": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_at": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          },
+          "use_display_names": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7dc5de309c08b7be43c6352c812f08e428de0df689888c1949c9eeded397fc6c"
+    },
+    {
+      "name": "jira_search_assignable_users",
+      "description_hash": "sha256:c02f826b083135acb5e038e1620e1c8a7342983c9236947ba8c75c56cbf7e8f2",
+      "input_schema_hash": "sha256:16b445e2f999956c090272d52218914f8a7ec1182929adf081cc6b4fc1166f89",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 1000,
+              "minimum": 1
+            }
+          },
+          "project_key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:67eeac892ba6ca40ed23b6ee8eff80be72a7fc7f7ece719c9bbadf690d3f8b7e"
+    },
+    {
+      "name": "jira_search_fields",
+      "description_hash": "sha256:4132c929cbd328f3a57f852f04820c7705c4134655dbe6de0a7fd55565a9ca2b",
+      "input_schema_hash": "sha256:c586b4e8a2a3acd5d34ce056cfba1a814a651497b29ce5c464e76af3fb33a5e3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "keyword": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "refresh": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:df048b2d21d37429a5592f5f7991157e6285155872c4198da8d4f0599c988c6d"
+    },
+    {
+      "name": "jira_search_projects",
+      "description_hash": "sha256:8959e979e13afa415a0b64d3511f4adf7c25fa8cb45c1094df89a08c7e33e4f6",
+      "input_schema_hash": "sha256:6607d821ec82401435310a814f4470b0f5161ecf1922348a6e02756f0db1968d",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "current_project_ids": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_results": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cc5c9359102396078c5c15d2e0f933f8ad5b480a47815cbf86452cbd9d907c2a"
+    },
+    {
+      "name": "jira_transition_issue",
+      "description_hash": "sha256:633d548a28dcd6fac84e6a4a1c2c2cd75b5eb88b454e540230fcfde8267a8421",
+      "input_schema_hash": "sha256:037ade34a08de40738d08b387515313edd5562feb9064daf8a08ec2a8488659b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "comment": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "transition_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:149c71dbaf24a875465126df0dd002657e83bb51f7563cb84740412345c7d8fb"
+    },
+    {
+      "name": "jira_update_issue",
+      "description_hash": "sha256:70f7d6f28f63e5614e8a35ca68e7339597691fe9c798843434454eb9d9c0a6ce",
+      "input_schema_hash": "sha256:7abce128b9847ace7298c73f487cc7d7319eb7c9dad14c0a7db8b20d3059b637",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "additional_fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "attachments": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "components": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$"
+            }
+          },
+          "return_fields": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:94035cfa0349200880c33ce5126a0886b39b0a310f0405da52723226953d3d65"
+    },
+    {
+      "name": "jira_update_proforma_form_answers",
+      "description_hash": "sha256:80e18ffdd461ccbe2696a65f3c6cde7bc61eae5ea451b5bb9631c2c3307b7da4",
+      "input_schema_hash": "sha256:339ab3a2e15a8ddf46408a2c2d119dd272cef9c35a66c11df85616ede4f340c7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "answers": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "answers[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "form_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:edc726f0a3bcf3242d4d4f678ef94e2e8877c967903a419f885c7c5f2d6913e9"
+    },
+    {
+      "name": "jira_update_sprint",
+      "description_hash": "sha256:71301576c75ed16faad2f37d26771a9e7cd9c8328a1a88b0c1838b6da401e078",
+      "input_schema_hash": "sha256:4d1cf619d5020b75092acd33b57dc9217b8430316b40b149a84b126810d96349",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "end_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "goal": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sprint_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "state": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:67c29580c666117c7205a169489ff605aaec53fdfb13be8849db5be7c0e0a2db"
+    },
+    {
+      "name": "jira_update_version",
+      "description_hash": "sha256:e4cf7d9f9a5bdf2c07033389e1e9254adf002710757db9cadea745cc33a79e7c",
+      "input_schema_hash": "sha256:0c994ea7c588c127a904fcb6eaa2b722f04c12dd14c5cbe6169b12675c63e74d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "archived": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "release_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "released": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_date": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "version_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:bb2ef820bf093d109a7023db896c97799fae074751f4cb40a726992aadfec3aa"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=47)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=36)"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/confluence_create_page",
+      "message": "Tool derives capability 'fs-write' (name token 'create')",
+      "snippet": "name token 'create'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/confluence_download_attachment",
+      "message": "Tool derives capability 'http-request' (name token 'download')",
+      "snippet": "name token 'download'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/confluence_download_content_attachments",
+      "message": "Tool derives capability 'http-request' (name token 'download')",
+      "snippet": "name token 'download'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-READ",
+      "severity": "medium",
+      "target": "tools/confluence_get_attachments",
+      "message": "Tool derives capability 'fs-read' (name token 'get')",
+      "snippet": "name token 'get'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/confluence_get_attachments",
+      "message": "Tool derives capability 'fs-write' (property 'filename')",
+      "snippet": "property 'filename'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/confluence_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/confluence_search_user",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/confluence_update_page",
+      "message": "Tool derives capability 'fs-write' (property 'content_file')",
+      "snippet": "property 'content_file'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/confluence_upload_attachment",
+      "message": "Tool derives capability 'fs-write' (property 'file_path')",
+      "snippet": "property 'file_path'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/confluence_upload_attachments",
+      "message": "Tool derives capability 'fs-write' (property 'file_paths')",
+      "snippet": "property 'file_paths'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/jira_create_customer_request",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/jira_create_remote_issue_link",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/jira_download_attachments",
+      "message": "Tool derives capability 'http-request' (name token 'download')",
+      "snippet": "name token 'download'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/jira_get_request_type_fields",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/jira_get_request_types",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/jira_search_assignable_users",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/jira_search_projects",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:e750bb5d52c1d1e741e1a626042d2c296d42b209c65e2b47c99d014251c2a8dc",
+  "pin": {
+    "created_at": "2026-09-03T11:55:34Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:55:37Z",
+        "bound_digest": "sha256:e750bb5d52c1d1e741e1a626042d2c296d42b209c65e2b47c99d014251c2a8dc",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

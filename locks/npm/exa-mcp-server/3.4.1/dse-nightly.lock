@@ -1,0 +1,195 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/exa-mcp-server",
+      "NODE_PATH=/cache/npm/exa-mcp-server/node_modules",
+      "EXA_API_KEY=DUMMY",
+      "node",
+      "/cache/npm/exa-mcp-server/node_modules/.bin/exa-mcp-server"
+    ],
+    "url": null,
+    "command_digest": "sha256:5ad7742271ca0acac0eefab158228acde112c6ba03ad346d9bf37589dfaf1a99"
+  },
+  "tools": [
+    {
+      "name": "web_fetch_exa",
+      "description_hash": "sha256:fe273c0aa03af31b5bf4fdb20a6b1e01b6661a4bd241f24c297dd27ed66e8fb3",
+      "input_schema_hash": "sha256:d72ee7687517df49ee4374713985811b9a87c252590b2ef26c9218786b0f805b",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "maxCharacters": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "urls": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "urls[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:556c5588419cde5b0707f99bc7faa798e2b60d9e88989693a74af45af23e2d8f"
+    },
+    {
+      "name": "web_search_exa",
+      "description_hash": "sha256:8b1c7b1269529fdbfc6816787e4e50c710d4f48c061973f8814407bad16c5e75",
+      "input_schema_hash": "sha256:83626e8602e25181df8d8d32d1ac71cdcbafec0abf0e4e8ebeb47f8e7cd8ca73",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "numResults": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:eb66a80ebed1da8d6736a28d80cd1959c053a167ae99987eab2fdfad0db9631e"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "exa://tools/list",
+      "name": "tools_list",
+      "description_hash": "sha256:06a289c45d573eac4e074bba9ea56206c67b678c685cfddc7529d5549590a6c0",
+      "mime_type": "application/json",
+      "entry_digest": "sha256:90c8e19a380710630cd17edcce0d506b8f472f05042edaeecb2420128320355b"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "web_search_help",
+      "description_hash": "sha256:5d15210be867a7467834403e0727050f43e158674dcca5aa414a349644d9e3a6",
+      "arguments_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "entry_digest": "sha256:999030146a5b6c50b698c618455d3243ab36e0367e8fb1376197488daba6ca69"
+    }
+  ],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=48)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=37)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/web_fetch_exa",
+      "message": "Tool derives capability 'http-request' (name token 'fetch')",
+      "snippet": "name token 'fetch'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/web_search_exa",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:25e9c61355808f8e2f90d3f5088d0d3256e3c2b38c06f8e22eb7d9058b43d226",
+  "pin": {
+    "created_at": "2026-09-03T11:54:22Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:54:24Z",
+        "bound_digest": "sha256:25e9c61355808f8e2f90d3f5088d0d3256e3c2b38c06f8e22eb7d9058b43d226",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-everart",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-everart/node_modules",
+      "EVERART_API_KEY=DUMMY",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-everart/node_modules/.bin/mcp-server-everart"
+    ],
+    "url": null,
+    "command_digest": "sha256:a668c03a56dd942060dea339a777d5edffde1e7250c5b830bbc465837b1ffda8"
+  },
+  "tools": [
+    {
+      "name": "generate_image",
+      "description_hash": "sha256:b09a54ebf1f562db8768b7d90fcb9cabbb56266ba100ffd1763c82de4c9a521e",
+      "input_schema_hash": "sha256:b795aa9c8303c1d768408b1293496c86a6094feffc345793637b8b260c6ec776",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "image_count": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "model": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ca9327d6a455bf6429e55bbfcbf233403c98c590fb4ad225a57a7b7a2533a567"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "everart://images",
+      "name": "Generated Images",
+      "description_hash": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+      "mime_type": "image/png",
+      "entry_digest": "sha256:de539a8de5b98c7bc748b8522e26fc8b86600a2954506cb77428a51fcb2fc5ea"
+    }
+  ],
+  "prompts": [],
+  "findings": [],
+  "overall_digest": "sha256:9693ba3c740a19afbb3d046b03643c1f4d32df19143e2115a18c2066e98c52ea",
+  "pin": {
+    "created_at": "2026-09-03T11:51:23Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:51:25Z",
+        "bound_digest": "sha256:9693ba3c740a19afbb3d046b03643c1f4d32df19143e2115a18c2066e98c52ea",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

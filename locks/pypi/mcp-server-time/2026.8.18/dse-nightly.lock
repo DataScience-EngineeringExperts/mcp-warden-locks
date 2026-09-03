@@ -1,0 +1,150 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-server-time",
+      "NODE_PATH=/cache/npm/mcp-server-time/node_modules",
+      "python3",
+      "-c",
+      "from mcp_server_time import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:784152474a2a00f0b20d1e6f0003e48c637e32bae48c55d0bb6ac9ecd50ec34d"
+  },
+  "tools": [
+    {
+      "name": "convert_time",
+      "description_hash": "sha256:171c9160f314ac7ce564c0679d229f864814c2ed99728e2ca0e8bb34df580aa0",
+      "input_schema_hash": "sha256:116b20b454386f6d32475bdd7e7bf5cba5673c0644f23865bc19fafc9a9fafde",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "source_timezone": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target_timezone": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "time": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:37915a5b927207d1acb38ec50a9cace4b0e327ad19980ac78441b41328bb3e11"
+    },
+    {
+      "name": "get_current_time",
+      "description_hash": "sha256:0a34bcff2277db311ef58792a1ce0a5d4b0d678e88a0c6d77eeed328898cd9d5",
+      "input_schema_hash": "sha256:4c5f8341a69e313883df9a1bb60aeea0e8e5178e4591da372ff6d2571da53e69",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timezone": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:fc220211cd5369189b758cae5234e35395693304c25fb15130c2cf4c8d79af04"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=49)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=38)"
+    }
+  ],
+  "overall_digest": "sha256:b61a6d5c970a36486634bb845ac9f4af0976627af71fc8474037242a03d2f0e7",
+  "pin": {
+    "created_at": "2026-09-03T11:54:45Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:54:46Z",
+        "bound_digest": "sha256:b61a6d5c970a36486634bb845ac9f4af0976627af71fc8474037242a03d2f0e7",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

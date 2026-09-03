@@ -1,0 +1,4907 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/firecrawl-mcp",
+      "NODE_PATH=/cache/npm/firecrawl-mcp/node_modules",
+      "FIRECRAWL_API_KEY=fc-DUMMY",
+      "node",
+      "/cache/npm/firecrawl-mcp/node_modules/.bin/firecrawl-mcp"
+    ],
+    "url": null,
+    "command_digest": "sha256:bcfa67712f2497337b12284ed26d6314e8a762560c21c4fff2dc85ecc8e14266"
+  },
+  "tools": [
+    {
+      "name": "firecrawl_agent",
+      "description_hash": "sha256:a332e0821182c84bd8a22185744963f01c05ee3469b93fa1cd2d411ad91855ef",
+      "input_schema_hash": "sha256:c5854eabb37c58437d2a6b0322f5f24617aeefb601e0034f951b83ccdc3cacf7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 10000,
+              "minLength": 1
+            }
+          },
+          "schema": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "urls": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "urls[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:3f281d893838af6b189daba1ccc8fcbb167596c80e6e05a3cc689d0de52567c8"
+    },
+    {
+      "name": "firecrawl_agent_status",
+      "description_hash": "sha256:ed9ee394c4912519a5a148707d6e0cab0bf2195e530ad6cb5fd4453caaa73a52",
+      "input_schema_hash": "sha256:69a5fdeb0408ddbd949e8c6d039848f1b5bd2369f13cbf6033d319ac15317389",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9b8b7473b862bce58463c47b0e7d2a537cc40e2a8699a96b66d6dcf406d30f9d"
+    },
+    {
+      "name": "firecrawl_check_crawl_status",
+      "description_hash": "sha256:f5cca45835dbd89b8578ea236098c093158d6fa6d548f1f7595c9e8937ce4ec1",
+      "input_schema_hash": "sha256:69a5fdeb0408ddbd949e8c6d039848f1b5bd2369f13cbf6033d319ac15317389",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:eed14307a523563751ea385cb6bbba8a36c0659f8fb06533e24e6a256f2845e9"
+    },
+    {
+      "name": "firecrawl_crawl",
+      "description_hash": "sha256:1018683be6abd9f16aa4f70559d38281e16e2503965226236bb62b67441e68d6",
+      "input_schema_hash": "sha256:138df7abc442e1fdc367b353cc1b6ed35b33b6197b0cd9865803f1814dbbce23",
+      "capabilities": [
+        "http-request",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "allowExternalLinks": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "allowSubdomains": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "crawlEntireDomain": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "deduplicateSimilarURLs": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "delay": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludePaths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludePaths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ignoreQueryParameters": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includePaths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includePaths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "maxConcurrency": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "maxDiscoveryDepth": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.actions": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].direction": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "down",
+              "up"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].milliseconds": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].script": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "click",
+              "executeJavascript",
+              "generatePDF",
+              "press",
+              "scrape",
+              "screenshot",
+              "scroll",
+              "wait",
+              "write"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.excludeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.excludeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.formats": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.formats[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "audio",
+              "branding",
+              "changeTracking",
+              "html",
+              "json",
+              "links",
+              "markdown",
+              "query",
+              "rawHtml",
+              "screenshot",
+              "summary"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.includeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.includeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.jsonOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.jsonOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.jsonOptions.schema": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.location": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.location.country": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.location.languages": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.location.languages[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.lockdown": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.maxAge": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.mobile": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.onlyMainContent": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.parsers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.parsers[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "pdf"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.pdfOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.pdfOptions.maxPages": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10000,
+              "minimum": 1
+            }
+          },
+          "scrapeOptions.profile": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.profile.name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.profile.saveChanges": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.proxy": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "auto",
+              "basic",
+              "enhanced",
+              "stealth"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.queryOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.queryOptions.mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "directQuote",
+              "freeform"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.queryOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 10000
+            }
+          },
+          "scrapeOptions.redactPII": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.removeBase64Images": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.screenshotOptions.fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.quality": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport.height": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport.width": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.skipTlsVerification": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.storeInCache": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.waitFor": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.zeroDataRetention": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sitemap": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "include",
+              "only",
+              "skip"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "webhook": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "webhookHeaders": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4f26ecf2d88b7e7ddfc583da0a4d6ad9360ed303833713fed22ab21e44c2d0df"
+    },
+    {
+      "name": "firecrawl_developer_search",
+      "description_hash": "sha256:4a47ccc4224340f3e60f60a11c6116e40f971da09d421f5c0e06cbbf7fa35d38",
+      "input_schema_hash": "sha256:62a604e0889b0d0101c630eb13b764957f9883b5e128129580ba5515d66dbc1e",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "k": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "skills": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "only"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a562b476e5972e4ec58eb18bb89942d624c33b40dab4cc3c5e4b31d65fbb04b6"
+    },
+    {
+      "name": "firecrawl_extract",
+      "description_hash": "sha256:7b19611ded5f0d8f4a204231c17d370a46d673973f667a3d55ad1782cdab259c",
+      "input_schema_hash": "sha256:6ce207bfaf4a49e64bbfd77094b86bd70b60983eaf4a94a6a06a6a884cc9ca60",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "allowExternalLinks": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "enableWebSearch": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeSubdomains": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "schema": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "urls": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "urls[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ea2c46c2d4518734e75d79a9be81f178473d69f9c4a9dd92ecdcfb9bab23d93d"
+    },
+    {
+      "name": "firecrawl_feedback",
+      "description_hash": "sha256:12cb359e455b12c52309b11cfe7791f6e55607f13684e366b2fb97e1dcac4120",
+      "input_schema_hash": "sha256:6cbe7190a86ffe8a4dcb31450d7991f4347d94c897eb68336ece855a3cc14506",
+      "capabilities": [
+        "http-request",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "endpoint": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "map",
+              "parse",
+              "scrape",
+              "search"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issues": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issues[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-z0-9][a-z0-9_-]*$"
+            }
+          },
+          "jobId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          },
+          "metadata": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "missingContent": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "missingContent[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "missingContent[].description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 2000
+            }
+          },
+          "missingContent[].topic": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 200,
+              "minLength": 1
+            }
+          },
+          "note": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 4000
+            }
+          },
+          "pageNumbers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pageNumbers[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991
+            }
+          },
+          "querySuggestions": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 2000
+            }
+          },
+          "rating": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "bad",
+              "good",
+              "partial"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "tags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "tags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-z0-9][a-z0-9_-]*$"
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          },
+          "valuableSources": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "valuableSources[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "valuableSources[].reason": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 1000
+            }
+          },
+          "valuableSources[].url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:bb640a00f09c606c741820cfc1f152bc1ee7510090f396f54c14151ff4207118"
+    },
+    {
+      "name": "firecrawl_interact",
+      "description_hash": "sha256:77c434fc905fd8ad3e371c93780c2b347bb53a49dcd682108bbfcb79363739d0",
+      "input_schema_hash": "sha256:c4f025638b7cd1fe19f5cd36905795209575e24e62981e9e2851f0ad7b5b58b3",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "code": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "language": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "bash",
+              "node",
+              "python"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "scrapeId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "scrapeOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.actions": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].direction": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "down",
+              "up"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].milliseconds": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].script": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "click",
+              "executeJavascript",
+              "generatePDF",
+              "press",
+              "scrape",
+              "screenshot",
+              "scroll",
+              "wait",
+              "write"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.excludeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.excludeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.formats": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.formats[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "audio",
+              "branding",
+              "changeTracking",
+              "html",
+              "json",
+              "links",
+              "markdown",
+              "query",
+              "rawHtml",
+              "screenshot",
+              "summary"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.includeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.includeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.jsonOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.jsonOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.jsonOptions.schema": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.location": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.location.country": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.location.languages": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.location.languages[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.lockdown": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.maxAge": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.mobile": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.onlyMainContent": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.parsers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.parsers[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "pdf"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.pdfOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.pdfOptions.maxPages": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10000,
+              "minimum": 1
+            }
+          },
+          "scrapeOptions.profile": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.profile.name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.profile.saveChanges": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.proxy": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "auto",
+              "basic",
+              "enhanced",
+              "stealth"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.queryOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.queryOptions.mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "directQuote",
+              "freeform"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.queryOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 10000
+            }
+          },
+          "scrapeOptions.redactPII": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.removeBase64Images": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.screenshotOptions.fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.quality": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport.height": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport.width": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.skipTlsVerification": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.storeInCache": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.waitFor": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.zeroDataRetention": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timeout": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 300,
+              "minimum": 1
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:40e020adb17856853b858837ffa0f5c110f1b5dbc9b02bda03a3b48f5b4b18a0"
+    },
+    {
+      "name": "firecrawl_interact_stop",
+      "description_hash": "sha256:64e6561abbc60c91568ffdc27178d34b5e055d2396c8dfe8fb6c91eed93d91a4",
+      "input_schema_hash": "sha256:78bd4914685cfa909301ca290743e6e2857d732047c4bf6f1448ed950ff317bd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8a8c42a8e45a6410bce7267f38ebc79194d3461aa841e4334c79213fc3f6999a"
+    },
+    {
+      "name": "firecrawl_map",
+      "description_hash": "sha256:7d8b4798ed2bdf2d5783845d804da631d885b91a926f1f044fde4a7ccbea5c7d",
+      "input_schema_hash": "sha256:2567ab0c41f46d57dedb8d2d4fcdd52fbf7265c0f88fc8f45f720737194d975c",
+      "capabilities": [
+        "http-request",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "ignoreQueryParameters": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeSubdomains": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "search": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sitemap": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "include",
+              "only",
+              "skip"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:38269100046ef3cad5f238f7ae066e56a25853e94ac40a1b095af2255ad5a2e6"
+    },
+    {
+      "name": "firecrawl_monitor_check",
+      "description_hash": "sha256:7309c02a2deb112942027a2df409287b034be7bc5d0c2738135089b956d0fe23",
+      "input_schema_hash": "sha256:1ca031848ed5baa83c2c95bdd6e67562f245ed5d16ac7f6a12ea6466562eaa15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "checkId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991
+            }
+          },
+          "pageStatus": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "changed",
+              "error",
+              "new",
+              "removed",
+              "same"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "skip": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:fee3a6cbb5ae520b15926eba91e40e4c138fb3de7135c13781e1ca979df2201f"
+    },
+    {
+      "name": "firecrawl_monitor_checks",
+      "description_hash": "sha256:93f7c39e593d49b717c81946a13baaf757d3af185f2ce4321f7ace51e2fb00b5",
+      "input_schema_hash": "sha256:4114f98da5cf8d63254924a52a27d323e9a4ffdce16db8bf9e23634a97569384",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991
+            }
+          },
+          "offset": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 0
+            }
+          },
+          "status": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "completed",
+              "failed",
+              "partial",
+              "queued",
+              "running",
+              "skipped_overlap"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:082ebad471ed6ce1eba8c148665d32ad29618ff1655df1b157dc49f59d5a8198"
+    },
+    {
+      "name": "firecrawl_monitor_create",
+      "description_hash": "sha256:2475e9489445c3c1ac5cc6e5aafe30a6329dea9413ba36b887f9310eb393e159",
+      "input_schema_hash": "sha256:e312d35b3e563a0e539b75a4e55db4a744a65c23953218fcff9185400dc770fd",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "email": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeDomains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeDomains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "goal": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeDiffs": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeDomains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeDomains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "maxResults": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pages": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pages[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "queries": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "queries[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scheduleText": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "searchWindow": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "15m",
+              "1h",
+              "24h",
+              "5m",
+              "6h",
+              "7d"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timezone": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "webhookUrl": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2440f965b9d85243ff06566ae2e5768cb62a1f8c94e1bbfed78207554da8873f"
+    },
+    {
+      "name": "firecrawl_monitor_delete",
+      "description_hash": "sha256:25cefa785b1218b50f92ee463088a30178f4311437a4d7f621b20d57009b334c",
+      "input_schema_hash": "sha256:69a5fdeb0408ddbd949e8c6d039848f1b5bd2369f13cbf6033d319ac15317389",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2423d0e4ff15ae7ebef5abbb079d552fedf3ef39f5acb9679b61216acf3456e0"
+    },
+    {
+      "name": "firecrawl_monitor_get",
+      "description_hash": "sha256:06272f515c03a6f76ce809828866a825c064c2957b5731a27f362a8c16d83486",
+      "input_schema_hash": "sha256:69a5fdeb0408ddbd949e8c6d039848f1b5bd2369f13cbf6033d319ac15317389",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:de2eb1cd002a96d34a03d95fc256219857121cf9bb4a8bf6f01a6b9e362f440b"
+    },
+    {
+      "name": "firecrawl_monitor_list",
+      "description_hash": "sha256:88106fd948de3f099d43d4d3bfe5be5111eb62ed40da76bb49209b5a03fe45b6",
+      "input_schema_hash": "sha256:d61195a5101615e09d291ef6b5c1d0fb04107c8f6c0e724597813995a33181ab",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991
+            }
+          },
+          "offset": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:03e8e5b67584fa34d0073a8e1dc0f4a0a4d5d2df36768e71ae8b344f412c54bb"
+    },
+    {
+      "name": "firecrawl_monitor_run",
+      "description_hash": "sha256:e84c14cda8038d3460db4c4010638ac89562fa454ec5b533a3f67b283c3f67ed",
+      "input_schema_hash": "sha256:69a5fdeb0408ddbd949e8c6d039848f1b5bd2369f13cbf6033d319ac15317389",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:24c8b89ae21c92b57316567d30f5aa41b8b4f11fa391b4707ff48d55e44b1fd9"
+    },
+    {
+      "name": "firecrawl_monitor_update",
+      "description_hash": "sha256:24fb9a4345bf4868f34d929b750e5ce79f00fd7d484d38059aaedd4bfa9179fc",
+      "input_schema_hash": "sha256:5250b9bc6a5af07ab2067956052946583098f0f9f16664c4ac087650487cda5e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:57158bd1f443bc493e91bd3ad0882b98eabcf3a19067dac4b176a99b68568a7d"
+    },
+    {
+      "name": "firecrawl_parse",
+      "description_hash": "sha256:e4fbc0e99389c69c1e8b22bebbf458ea966879409c3af8c0be078e2de450ec47",
+      "input_schema_hash": "sha256:3910695cf0f51496de20d0a9effb89b37d48fb329a5634039f8a3eeda9560484",
+      "capabilities": [
+        "fs-write",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "contentType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filePath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "formats": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "formats[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "html",
+              "json",
+              "links",
+              "markdown",
+              "query",
+              "rawHtml",
+              "summary"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "jsonOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "jsonOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "jsonOptions.schema": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "maxAge": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "onlyMainContent": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parsers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parsers[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "pdf"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pdfOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "pdfOptions.maxPages": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10000,
+              "minimum": 1
+            }
+          },
+          "proxy": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "auto",
+              "basic"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "queryOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "queryOptions.mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "directQuote",
+              "freeform"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "queryOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 10000
+            }
+          },
+          "redactPII": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "removeBase64Images": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "skipTlsVerification": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "storeInCache": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "zeroDataRetention": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0377fd2abb5f3cf606a0d250643167992456900f1e7a85589293ab144272a5b0"
+    },
+    {
+      "name": "firecrawl_research_inspect_paper",
+      "description_hash": "sha256:fa0b481a084b82a96aeddfbfdd6389a6da7ad30b4f95ebdb6b959b4712148ef1",
+      "input_schema_hash": "sha256:cda683e75fd95b3d2ff3cbe439c7f0bb6f7fc6cf90fec1276510438215f4d897",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "paperId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d43d6abf93b72c560a4f19dbfe4f2afb4e2780aced39fb4469f45cf0fc6b298b"
+    },
+    {
+      "name": "firecrawl_research_read_paper",
+      "description_hash": "sha256:2d9a206302368e286a4c9df747a773cbb3d9993e6b40c4f5d8376caa20d777a6",
+      "input_schema_hash": "sha256:baba062e943629ad78ed0827ceacde496fe674329de63b83acf3c6e9edbdfed1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "k": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50,
+              "minimum": 1
+            }
+          },
+          "paperId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "question": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5d36699b0f93186493f5605bdaf535cfc14780dfd9d876d4801972b09e700705"
+    },
+    {
+      "name": "firecrawl_research_related_papers",
+      "description_hash": "sha256:8611a0bb6dcbbd33807c439a697a35ccd61fa3c2ef9f130492ab9fcc26f978b1",
+      "input_schema_hash": "sha256:acbc14ac5abc30f6ef505f1a6c02fb7180bcbbcae116908a47868c75c5350e1b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "intent": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "k": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 500,
+              "minimum": 1
+            }
+          },
+          "mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "citers",
+              "references",
+              "similar"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "rerank": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "seed_ids": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "seed_ids[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6367fd97f8d0113ecb14aa4ad1954f69b6624dea40afdb1557e8d9fd82dbdad6"
+    },
+    {
+      "name": "firecrawl_research_search_github",
+      "description_hash": "sha256:aec1d11509c6fac2ce22d08931784e28c1a8beb8aa875b21bb9e3c4cb125f816",
+      "input_schema_hash": "sha256:3f9fa3645a5b96f79d5c936330a8008ea0e9993769ad16bf84f620e8de66151a",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "k": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:74bd5f0eb132895bc1c9dceb1539884b9974bd29d973e8532f82ee8172de0b94"
+    },
+    {
+      "name": "firecrawl_research_search_papers",
+      "description_hash": "sha256:0cafd38c8c31348a51dcc45186f05a94e557212d9dccb1dd8d1790a11d581a56",
+      "input_schema_hash": "sha256:33680104c1e89e04401a743cba68c4bf73823b082f2b70550c51b6ee197129c6",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "authors": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "authors[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "categories": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "categories[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "from": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "k": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 500,
+              "minimum": 1
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "to": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:731734c8344e1c3355a632de141e394155a2badc971f60a2e217b030261dfa22"
+    },
+    {
+      "name": "firecrawl_scrape",
+      "description_hash": "sha256:abb1718624efa7738535622634d4e7282c7491edc16f706767d0587b24f0caaa",
+      "input_schema_hash": "sha256:eb7c435b0bb15ce4214bd086095b7e41033cbbd8b1f92ed89b3a57293568a231",
+      "capabilities": [
+        "http-request",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "actions": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].direction": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "down",
+              "up"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].milliseconds": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].script": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "actions[].type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "click",
+              "executeJavascript",
+              "generatePDF",
+              "press",
+              "scrape",
+              "screenshot",
+              "scroll",
+              "wait",
+              "write"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "formats": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "formats[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "audio",
+              "branding",
+              "changeTracking",
+              "html",
+              "json",
+              "links",
+              "markdown",
+              "query",
+              "rawHtml",
+              "screenshot",
+              "summary"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "jsonOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "jsonOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "jsonOptions.schema": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "location": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "location.country": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "location.languages": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "location.languages[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "lockdown": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "maxAge": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "mobile": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "onlyMainContent": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parsers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parsers[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "pdf"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pdfOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "pdfOptions.maxPages": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10000,
+              "minimum": 1
+            }
+          },
+          "profile": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "profile.name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "profile.saveChanges": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "proxy": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "auto",
+              "basic",
+              "enhanced",
+              "stealth"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "queryOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "queryOptions.mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "directQuote",
+              "freeform"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "queryOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 10000
+            }
+          },
+          "redactPII": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "removeBase64Images": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "screenshotOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "screenshotOptions.fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "screenshotOptions.quality": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "screenshotOptions.viewport": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "screenshotOptions.viewport.height": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "screenshotOptions.viewport.width": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "skipTlsVerification": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "storeInCache": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          },
+          "waitFor": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "zeroDataRetention": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:573509ef8d0a1e315ff296b0b83b809685c212670dc8f621b8db4f246637c84c"
+    },
+    {
+      "name": "firecrawl_search",
+      "description_hash": "sha256:bfe18bf7635673902af289e4c513d11df578c2fe6e9f500b9a835966423dc406",
+      "input_schema_hash": "sha256:07e7e99ecf97cbb60aca4d9f5f54187c93fc4819fabed1c7ea0ada4bef442a8a",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "categories": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "categories[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "developer",
+              "github",
+              "pdf",
+              "research"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "enterprise": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "enterprise[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "anon",
+              "default",
+              "zdr"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeDomains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "excludeDomains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 253,
+              "minLength": 1,
+              "pattern": "^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$"
+            }
+          },
+          "filter": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "highlights": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeDomains": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeDomains[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 253,
+              "minLength": 1,
+              "pattern": "^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$"
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "location": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "scrapeOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.actions": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].direction": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "down",
+              "up"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].key": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].milliseconds": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].script": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.actions[].type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "click",
+              "executeJavascript",
+              "generatePDF",
+              "press",
+              "scrape",
+              "screenshot",
+              "scroll",
+              "wait",
+              "write"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.excludeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.excludeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.formats": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.formats[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "audio",
+              "branding",
+              "changeTracking",
+              "html",
+              "json",
+              "links",
+              "markdown",
+              "query",
+              "rawHtml",
+              "screenshot",
+              "summary"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.includeTags": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.includeTags[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.jsonOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.jsonOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.jsonOptions.schema": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.location": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.location.country": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.location.languages": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.location.languages[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.lockdown": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.maxAge": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.mobile": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.onlyMainContent": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.parsers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.parsers[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "pdf"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.pdfOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.pdfOptions.maxPages": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10000,
+              "minimum": 1
+            }
+          },
+          "scrapeOptions.profile": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.profile.name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.profile.saveChanges": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.proxy": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "auto",
+              "basic",
+              "enhanced",
+              "stealth"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.queryOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.queryOptions.mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "directQuote",
+              "freeform"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.queryOptions.prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 10000
+            }
+          },
+          "scrapeOptions.redactPII": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.removeBase64Images": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.screenshotOptions.fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.quality": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport.height": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.screenshotOptions.viewport.width": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.skipTlsVerification": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.storeInCache": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.waitFor": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scrapeOptions.zeroDataRetention": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sources": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sources[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sources[].type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "images",
+              "news",
+              "web"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "tbs": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d5122a38e2dc00331d6ed6ce305264f1debd44ea3f293685072bd8c850f634a3"
+    },
+    {
+      "name": "firecrawl_search_feedback",
+      "description_hash": "sha256:db411e91f0c78c82753f6c5d0ee56edc3ab907235a34a14acbe0eca3336b22c0",
+      "input_schema_hash": "sha256:78d980ac6365c1a5abd9a58a51fe129b9fe267d41f9d0bd3ef184a8bbe834f69",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "missingContent": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "missingContent[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "missingContent[].description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 2000
+            }
+          },
+          "missingContent[].topic": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 200,
+              "minLength": 1
+            }
+          },
+          "querySuggestions": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 2000
+            }
+          },
+          "rating": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "bad",
+              "good",
+              "partial"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "searchId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          },
+          "valuableSources": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "valuableSources[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "valuableSources[].reason": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 1000
+            }
+          },
+          "valuableSources[].url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0757908bc8c1ad866d9efbb6bf87b06719e63860b8a0b6d294b2fd617786f8e3"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "FIRE…(len=26)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=47)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=36)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/firecrawl_crawl",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_crawl",
+      "message": "Tool derives capability 'sql-query' (property 'ignoreQueryParameters')",
+      "snippet": "property 'ignoreQueryParameters'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_developer_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/firecrawl_feedback",
+      "message": "Tool derives capability 'http-request' (property 'endpoint')",
+      "snippet": "property 'endpoint'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_feedback",
+      "message": "Tool derives capability 'sql-query' (property 'querySuggestions')",
+      "snippet": "property 'querySuggestions'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/firecrawl_interact",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/firecrawl_map",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_map",
+      "message": "Tool derives capability 'sql-query' (property 'ignoreQueryParameters')",
+      "snippet": "property 'ignoreQueryParameters'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/firecrawl_monitor_create",
+      "message": "Tool derives capability 'http-request' (property 'webhookUrl')",
+      "snippet": "property 'webhookUrl'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/firecrawl_parse",
+      "message": "Tool derives capability 'fs-write' (property 'filePath')",
+      "snippet": "property 'filePath'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_parse",
+      "message": "Tool derives capability 'sql-query' (property 'queryOptions')",
+      "snippet": "property 'queryOptions'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_research_search_github",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_research_search_papers",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/firecrawl_scrape",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_scrape",
+      "message": "Tool derives capability 'sql-query' (property 'queryOptions')",
+      "snippet": "property 'queryOptions'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/firecrawl_search_feedback",
+      "message": "Tool derives capability 'sql-query' (property 'querySuggestions')",
+      "snippet": "property 'querySuggestions'"
+    }
+  ],
+  "overall_digest": "sha256:f22976cad166d8d5864fcaac05ca9bf42d8e6e20bceda903d8e3197c5f2d8025",
+  "pin": {
+    "created_at": "2026-09-03T11:52:14Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:52:16Z",
+        "bound_digest": "sha256:f22976cad166d8d5864fcaac05ca9bf42d8e6e20bceda903d8e3197c5f2d8025",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

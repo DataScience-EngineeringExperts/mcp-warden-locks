@@ -1,0 +1,2161 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@hubspot__mcp-server",
+      "NODE_PATH=/cache/npm/@hubspot__mcp-server/node_modules",
+      "PRIVATE_APP_ACCESS_TOKEN=DUMMY",
+      "node",
+      "/cache/npm/@hubspot__mcp-server/node_modules/.bin/mcp-hubspot"
+    ],
+    "url": null,
+    "command_digest": "sha256:a7fb7cdc62000593631d7a5654aa0c0ffbf3f7c1307e067d18a8a898f5f70df3"
+  },
+  "tools": [
+    {
+      "name": "hubspot-batch-create-associations",
+      "description_hash": "sha256:1d85c375596570dde7a4c18fc404c1c96a2a24ae00006259890c658c6f5f32af",
+      "input_schema_hash": "sha256:a00e082079f3ddf5d1d30fc2aab2823477cb9bfe5d738e87a43532d3d5c1f0f5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fromObjectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].from": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].from.id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].to": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].to.id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "toObjectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "types": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "types[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "types[].associationCategory": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "HUBSPOT_DEFINED",
+              "INTEGRATOR_DEFINED",
+              "USER_DEFINED"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "types[].associationTypeId": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a67ab299c0621f104e94177904e2944fab5ec460a389b2539305828043b7b14a"
+    },
+    {
+      "name": "hubspot-batch-create-objects",
+      "description_hash": "sha256:c15fa3067a5a00abb65dddfd792296e7e03df7ea048a82bb4245bc5d4d786b8f",
+      "input_schema_hash": "sha256:f3d4022f41a1e6cded961ae388f5c19ff92878234a58376fd46d71fbe756ef0f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].associations": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].associations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].associations[].to": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].associations[].to.id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].associations[].types": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].associations[].types[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].associations[].types[].associationCategory": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "HUBSPOT_DEFINED",
+              "INTEGRATOR_DEFINED",
+              "USER_DEFINED"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].associations[].types[].associationTypeId": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].objectWriteTraceId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].properties": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ca68e1adf807460c7af9ad6f02b644f2eda683cb116625e6d52364fb6970c69a"
+    },
+    {
+      "name": "hubspot-batch-read-objects",
+      "description_hash": "sha256:3b291164d177f6b0c5d2000fb41c7888656448fd075bc31706a47975836db9d6",
+      "input_schema_hash": "sha256:f0ea32b2ae446e9333044d9a4a0248dd0a690a41a487fc4bc669839927ee5dad",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "propertiesWithHistory": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "propertiesWithHistory[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0a2005fe96e3b79df1da342888e3ff127990e1e327afd8a7166ea7b0d876556e"
+    },
+    {
+      "name": "hubspot-batch-update-objects",
+      "description_hash": "sha256:2d35ca5d58a0eb8d0205c0d189b64446315944f4bc56b88f278bb344049aab51",
+      "input_schema_hash": "sha256:537b59ec58ff53dc6a37eba0bef36ab2d10bc063bbd778da6c8ff97c2a6b8927",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "inputs[].id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].idProperty": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].objectWriteTraceId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "inputs[].properties": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7b21e497b27a2ba4ecc1c8c4cdc376091ed3e1687f4271a785b5986d0f2134a7"
+    },
+    {
+      "name": "hubspot-create-engagement",
+      "description_hash": "sha256:e7748123d29c80033ef3c885deddf042d7fc9a06858ac33cf85d3b6801fcc9de",
+      "input_schema_hash": "sha256:1e94f3436191886008dde0a61f25cb617e0247c9c647600d11cab1ae64937b88",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "associations": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "associations.companyIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.companyIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.contactIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.contactIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.dealIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.dealIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ownerIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ownerIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ticketIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ticketIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "metadata": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ownerId": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timestamp": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "NOTE",
+              "TASK"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d2f4eabde667fae3f151448fda8fa6bcd4125f391c470a82b7a5c3e3ac0fd8d1"
+    },
+    {
+      "name": "hubspot-create-property",
+      "description_hash": "sha256:de93c1e374a10bcd5aee79d1a207a357f395801154f792b9860577a8032ae0d9",
+      "input_schema_hash": "sha256:6dd17d944df30632c252719c49a87d6349d9159f2bf4dd1a6197092d7f37bd0e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "calculationFormula": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "displayOrder": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "externalOptions": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fieldType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "booleancheckbox",
+              "calculation",
+              "checkbox",
+              "date",
+              "file",
+              "number",
+              "radio",
+              "select",
+              "text",
+              "textarea"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "formField": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "groupName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "hasUniqueValue": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "hidden": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "label": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "options[].description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].displayOrder": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].hidden": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].label": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "bool",
+              "date",
+              "datetime",
+              "enumeration",
+              "number",
+              "string"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7df084935f6e46ffce1bf557a9979f789f943485642cb4535dae15a76384521a"
+    },
+    {
+      "name": "hubspot-generate-feedback-link",
+      "description_hash": "sha256:a49a6ae7556f67e9377a179c20be0264391df6d76d3d12c48158f80feb2d8b1f",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cfe46650bf8210b4a991a518f1688680a1907b6a1029d54592d29025eb213041"
+    },
+    {
+      "name": "hubspot-get-association-definitions",
+      "description_hash": "sha256:9e6d404e377200fe8458611fd1da0faacae706c5d4e2054402860501dac936d1",
+      "input_schema_hash": "sha256:e107296068b769344afdc2edb90e08c2e09d6f3057430170a25719a730e15922",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fromObjectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "toObjectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:714f96055ec945f3e8c2737f2e0d2ddbd21056611ca7a09e4de4b579db38f710"
+    },
+    {
+      "name": "hubspot-get-engagement",
+      "description_hash": "sha256:13758c600ca64cab3ef464c8960054cb93e4e63eb642fd76ff007e8da09adad3",
+      "input_schema_hash": "sha256:889dd0933e450216e85a4791ab423114113da04867dd0df6e5239b0d2b984cf1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "engagementId": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f2e0026c97ccc2d8c80090611360b63fabd3a2d1241879737f2a696b72bbb6f9"
+    },
+    {
+      "name": "hubspot-get-link",
+      "description_hash": "sha256:9dbb7838028bd01745810c0a55f97342bc1cf2f919c224028059145d09d7d62f",
+      "input_schema_hash": "sha256:cbc89f3a39cb9c94b422c0604922bb53511408b37b72711be3627ea6c9d7b594",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "pageRequests": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pageRequests[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "pageRequests[].objectId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pageRequests[].objectTypeId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pageRequests[].pagetype": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "index",
+              "record"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "portalId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "uiDomain": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:940d89f3abcbc26c56609e78578bf576ca0d8fe974d87c1df564920b36a240cd"
+    },
+    {
+      "name": "hubspot-get-property",
+      "description_hash": "sha256:17ebc0477f9cb7ef07616d999c1bf3bc7cce973670f958e50589ea687c6d1e86",
+      "input_schema_hash": "sha256:83cee800e4ff6f0505a1c7685634203aa610bb7645cc118729a1a46353a0f919",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "propertyName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:69a201e1a0405a5b4cc53b12092d9cbc70570fd79533feb9b66e3543c14c78dc"
+    },
+    {
+      "name": "hubspot-get-schemas",
+      "description_hash": "sha256:202bfaf9c7d86d3fd5f044c05b0cd13fa06a5ce47dd948761d0c37bb15c77d02",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:10b6ee1b3f6d3784ecf3da309335b06eb243dc618ce2418c3503e6d2f1ca4a3f"
+    },
+    {
+      "name": "hubspot-get-user-details",
+      "description_hash": "sha256:39fc1573fc39d6b2b7f72fd245aa80302af4f566008d6e07d882d069bf45eb17",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:755b713e8e3d6443130779827c14e7234af291b3dc3a9ce045e833ea243ce644"
+    },
+    {
+      "name": "hubspot-get-workflow",
+      "description_hash": "sha256:83ed0cac3ddc812c82f9a9d0a95e80217237735741bfe9ddcaf065561bf0f080",
+      "input_schema_hash": "sha256:71407239aee4c4e3cd94b8a6a6afdfd2d64faa4a860e55b60066abe2dcf18114",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "flowId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:466767095c48197d0bab6252e5b13203539d9f286c6cbf5b2a72279ec14b93f1"
+    },
+    {
+      "name": "hubspot-list-associations",
+      "description_hash": "sha256:9276f59eef494f326016fac3e0c000b1b947f6a6b44928f18c69e37d1994c282",
+      "input_schema_hash": "sha256:b1b76a165fc09c31a14fd99edd1b5ed56ec265bf690e22c26a813ab22e2ba92c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "after": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "objectId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "toObjectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:111226dcf924b47e79391b5405d2774a089946f459d50898e1c90f0e3f379fa0"
+    },
+    {
+      "name": "hubspot-list-objects",
+      "description_hash": "sha256:f29ce073a5d68b826ac7172b7e05a15ce2ee880f0ee69645a983bab22e568045",
+      "input_schema_hash": "sha256:004e7ee4b8b027a276b71af9632d5b8039a120f56d962d506ad835183f537837",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "after": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "archived": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 500,
+              "minimum": 1
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4dd3e56cbb6caa526b244a9983f6450fca28a444ec26f36de405f5e4f5e8bb87"
+    },
+    {
+      "name": "hubspot-list-properties",
+      "description_hash": "sha256:fa6ab9ef703d152702363838ca56b167641835d27ea04089548ae9c62606adfd",
+      "input_schema_hash": "sha256:a6284f971355464681a804ebef571daefeed46a64dcd3a279576f53827618a4b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "archived": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeHidden": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:95340f526b5031aa1ec2584c9a460a7a2a9e9cb8905d8b2eaa23a70ef1ac32ee"
+    },
+    {
+      "name": "hubspot-list-workflows",
+      "description_hash": "sha256:2c4e4b195e51fdc2bbdbbc9b5ce4bf57a5c8fdce114a1cdec73ef1195a22bc9e",
+      "input_schema_hash": "sha256:95f9792c67e671a28890191f32e1ffcecfcf513ccf01ac5254b2e5ad3aaba36c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "after": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:11cc620b8bb69f1c7e499abebaf08f472d310e1def8482b1448eb609acc2b822"
+    },
+    {
+      "name": "hubspot-search-objects",
+      "description_hash": "sha256:8c6e4e17dc510c4cd31ce20c56358ab1a34d53eea197801476ea28e8fb9e3d2b",
+      "input_schema_hash": "sha256:9c2a98e770e5ff53c9c04fbf05243679eab957af45e066e886e921bbf991db3f",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "after": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filterGroups": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filterGroups[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "filterGroups[].filters": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filterGroups[].filters[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "filterGroups[].filters[].highValue": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filterGroups[].filters[].operator": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "BETWEEN",
+              "CONTAINS_TOKEN",
+              "EQ",
+              "GT",
+              "GTE",
+              "HAS_PROPERTY",
+              "IN",
+              "LT",
+              "LTE",
+              "NEQ",
+              "NOT_CONTAINS_TOKEN",
+              "NOT_HAS_PROPERTY",
+              "NOT_IN"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filterGroups[].filters[].propertyName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filterGroups[].filters[].value": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filterGroups[].filters[].values": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sorts": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sorts[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "sorts[].direction": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "ASCENDING",
+              "DESCENDING"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sorts[].propertyName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:fe15f54204fcbb1ed4adbb956c42b0a9f8a2bf6b966fca849bba7abc5e56086c"
+    },
+    {
+      "name": "hubspot-update-engagement",
+      "description_hash": "sha256:f142477a8d8e03ba67dc914d28073492dfeaf73a5ecf65417185d2df8d3d2983",
+      "input_schema_hash": "sha256:89cf8aa721fd6346f2814cd31496f7d61f77fa9478fcea7af1889e048476b825",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "associations": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "associations.companyIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.companyIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.contactIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.contactIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.dealIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.dealIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ownerIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ownerIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ticketIds": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "associations.ticketIds[]": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "engagementId": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "metadata": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ownerId": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timestamp": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:016a3e8da3979682263e830e619a2a68537f41bb973ff9493016b5e60c1f146e"
+    },
+    {
+      "name": "hubspot-update-property",
+      "description_hash": "sha256:11a320be87612d7d37d411987c2ad18cb09bf9e3073ca8ca4deb84499907dd29",
+      "input_schema_hash": "sha256:cec43a765fbee78c0713ac92308324a58c375b2e4035ba41279880578f8b075f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "calculationFormula": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "displayOrder": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fieldType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "booleancheckbox",
+              "calculation",
+              "checkbox",
+              "date",
+              "file",
+              "number",
+              "radio",
+              "select",
+              "text",
+              "textarea"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "formField": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "groupName": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "hidden": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "label": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "objectType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "options[].description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].displayOrder": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].hidden": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].label": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options[].value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "propertyName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "bool",
+              "date",
+              "datetime",
+              "enumeration",
+              "number",
+              "string"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e085d27321afced88f7cae561fb116ca2f43afff8f8ca941b49f2a1e3b2a75f9"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PRIV…(len=30)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "tools/hubspot-generate-feedback-link",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "hubs…(len=30)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/hubspot-search-objects",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:e667369f38adf1a12bea6f4151b8ca83b969eaf1e515b13614399191e2abe09a",
+  "pin": {
+    "created_at": "2026-09-03T11:52:38Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:52:40Z",
+        "bound_digest": "sha256:e667369f38adf1a12bea6f4151b8ca83b969eaf1e515b13614399191e2abe09a",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-neo4j-cypher",
+      "NODE_PATH=/cache/npm/mcp-neo4j-cypher/node_modules",
+      "NEO4J_URI=bolt://127.0.0.1:7687",
+      "NEO4J_USERNAME=neo4j",
+      "NEO4J_PASSWORD=DUMMY",
+      "python3",
+      "-c",
+      "from mcp_neo4j_cypher import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:6ab501c7e0c2f767812d5f2c2581405d68264b1d325fec499dde1208ad8b85d7"
+  },
+  "tools": [
+    {
+      "name": "get_neo4j_schema",
+      "description_hash": "sha256:f0cb6fdc7bf7724bc209d40ef0893b26e1a89198097e53010d48cc3750337197",
+      "input_schema_hash": "sha256:51d2e5525a9bb54a5a06451a19eea2832e868b6c9c44637f29294e52c35b70ce",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sample_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e02e1b41b739573df44f0f62de294f47e9e9b1b66e00110feef422113a070175"
+    },
+    {
+      "name": "read_neo4j_cypher",
+      "description_hash": "sha256:bebdb8bf36f85fe8057583d448130881fb1f79e96ca3f0c08286bad853711e51",
+      "input_schema_hash": "sha256:9631746823a32739ed4fa1dd5bd2bd04c93780ade4ba3b48aa9f3915b4069562",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "params": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ee821ec8ce8df3e9be655ae2273c6ed06cb5293032934d02d5e06eef137ea35c"
+    },
+    {
+      "name": "write_neo4j_cypher",
+      "description_hash": "sha256:661a7ff74f49af8da5a637db2a590b1b9319b3bab9926a87c9aa4e537abc97e8",
+      "input_schema_hash": "sha256:9631746823a32739ed4fa1dd5bd2bd04c93780ade4ba3b48aa9f3915b4069562",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "params": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6c4b03fd59689703c324e813741a08eb64917fb2f3ab27dccbe2902f8c998ee3"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=50)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=39)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/read_neo4j_cypher",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/write_neo4j_cypher",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:72d0c0374be4a67f0a257d4848af35c85a0646f62792a2220a4b8553792185be",
+  "pin": {
+    "created_at": "2026-09-03T11:56:33Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-06-18",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:56:36Z",
+        "bound_digest": "sha256:72d0c0374be4a67f0a257d4848af35c85a0646f62792a2220a4b8553792185be",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

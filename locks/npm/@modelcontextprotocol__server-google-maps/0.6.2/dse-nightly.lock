@@ -1,0 +1,430 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-google-maps",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-google-maps/node_modules",
+      "GOOGLE_MAPS_API_KEY=DUMMY",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-google-maps/node_modules/.bin/mcp-server-google-maps"
+    ],
+    "url": null,
+    "command_digest": "sha256:9af9e6ba0a54e0f48d780255f32c0f81c3e40e698d13e8b8048b52919ba1db41"
+  },
+  "tools": [
+    {
+      "name": "maps_directions",
+      "description_hash": "sha256:39a839a92e662eb78e3721614c91ceea3b9b66a2ecfe5f01e9cbe384a45b9679",
+      "input_schema_hash": "sha256:65aad8696ac3314a1fa9207e6cc8d24c72cee0b80755140def528fbe692e21cf",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "destination": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "bicycling",
+              "driving",
+              "transit",
+              "walking"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:678224ffadb02d845f25d1413d65d8cdbeb266d26dd3e208f3a1cb673692b8d9"
+    },
+    {
+      "name": "maps_distance_matrix",
+      "description_hash": "sha256:9d31467d7736b88decf7c214551cc5f9124b7bb517de76d0a2e52272b28ed597",
+      "input_schema_hash": "sha256:d7fdbfb4450342a09e3f2664ae6256fdd544206ac12247e526113bce51af8316",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "destinations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "destinations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "bicycling",
+              "driving",
+              "transit",
+              "walking"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origins": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origins[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c03357b8e31394c6b67819e3e605c906eb9be4e82b884ccd99aa70c1d2b4aafd"
+    },
+    {
+      "name": "maps_elevation",
+      "description_hash": "sha256:e173cc40cecb268ea35d42360167040509a7b6da104ff68b80b3405184b9edf3",
+      "input_schema_hash": "sha256:e94fe065ea931059debe266b7ec49f3f79226723c72925119f81445bcd0c010c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "locations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "locations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "locations[].latitude": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "locations[].longitude": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a840a0bc373fc7b3ee895672c0224ae34d510d846806a592fa59886ffc791f4c"
+    },
+    {
+      "name": "maps_geocode",
+      "description_hash": "sha256:212aa6693adcd08090db3db38ba752e36942cd5a8a0c40b6ca13c91af0d4197b",
+      "input_schema_hash": "sha256:6f70d8cde2a32a66046095c835c37bf9a55bfa1e85d5de3efd7f8831dcd29786",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "address": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:96fd8f7da56c7e4d48ed3f1b81d145188f09b1dd23de49dd0ef426f152387107"
+    },
+    {
+      "name": "maps_place_details",
+      "description_hash": "sha256:4ea3fa207f2796c70fd04d798ca209d4ef6b27ed05216f9edf9b4a211a0250c6",
+      "input_schema_hash": "sha256:5d1fa41fef5c46ec8222130b58f94bad7747809d4dbb5ec9ee756169c774c85d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "place_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d411352ba6d3e8a541e3ac8516a8ac31aeae39aab939e02ca04aa3cd2d434deb"
+    },
+    {
+      "name": "maps_reverse_geocode",
+      "description_hash": "sha256:f8fdbbd921f4a91520d919c0bcd451cbfcc4a000721923b5c5d8b096f645ddfa",
+      "input_schema_hash": "sha256:305d47e6ecb4356781ef991d76d4f8c5ede1f72a3d770724d9c807ddd39a75d6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "latitude": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "longitude": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4f63dc41f7a00054d140d5b849008047664864e1ba35ad9ee5c83d58dfce3b0d"
+    },
+    {
+      "name": "maps_search_places",
+      "description_hash": "sha256:36dfbceadcbcea28e4f3c203de32b90a9cf39813dde68178ac1822477a089bc2",
+      "input_schema_hash": "sha256:3f343036b9511380b0fda54a55f0a30e4e202de5d821d6d6cd890f6e2a3a8e5a",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "location": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "location.latitude": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "location.longitude": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "radius": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:75d20cb620f8cd4365b0b95ea813cd24aac9ecb10c08903c5ee7e881a834de24"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/maps_search_places",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:0c40c2c79ab140ebddb9ecd02458630b6be127fb5f6ac11a7f109d9e2dbf4a2c",
+  "pin": {
+    "created_at": "2026-09-03T11:50:15Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:50:17Z",
+        "bound_digest": "sha256:0c40c2c79ab140ebddb9ecd02458630b6be127fb5f6ac11a7f109d9e2dbf4a2c",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

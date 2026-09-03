@@ -1,0 +1,1771 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@executeautomation__playwright-mcp-server",
+      "NODE_PATH=/cache/npm/@executeautomation__playwright-mcp-server/node_modules",
+      "node",
+      "/cache/npm/@executeautomation__playwright-mcp-server/node_modules/.bin/playwright-mcp-server"
+    ],
+    "url": null,
+    "command_digest": "sha256:fa7720be3753d2a440266265de7a01635ace727d32de842d62c8a8cf4761ddee"
+  },
+  "tools": [
+    {
+      "name": "clear_codegen_session",
+      "description_hash": "sha256:6d50c9fc842b1a0a9634f975ab59de37b23b2033a7c64ac709de5ae88e24df90",
+      "input_schema_hash": "sha256:a825c87ca5b2668f0a4258aad706f20efff5c3a859a2ebb0477bc6a469ece667",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sessionId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:bf4487b078c9f63ea731cdbe438d64cf783b323d4ca0846e19f7055a6e664db7"
+    },
+    {
+      "name": "end_codegen_session",
+      "description_hash": "sha256:ad36b959a43e9abf990e3531891250f2608ef885e0bb71123e6cb2b0b075a89d",
+      "input_schema_hash": "sha256:4651db55208578dad44f23945a4d269fb7ed1eb2200d2a6fc5487e5c279db72e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sessionId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f94e5dc4d74cbfd0642f74a62abc624329b6d5b41d182c3e0a963f49040a514f"
+    },
+    {
+      "name": "get_codegen_session",
+      "description_hash": "sha256:069c009681c9bd82a6bbd7a2706161bd60c102886d8588cb3a3285079c2b4d99",
+      "input_schema_hash": "sha256:a24eae2bd4791c86f60f7ab320a486454cbf73713d8a2807a670486e3451af5c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sessionId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7c71e67021aee9fe8ad224302d9ba4c215c360d24737d41e95d670405804f4d8"
+    },
+    {
+      "name": "playwright_assert_response",
+      "description_hash": "sha256:17e73bed46ab6fbcf415cfbda011ecf5e61628e882b2685c80522dbd9941f577",
+      "input_schema_hash": "sha256:e318d42f7ec978121dcca9753d1051b4d3cd5b2f3accf5dc0cb6b77521f5bcae",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ff8e202e26da9d087515e17fc1fc057fefeceb8c3506cb69b7ecd0e1314698de"
+    },
+    {
+      "name": "playwright_click",
+      "description_hash": "sha256:4528c82a52d750b37f7fa369e8c0b507c356e0f5676820ce38c716fdc27d4bc2",
+      "input_schema_hash": "sha256:04020bb1ba79bbae7bc6799338421c4283ba6882171d091275d6294ff4f10c73",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:808bbcfa128dca60e017264a439f89c1bad71934d2be5b8e6a2154d7baa26a8b"
+    },
+    {
+      "name": "playwright_click_and_switch_tab",
+      "description_hash": "sha256:0b110c59702864325ee2f53be5ec69334870b7fb3336f399aed84fabee4f34e0",
+      "input_schema_hash": "sha256:d7e2da06e7e8f0fa5be2c7b9d7e3c0c59f440b3d9802d925de423dbfb80969b3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:08f2952e50d9970d1e4e16e3688de830b80e7fe5b0652ecee6ee003738a5eaa0"
+    },
+    {
+      "name": "playwright_close",
+      "description_hash": "sha256:5142660d6be43d672f9dc85e16ea97c8766e985c6eb86cbee9eb5f37b6263863",
+      "input_schema_hash": "sha256:c8a1ac469a826ea3547ac220c7bbfdcd6b58080d4ec596ff2a0149c5ccb9b699",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d66f1f3e0eb739f34252857450d8341bb980a5473ad8b416e17ed9ecd53fa1b0"
+    },
+    {
+      "name": "playwright_console_logs",
+      "description_hash": "sha256:0a6acb2f9fa0e0e38fabaf928ca6256148873a9aaf4d1cda9d43b157d0dd142c",
+      "input_schema_hash": "sha256:b11861cc31da9cc563dbe78334d349cd46d277f510bf8141b73b80b1f5aaea5e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "clear": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "search": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "all",
+              "debug",
+              "error",
+              "exception",
+              "info",
+              "log",
+              "warning"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:666fda78da5b68badcf2ccaac1b3e616b0a3033c40ea86645a7573cb02253ddb"
+    },
+    {
+      "name": "playwright_custom_user_agent",
+      "description_hash": "sha256:af838a14e0fe4d089bac8efeb7805571a2e08a4a4461849c2ffdd54cddfbf990",
+      "input_schema_hash": "sha256:b108c65161fb95931ab93f798a86d8c385f7650a560e75b19f509b993cedc3a7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "userAgent": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7373f28e27d2ae1942c14ac79a8bfeab78831422b36add04f42c026fcbb3ae47"
+    },
+    {
+      "name": "playwright_delete",
+      "description_hash": "sha256:5ba4f862af623fdab9c78b352f4241197a23dc9cde0ac085ee02cf3e474fa540",
+      "input_schema_hash": "sha256:3a24193e225611db06952c444f32a28f24dfdd3d6a9d2ec67c7ae2a816228b2b",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "headers": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "token": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c4d2c82d3ed7206e7db9e9a391d178cd9d493b4a2a2c4adbf48ebb95c604ed17"
+    },
+    {
+      "name": "playwright_drag",
+      "description_hash": "sha256:c31b0fa002422272664e6d864f2316d20f3c940f85927731afe90b1c0fb9727e",
+      "input_schema_hash": "sha256:ee04fa2d71d3cc58012552cbb6bbdec665267a1f6bd49de9b2282aabb920aa08",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sourceSelector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "targetSelector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5bd0c11364582565e00f3df389a12560edf5c845001dbfcd174565e35f906035"
+    },
+    {
+      "name": "playwright_evaluate",
+      "description_hash": "sha256:b00e5dcf23853b462ac32749570ddc55bef82afa4310903ab35ea322dc2f30dc",
+      "input_schema_hash": "sha256:04d6f1dffde518899fc76eb713dae3b6ee44d36ad09482e1a373fd3139068e6e",
+      "capabilities": [
+        "shell-exec"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "script": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9eb27dce453a6e00596675c99f9c27cd7c26d52833f451ec4517d3fdf60bb3c8"
+    },
+    {
+      "name": "playwright_expect_response",
+      "description_hash": "sha256:31b1777500ed9c15eac6ea166036b6b7695de266a8b2196073fdd79bc259c284",
+      "input_schema_hash": "sha256:1e0202f3113303d690ec3033d70c13851715209f687daf74ee2acf80410ede92",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:05a1cf082d09b86ec9dd0b3bf97bd7be90dd7f6f32ac97631c39779fd2f4c2a7"
+    },
+    {
+      "name": "playwright_fill",
+      "description_hash": "sha256:1939b0139e365a6b6b6be2a8db39a569af376eac9614121e1bb0d3a044c91bfa",
+      "input_schema_hash": "sha256:5b34dcced7c50165ff42b3934d97ff748d3dac5733673f89034dac5fbdae418f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e18bd242d34d219ff397ecbf296b8ec746eb0c587ef9b6a9cc2f87a98548ca11"
+    },
+    {
+      "name": "playwright_get",
+      "description_hash": "sha256:64ae8974d1e455c2a37a1311c4e244c72af708af6a7501715cdbfeb445b86e26",
+      "input_schema_hash": "sha256:73e2d99e357cdfcb71eb09251350ec0efcc6f1f39f785f16bb0fa32e4c8e3f3f",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "headers": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "token": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2cfb22c5287b90fb86546e69818c416dff9ff24a499a224bf8b5e6a9dc1430b0"
+    },
+    {
+      "name": "playwright_get_visible_html",
+      "description_hash": "sha256:55fbe87475c61e6e34ee26aa95e7a68e9d7b720e22ee8e77c1556485db7cbb43",
+      "input_schema_hash": "sha256:a968f0b2f5d5559d657272a452e7f2f9301d51aff94e27572e1ccf1c3e39e082",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "cleanHtml": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "maxLength": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "minify": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "removeComments": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "removeMeta": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "removeScripts": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "removeStyles": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:13166d25c5bf395f21dba6b982c66ec6a7e415e785e18521ee6d67a5f2fdb5ed"
+    },
+    {
+      "name": "playwright_get_visible_text",
+      "description_hash": "sha256:c54f7df5240d4b808f2c61859357999615f2845a1eeb1d333dfb8d5afcbf7537",
+      "input_schema_hash": "sha256:c8a1ac469a826ea3547ac220c7bbfdcd6b58080d4ec596ff2a0149c5ccb9b699",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9a1d78019c8690b64a6af35c4c9ae969f535f6bd8b749789669d0cb574cd6088"
+    },
+    {
+      "name": "playwright_go_back",
+      "description_hash": "sha256:1a3fc1bae66d097a1f319d39e3b6e33bd427cf1bafb6e2b680b1e5fa24638970",
+      "input_schema_hash": "sha256:c8a1ac469a826ea3547ac220c7bbfdcd6b58080d4ec596ff2a0149c5ccb9b699",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ce6c0da78c8b620294d1b66ced62c8f2ffbf8d0b4799007e9426732db8947032"
+    },
+    {
+      "name": "playwright_go_forward",
+      "description_hash": "sha256:36970f159ac67305c7a1b1853f843871812593c7c05ff1d08d372022223f9763",
+      "input_schema_hash": "sha256:c8a1ac469a826ea3547ac220c7bbfdcd6b58080d4ec596ff2a0149c5ccb9b699",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f98720c7740d8250139842176e3345837d59682368a7fb8bba6ceba87172821b"
+    },
+    {
+      "name": "playwright_hover",
+      "description_hash": "sha256:6c370eb9d9da59af0621a288f57830a26008f05a7ed585c60c57c5ec1ceff705",
+      "input_schema_hash": "sha256:ee23b8b2bb16b7d10ae1324f48a1a93a921af09067c752576abd9a16b227c3ff",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c1d6a7d343aa21a4440b6a75963720c65ecd0ca69ca71ac16c8955c98ecad7a8"
+    },
+    {
+      "name": "playwright_iframe_click",
+      "description_hash": "sha256:6f878cc8780b6fd3579e68321c716e93e91867f55270011c81b7d965f26b3f8d",
+      "input_schema_hash": "sha256:c2284be9a33b506c70027d27ce52d24e6cd0ef5b84650ffc7aa9fecd9ad3b51b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "iframeSelector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:23e6b99c38bb98181221da1eb27c7041fcaaa60bb49e7159e3f39ecedb2a65de"
+    },
+    {
+      "name": "playwright_iframe_fill",
+      "description_hash": "sha256:b6ef0180a78dda836b15db88a4ecd894a9485aada3a5098a5cfab293a4b59180",
+      "input_schema_hash": "sha256:d87d1ea5d386008fe9465898f0985f8e55ed55d13e9659a9be575e5ffb0046cb",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "iframeSelector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:91a4cf849e35f44d8be08685e8c54f117cd535d3cc216a4cb3ccced901c1a8c2"
+    },
+    {
+      "name": "playwright_navigate",
+      "description_hash": "sha256:c47ab66fe06057eac7d17f9233c88a8293d91f4c7c1bc92c233d08de01bb5ad6",
+      "input_schema_hash": "sha256:fba892fe97e133e9b94587705e63107237afdb01ccec4a77cc8ce4e260ed4edd",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "browserType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "chromium",
+              "firefox",
+              "webkit"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "headless": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "height": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timeout": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "waitUntil": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "width": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:fce6e976ba807051c9533224a7e6630134c09e9f11c3e421421d6146d38a38b1"
+    },
+    {
+      "name": "playwright_patch",
+      "description_hash": "sha256:b118120123a94db001c01c8d98db64018589d8a64a79e033cf080b2feea25bff",
+      "input_schema_hash": "sha256:53668a41ffbb95af2af92929588499a642168de8f0e2480b942b07b16f803003",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "headers": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "token": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:63a66ef3d808a270bad09b5d264ef1a0669dd8795846a99127bcd8ba3e1e579c"
+    },
+    {
+      "name": "playwright_post",
+      "description_hash": "sha256:ff6aa9657802ddc14e614a8de2a6bf848b6619d6b6237fe1d9fb5952cbfa6299",
+      "input_schema_hash": "sha256:23f16600cd7da9d02a2f02ea1e339d9453b65640d07a15d79f6051b18df10c14",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "headers": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "token": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:39d88a272767920619ad09918df407cd75c6f134278351e59adfdd543772caa2"
+    },
+    {
+      "name": "playwright_press_key",
+      "description_hash": "sha256:6e1ae0719604f730eab94b607cf7518bf0cbf336db887218269464824080a781",
+      "input_schema_hash": "sha256:b8c44b17b6993d249a7a8b555147b2672ae048542f8a8bb2260af1e837373230",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ba23e8c2115932d02ec245a98ac694008f522bc3b259823413079a89d268d600"
+    },
+    {
+      "name": "playwright_put",
+      "description_hash": "sha256:a7d58f4df12d0e5d76b2e16d08ba798cd5df55bc9ce6b9288ccd0f011c2c9b15",
+      "input_schema_hash": "sha256:54cf23c2b702f9969303f1f73cb61721476720ac33e0ffb27e7c58c0e07db34f",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "headers": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "token": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cbefae73ef4b6c0401efdaefd9b4e180368295d467a62c2b0d852e7aa0b6d78a"
+    },
+    {
+      "name": "playwright_resize",
+      "description_hash": "sha256:3f38f119a047d9a2dc90ca3073da32bbb2d04973664bd14b6bcd00f2d6120ed0",
+      "input_schema_hash": "sha256:321fafc1d37bc90204807d79e22ccbdff997688dc300d3f2485aab98c667037a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "device": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "height": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "orientation": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "landscape",
+              "portrait"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "width": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:fe93f08b6353e6d848d9bd563b7c764f39d4f9d1424eb4569ccc1c55159264f9"
+    },
+    {
+      "name": "playwright_save_as_pdf",
+      "description_hash": "sha256:b4162b2a4d5d8d7df6bc621c7767fa61f1bdd6ac801c9413bd2d9af384f76af8",
+      "input_schema_hash": "sha256:ab02fbd795402e6f221cb9f75e8245e8ae5676418be4f45d9f4d3110d2fd7cfd",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "format": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "margin": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "margin.bottom": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "margin.left": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "margin.right": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "margin.top": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "outputPath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "printBackground": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2cbaaca3dfb2095c98eaf3c45aaaa5f1ff4d3dbf9eb0f9b01416115430f08a9b"
+    },
+    {
+      "name": "playwright_screenshot",
+      "description_hash": "sha256:fe2baa00c6c5c8c210ccc260dff190b2a9b36b99f4f504dcdf943875c78a7acd",
+      "input_schema_hash": "sha256:a4c9cbd30bec99a11d733fc5c889d6fe708834559dd2f2f17ea2f8f0611f666e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "downloadsDir": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "height": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "savePng": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "storeBase64": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "width": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f916fbcf7f070afb3c85063b3f5d4ebe842f07cf336f029c43519496deeaac28"
+    },
+    {
+      "name": "playwright_select",
+      "description_hash": "sha256:1706b826412b5737583de3df8a053266c07bfe80d286b438909cd2c87ce006e4",
+      "input_schema_hash": "sha256:42208b19499bd8183fd6cdb8043683038c3fc04b87f68fb3a7271848a7bb99cf",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:27959f61630b9139bf1accf5137efb5f89ec6b5ed89cf00725c8313fcfb355da"
+    },
+    {
+      "name": "playwright_upload_file",
+      "description_hash": "sha256:948322238db9a77db6f9e8021a2393b152502a54cf9e3e6280d16ee624d4ea5f",
+      "input_schema_hash": "sha256:f9f0a26a5734d17f4e444b2c1359a29505b877fab69309f42a0b1c4d0ca4c72b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filePath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "selector": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5b4b6619e66004f82c81127da1cb0d007d79e4eba487ceddfab3ac7c515ff863"
+    },
+    {
+      "name": "start_codegen_session",
+      "description_hash": "sha256:f8389482caeb14ca22574de70338db56365942aee1cfe3675d0bbfa5e322ba34",
+      "input_schema_hash": "sha256:9b97a5fff3eadab6ab79fbb24a91dcc911494a47decdd1fa60df94a8d487b1aa",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options.includeComments": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options.outputPath": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options.testNamePrefix": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:37ae221bef6d435721ed55583be3aab5db7722e2628be89055dfc6934ce7e8c8"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "console://logs",
+      "name": "Browser console logs",
+      "description_hash": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+      "mime_type": "text/plain",
+      "entry_digest": "sha256:19300803892770f5af5b8125c0485cc13c321a433deb8c9f790cb37529d44a5e"
+    }
+  ],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "exec…(len=40)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "exec…(len=53)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "tools/playwright_custom_user_agent",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "play…(len=28)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/playwright_delete",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-SHELL",
+      "severity": "critical",
+      "target": "tools/playwright_evaluate",
+      "message": "Tool derives capability 'shell-exec' (property 'script')",
+      "snippet": "property 'script'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/playwright_expect_response",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/playwright_get",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/playwright_navigate",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/playwright_patch",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/playwright_post",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/playwright_put",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/playwright_save_as_pdf",
+      "message": "Tool derives capability 'fs-write' (name token 'save')",
+      "snippet": "name token 'save'"
+    }
+  ],
+  "overall_digest": "sha256:d41ace5a009a44c8d2fedf07c16e3325f93f47d033154ee9a4e40c2048ce32f3",
+  "pin": {
+    "created_at": "2026-09-03T11:53:31Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:53:33Z",
+        "bound_digest": "sha256:d41ace5a009a44c8d2fedf07c16e3325f93f47d033154ee9a4e40c2048ce32f3",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

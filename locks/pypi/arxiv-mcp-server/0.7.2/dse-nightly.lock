@@ -1,0 +1,1175 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/arxiv-mcp-server",
+      "NODE_PATH=/cache/npm/arxiv-mcp-server/node_modules",
+      "ARXIV_STORAGE_PATH=/tmp/arxiv",
+      "python3",
+      "-c",
+      "from arxiv_mcp_server import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:484c359a2e97ff6f30d4fb6167f38d93ba92a23ff5e1e60a6d4a8c3764debfdf"
+  },
+  "tools": [
+    {
+      "name": "check_alerts",
+      "description_hash": "sha256:115b029f48053e87cd42d191450a392fd24cf7baf74015705bade0d1843ebe19",
+      "input_schema_hash": "sha256:6dd890d1a96900f6179ab70c0ecf2528f73b150af3aaac87216440bda6796d56",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "topic": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0ac252664719c6a7c5c6645554a143027f203e7a4e71ca58643e51fb85e16896"
+    },
+    {
+      "name": "citation_graph",
+      "description_hash": "sha256:a73a9665a7d6460f877ff5f6f6e4653d4022cddb3fd2466366864e9a42a2b1bd",
+      "input_schema_hash": "sha256:8e68286b5afccf4e0a6c78fbe364dc9d2634e724ca992b183bacf460f7466381",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_citations": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 200,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0a6e771d77cd9f96f1303a8eea4e6c8c45ddb719e08c8d97a8bc5f9c6783fb4e"
+    },
+    {
+      "name": "download_paper",
+      "description_hash": "sha256:e5b3a65a25536fc8fbf9a644b9b76f72c6561334dc5dbb450904ccab79a3db8f",
+      "input_schema_hash": "sha256:3936dc9e09410c21631f67a44f3114218e2ddecdf2d6decc4640b1d8cef7217e",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "force": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_chars": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "return_full_text": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:56a476ac0c7c50945263d6d284df69e1e50eee81d51c499a8c7c9e72562ea472"
+    },
+    {
+      "name": "export_citations",
+      "description_hash": "sha256:bb753a3751b575c0a76bea64339993ecfcde80cf94292fa3ed1a86fe90b675bc",
+      "input_schema_hash": "sha256:0881885d6e4a68f59ffa3e2e23431b8e255781a5051a1dbbc7f0928fbad14cff",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "paper_ids": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paper_ids[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a82c291ee5b66f980336aaed269dfe1106fe9be41ea144ddcc9860c73cd02445"
+    },
+    {
+      "name": "get_abstract",
+      "description_hash": "sha256:10209d1bb1b5b70d65f318e3e8828d3e8c7c9a2d5ad217e865e2cb3c930194b2",
+      "input_schema_hash": "sha256:ef2980a2c7456b21f465516135f6cb6e64c79e51c337d34a2411d631b3d0d7d8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:39c13f33563dfe15175a1194f69ff4e2e8bf46bedcf99f654f0967ac841f7eb8"
+    },
+    {
+      "name": "get_paper_latex",
+      "description_hash": "sha256:93be51e804517658818bdc9d53af211a71ccdb7c80226ecfae03ae78610bff4f",
+      "input_schema_hash": "sha256:1d1284a1fc8efa54695ced2584f69fbbd851b1db456bbc93605aa4e4fd4b1eb6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_chars": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50000,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 40
+            }
+          },
+          "return_full_text": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:74d5f0a7dba54de98c62640f39b48a11f609abd2867043a6205bb298ed6d741f"
+    },
+    {
+      "name": "get_paper_latex_section",
+      "description_hash": "sha256:4284e0a173f8ec4f15eb7f2d792cbf1945adeaa3df2ee09c68181c152171e284",
+      "input_schema_hash": "sha256:991407e2c8218fe42045a4fd513659d579bd257f24745827fb1c4af415184f72",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_chars": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 50000,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 40
+            }
+          },
+          "return_full_text": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "section_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 200
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:eb23fa4620dd19e511854aff8bad0b6ee3e8bebe4430be79a747093c5533a77a"
+    },
+    {
+      "name": "get_paper_outline",
+      "description_hash": "sha256:653883d682b5e5be94bdba46c0a31788ce7b7a1afd96b437daebee33de39f46e",
+      "input_schema_hash": "sha256:e864597fd2def47991b20bcf37cce3fca08c96ce6f156228bae17557844a4d05",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_sections": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 200,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 40
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:528b88e46a7493066f5def9feb779bb508c2c31f19603232ca1c34d33731f31c"
+    },
+    {
+      "name": "list_paper_latex_sections",
+      "description_hash": "sha256:49ab9a5b3045e4ab97cb041e67de4f6cbd85e34290f23abeddff40d83fb02c28",
+      "input_schema_hash": "sha256:e864597fd2def47991b20bcf37cce3fca08c96ce6f156228bae17557844a4d05",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_sections": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 200,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 40
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7664c9e3639e9e0b7db3de034c57671c779fae9acf34d4877403114acdedc034"
+    },
+    {
+      "name": "list_papers",
+      "description_hash": "sha256:b2fb60fd21f3dd631c8345f4c68ea8f0356138c9155af39dac0d46d5d5db683b",
+      "input_schema_hash": "sha256:f789aa8c0a8ca78b8b4adf544ef1b78bfd51615f66d40f441f8e8c433c8101e8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "compact": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:19c8e222bc8d05be353339edec10b2968fe1230d570d96bd327a17e58b459330"
+    },
+    {
+      "name": "list_watches",
+      "description_hash": "sha256:4d76346a7071f16ede6489293fb083bf9418e9a75b7f3be12d4c51ce07933038",
+      "input_schema_hash": "sha256:99334726611ccf58a148b0814696bfa6fe08c1b2d027e946beccf5a74331c9aa",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d84389b0bcd8c92fa6e42a19413cb98235be328885029bdf834ab1411f3aa5cb"
+    },
+    {
+      "name": "read_paper",
+      "description_hash": "sha256:3f546dcb183ac31fde0b741e19bd36c9167b8cefa1cfbcdae08066c9b29a5865",
+      "input_schema_hash": "sha256:d3df7286d1854bfa0100d53843956c3aa7b971a770f3b924b8f59528786e8a0f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_chars": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "return_full_text": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b57bcbd3c711ba349105861202b71857455305f2529ac17e315429ee9f7e3b87"
+    },
+    {
+      "name": "read_paper_section",
+      "description_hash": "sha256:0126ff26eae1434e9e222b211749949ef2eca5dc0ae0b6fad50bd1b4a5c6c8f0",
+      "input_schema_hash": "sha256:c2d9a1324e010b68d29c4ad7647adbce9c2f4cdc00ba7880a1d5f45abe39af43",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_chars": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 40
+            }
+          },
+          "return_full_text": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "section_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 200
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e7746d9eb28976989552936f4b0c18e935671680e830c890d749bc5be9c3475d"
+    },
+    {
+      "name": "reindex",
+      "description_hash": "sha256:7c2e87583a6eabbce169a80d42395597136c24871ee5c1ee32eddbdfb4fcfb7b",
+      "input_schema_hash": "sha256:94e4fd0549f8275eec18402827736954616d3a11dfbfdfc5395ee3a423cd02d2",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "clear_existing": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:aa8b97d8418dba987adb02139404860a947d48d7dae3be8d137991606a95c991"
+    },
+    {
+      "name": "search_paper_text",
+      "description_hash": "sha256:89e0c615474727a8924b1f25b91324d349029e67002e0babbd706aa7b3f33a96",
+      "input_schema_hash": "sha256:907f90c2d3118b7b16ff13ce54ae3c3b1428b44899967e0c676835315c95c731",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_passages": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 25,
+              "minimum": 1
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 40
+            }
+          },
+          "passage_chars": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 2000,
+              "minimum": 64
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maxLength": 200
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:47fd44ea63e88610a9a065f403bd7f491926b24938ea1b5eb5495f88f1b5efdc"
+    },
+    {
+      "name": "search_papers",
+      "description_hash": "sha256:807d6477e45a697d323ad88dc0f26ab2af8ba88bbf40902dc68630ab76bcb003",
+      "input_schema_hash": "sha256:3d0c4325ea9a2b93e823f8aa25df647c186f2cca2d14edad273b63ec19156750",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "abstract_mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "full",
+              "none",
+              "snippet"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "categories": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "categories[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "date_from": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "date_to": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_results": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort_by": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "date",
+              "relevance"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:95e6402d7d6bf5a232ba1096f96522c4a2d25320e7e25ea2bede94e0f62164e4"
+    },
+    {
+      "name": "semantic_search",
+      "description_hash": "sha256:d904ee94cd7595351477ae0d87257e7077c24334f5ececbee422e901e516d979",
+      "input_schema_hash": "sha256:19541fb23f5c510b345576397ce9cb3dc71f3bd28030bd774fc356c340ab47c1",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "max_results": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paper_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:955533f6fe0db29b05b98577e1bb02e0d847489bd8802f12fd4445ed824393a4"
+    },
+    {
+      "name": "unwatch_topic",
+      "description_hash": "sha256:2a67d7d821ee410cfe60389abfb04a7fc867ba3ed76d955f1a7a7c1fbf6897f5",
+      "input_schema_hash": "sha256:0389febf0679be8cf0198ca5c36463d700ba8ef9ee0ef271e92c02acb8dc480a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "topic": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a8fe32d561220974d0c6f8477004ee2b9766bc1985f428ab2dc087e4955ea243"
+    },
+    {
+      "name": "watch_topic",
+      "description_hash": "sha256:7d4dbd4435d74e0e13426d9ba6d0f0522d7dce971f1be58ffc311f753cc3a241",
+      "input_schema_hash": "sha256:ee8fc1819999cc54afd4996d06ac1ae9b39685c130c8a95c2a481fd09a734913",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "categories": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "categories[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_results": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "topic": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d28df29d97c55787556b90f34d914a0285ea540d1b4770727a2e7c2bf61c6ebb"
+    }
+  ],
+  "resources": [],
+  "prompts": [
+    {
+      "name": "compare_papers",
+      "description_hash": "sha256:985da2d97d7aa6945f3bb5945703edf932f52efbaf03cfaaf77864920b85ef9a",
+      "arguments_hash": "sha256:8fc9d6fbb77ae150ddb603e27e17a7897fd7d2972d8121abd91e22bc8412b669",
+      "entry_digest": "sha256:1fb6f404dc41e70a8ee638f611485e42482e4ca2a8b1ad7bcae425deb79f7aee"
+    },
+    {
+      "name": "deep-paper-analysis",
+      "description_hash": "sha256:ecfe9ec988b7af73e1397df2733480f9ce3bded4099f7027d518ca1ea72376ea",
+      "arguments_hash": "sha256:969a9fa07c906eda2d429007538f56035d8ed542a59126c7bbdec37eaaf1fd7d",
+      "entry_digest": "sha256:4a847e1d6a474211f31922ad628780feec318c43cc961de8d7a85629b680bd41"
+    },
+    {
+      "name": "literature-synthesis",
+      "description_hash": "sha256:4b33d41c1179e293da113c723fe10773372e6daa31662c4ea48e629638c6069b",
+      "arguments_hash": "sha256:139b386d73e90e5ed2d25f05116813a1e2421edd3d6d0ab2fd3eda300be411e4",
+      "entry_digest": "sha256:dbdb8f4e7d615086dd26f4b6b1ce2daf0ed63b5666aac1ea1d1dd7c0505c59a0"
+    },
+    {
+      "name": "literature_review",
+      "description_hash": "sha256:c2a5f0cf7628237a20763747c0f3e3d0ad351f5e30dd46efb7b0944b85313b42",
+      "arguments_hash": "sha256:7af00814db854273d09618bfb99285afd22ff28dc51d88578b26f7604c73853c",
+      "entry_digest": "sha256:541614592b11b6861d99c93393abdd9e1377a614cf27106a5273bc8182239ed7"
+    },
+    {
+      "name": "research-discovery",
+      "description_hash": "sha256:38d87660cf53146c9d2dc584e7df9e945ac20e1079bb13461a3890cca09d5be8",
+      "arguments_hash": "sha256:647389890fb589217c91775c9f2525d2545d27a6665e1c44543bae1d615cd04f",
+      "entry_digest": "sha256:cd29e5c7e7c239df79db69be39fbaaa1672fae8a4eba90498b08df4b180782ef"
+    },
+    {
+      "name": "research-question",
+      "description_hash": "sha256:d95a13de746583d67eca95eb574e727892443e23798096709dfc0398a8f0c085",
+      "arguments_hash": "sha256:692cf1d25bac96d1276706ffd4a4e4e7fddc3b5edb4537fdfa134c0a302fc199",
+      "entry_digest": "sha256:4ba7e7dec49a25ece345d0b4de8fa40e085f54666237375767859fec1c6b8862"
+    },
+    {
+      "name": "summarize_paper",
+      "description_hash": "sha256:9b11a5ccf63440f25bee02bc619049b59b3c740d8bb8fb4261704d972f4e7e15",
+      "arguments_hash": "sha256:969a9fa07c906eda2d429007538f56035d8ed542a59126c7bbdec37eaaf1fd7d",
+      "entry_digest": "sha256:a4dbad61712e699e8d42880c8991fd632f2d7da6f8b068f44e83680b7f778335"
+    }
+  ],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "ARXI…(len=29)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=50)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=39)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/download_paper",
+      "message": "Tool derives capability 'http-request' (name token 'download')",
+      "snippet": "name token 'download'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search_paper_text",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search_papers",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/semantic_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:d7c9ef9d75f930b0e80979c8616e39c501b5d1d5c6174116b553c7afe581fede",
+  "pin": {
+    "created_at": "2026-09-03T11:55:38Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:55:41Z",
+        "bound_digest": "sha256:d7c9ef9d75f930b0e80979c8616e39c501b5d1d5c6174116b553c7afe581fede",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

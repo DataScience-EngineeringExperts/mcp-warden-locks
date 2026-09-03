@@ -1,0 +1,1391 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@playwright__mcp",
+      "NODE_PATH=/cache/npm/@playwright__mcp/node_modules",
+      "node",
+      "/cache/npm/@playwright__mcp/node_modules/.bin/playwright-mcp"
+    ],
+    "url": null,
+    "command_digest": "sha256:c475795e0b9858c1c6381d5ba2fbf27d81dfadc7bdaf1a04cf1861166c96a01a"
+  },
+  "tools": [
+    {
+      "name": "browser_click",
+      "description_hash": "sha256:7d464021edd2ee01b2e8beb7b7abd3ca32ee3d91e4bc6e8b3c59b4dde91c5aed",
+      "input_schema_hash": "sha256:7fed82f52ae7018670d967e4429b63501948c80de2df2e9279ce4c103694d0d3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "button": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "left",
+              "middle",
+              "right"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "doubleClick": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "modifiers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "modifiers[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "Alt",
+              "Control",
+              "ControlOrMeta",
+              "Meta",
+              "Shift"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:20cf4f59bd818cbf6b30aae270533fdebb0bebb5469721939bc51140c3be0200"
+    },
+    {
+      "name": "browser_close",
+      "description_hash": "sha256:ffec1bd2ccca32938176cb8ea383abffdefa1dc99b6ac485ef737de273af1f83",
+      "input_schema_hash": "sha256:71fc596a20f27da3dec80050e5d1f553eba34aea24c2853b853488a811e6b892",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7805213f7e5d15b452538522b8dfa2fc13553279149d6579537d3159df7e2dc9"
+    },
+    {
+      "name": "browser_console_messages",
+      "description_hash": "sha256:2a0262a2876e6e49bf544d3f6171a93b5fefd89520ccbae26241cd1068613404",
+      "input_schema_hash": "sha256:d503685c2c343d3f67d58e4e72ecd680e5b452d1e7905f3aa40dd0f5e6093853",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "all": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "level": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "debug",
+              "error",
+              "info",
+              "warning"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b05803a91f56db2149427f97e65ecaa7fb6458b25bf6d7c586cf7c2909d47c58"
+    },
+    {
+      "name": "browser_drag",
+      "description_hash": "sha256:62cae5e529c727db636861f9a2496b41aa114678a6de455b1a611f58f9ceda32",
+      "input_schema_hash": "sha256:3dcca018f0b0e9341fee3c91b5420f82557a59a9d9763699e90970b2bd3ed1cb",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "endElement": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "endTarget": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "startElement": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "startTarget": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:10c2ebd5c036325827a60a1b5c4e7c4a23d86d8dd919089b6115d7e6d0690b24"
+    },
+    {
+      "name": "browser_drop",
+      "description_hash": "sha256:66607a19d796c944d9664187618a8e1aaa9ee2e11174ea269dbda15ef3b97ee4",
+      "input_schema_hash": "sha256:2f2a2c904744c935fc66547031c43b43466e86043f6c306624b536867b18d8e8",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "data": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c98db3737a397660b5c23951143be73a45604ac468f3cc862e5bbbb9f20a3eec"
+    },
+    {
+      "name": "browser_evaluate",
+      "description_hash": "sha256:04247cdeb33f691278fc55f138d15149bc2fbc15972c5f2b6f4c043a3b1270bb",
+      "input_schema_hash": "sha256:323e6acbb66440dd71d398d4f2acdbddc8af0714ed36da0e01eb35fede62e5eb",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "function": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:86249ecaa19388e7d0ca8692cd79d5d0199071ec5d73da98adb42760b8331a5d"
+    },
+    {
+      "name": "browser_file_upload",
+      "description_hash": "sha256:914a6c1a65a65487ec06041b8f405b281f4cfa656342f0c9c38a3c3e31213687",
+      "input_schema_hash": "sha256:c76aede191ef1e3bdd09ff177419a1e77a0e1f3f676bdd7c8053ac78e6a80086",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "paths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9a91437e975010b2f527eb863103a02e3f5c42c16d7b0c6bbc58b88da5d306d2"
+    },
+    {
+      "name": "browser_fill_form",
+      "description_hash": "sha256:771d85163e8e8994d00922881c58346a2951c0085beb11fff9da4ff5930f39eb",
+      "input_schema_hash": "sha256:c991223a68247bd517c0fa1b61db444178ff6ad546e7214936d29b8de4c2f2ee",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fields": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fields[].element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "checkbox",
+              "combobox",
+              "radio",
+              "slider",
+              "textbox"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4e77527bcfa0760038ec704936fc9d475002296b1ada142d5d780dda0d6b3276"
+    },
+    {
+      "name": "browser_find",
+      "description_hash": "sha256:e8bdb86d96e0429028a07ba7ff062194d4f0dc1c63f5cf2ed88b7341e7d18fec",
+      "input_schema_hash": "sha256:204f595563881a96f3f3830af62668b73678fd42dd04a57100fc55a3f39c8979",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "regex": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c66ab8a910eeb970887195cd20c12602632f4a372db9ca8340a0ea2326670a42"
+    },
+    {
+      "name": "browser_handle_dialog",
+      "description_hash": "sha256:f3a6532912c5a270c56b130bc9bbfb1900f47a1139fdda0c092c3edc4d8b2cc8",
+      "input_schema_hash": "sha256:2d4cacf71e9fd7f902bebbc84f106614b891c2654de32b71b1f0d629a10d8b5c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "accept": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "promptText": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b507c7b81464e58c6f3ad7808708504d052b9564831f28fcde5dc1cf142c10e6"
+    },
+    {
+      "name": "browser_hover",
+      "description_hash": "sha256:e8324a0a522bca4d40bc10854ebabd806676abf765313bcb48d3923d3e0a1cc0",
+      "input_schema_hash": "sha256:3b0a5a3333d051dba9f6b023c341eef00f0e5264bef37bc0a11f83156937e803",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:dbf5702d95ab04e0f147ab2397a0966a90ac64bd723a238f9b0ecf9ba611ed40"
+    },
+    {
+      "name": "browser_navigate",
+      "description_hash": "sha256:c47ab66fe06057eac7d17f9233c88a8293d91f4c7c1bc92c233d08de01bb5ad6",
+      "input_schema_hash": "sha256:2165538e098634780eec628947d795a2619b4d2e3cef0e36d3084ac46abb94f7",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:223eb2e0ce82df2bb53a94a633b6640702d611e3a29c3ba5b7e8443fe49b8172"
+    },
+    {
+      "name": "browser_navigate_back",
+      "description_hash": "sha256:e2df2fafb8ca0a695b2bcef478ca29898e1c5ee46cd9e1214d09052737ad9bf1",
+      "input_schema_hash": "sha256:71fc596a20f27da3dec80050e5d1f553eba34aea24c2853b853488a811e6b892",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:3e328be537081a7d4e78cb9530732cc7afa6a96afe03c6028495ea159262fa59"
+    },
+    {
+      "name": "browser_network_request",
+      "description_hash": "sha256:275a3c1fb570d85aae6643feee176b829e275ed78755e232ef60338b273eddb2",
+      "input_schema_hash": "sha256:d041ab91391ddbdb960c9a5b10f741af3baabdad5137a41c5f3111cce14b2872",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "index": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 1
+            }
+          },
+          "part": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "request-body",
+              "request-headers",
+              "response-body",
+              "response-headers"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:28986192aecdff0d6a1ec34c47772ab70ad0c5d26cf71dd941c56e205f34938d"
+    },
+    {
+      "name": "browser_network_requests",
+      "description_hash": "sha256:b82cacad2791246ae875f7be18c5a432970a24f9469bcc7763c56f3957b162d6",
+      "input_schema_hash": "sha256:86d566ed7630b826e22f89987152935cd5963d5d31cf04e90c33f7918389646a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filter": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "static": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e1fd86e64c8e71b61c625ea60d95972c170ae4e1301779527b5c645eddd93826"
+    },
+    {
+      "name": "browser_press_key",
+      "description_hash": "sha256:86b62b7dfb1d29cb849d8c599faf04b1f531dbbea31c5a9e58020a3fd9b4d4c4",
+      "input_schema_hash": "sha256:57a7f701ebf865e5a7a759c15e8d04bca12cb756c2e3f4ae7280070bb6e310e2",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:aab429de478ff15cd984dd7d521ac8087581d41d3dd3cecad913e3d24377ff03"
+    },
+    {
+      "name": "browser_resize",
+      "description_hash": "sha256:2532274341b2ef4716cc5a0e1c782c14f6a3dee2fe716e7f2a3a0ce80ddddd32",
+      "input_schema_hash": "sha256:4a80d1f511092cf5e94b689f81afd36ec42b0ac74a510f7220a7c9987af00b84",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "height": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "width": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:00a964a360dcb5b23f51b143b5e2a489bd1a383f0c6d862c1e2dc4a5c6b59523"
+    },
+    {
+      "name": "browser_run_code_unsafe",
+      "description_hash": "sha256:f04f2520590c706a774fb2bfb1556f81047ea302d8c709d93facdd061f262580",
+      "input_schema_hash": "sha256:900ecef9fc7ac8229624f8faee37b95d5353ec2b0479edca1b92e12a816558dd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "code": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c68d9bbd649ba3e3e565b099e8e69409df4c545c1b6a09c24700fd506ee8db1c"
+    },
+    {
+      "name": "browser_select_option",
+      "description_hash": "sha256:eb1a78927b0c9c55913b027799dccf321c758d370d0dc9fcf33c3e1901a057c9",
+      "input_schema_hash": "sha256:03b097752bdb41817ec0a6a259062598e5c85c1a8c7106d0f2fde506321096bd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "values": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "values[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2cc9cd8b1893c985f3e18b6e483eb03ee79a1e78f18722815aaf4013a982b242"
+    },
+    {
+      "name": "browser_snapshot",
+      "description_hash": "sha256:22833ef78f0c2789c081d77d28adce060395b354a6dbcb3fdc324b8b6ab98274",
+      "input_schema_hash": "sha256:36ee5bbb5798a52e26015635e1f6015b8f4b62f44119d53ad2516837667fcd61",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "boxes": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "depth": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5307d48f04c0355c17cf9c8a86c47cee7af59663a0326b4234d72ddea4adec77"
+    },
+    {
+      "name": "browser_tabs",
+      "description_hash": "sha256:8da21efae81d7dc8075fcaea1fdb3cb17dd4f571d2cbae421b6312312e93314b",
+      "input_schema_hash": "sha256:268e0f3eca6295e0fef99d2ef85adfbd3d843c054087817fe96e02ccd8145711",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "action": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "close",
+              "list",
+              "new",
+              "select"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "index": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:dbcf7a7807bd6c79d163693d247e91db16f609b599ab493a7a0bb1341308df5a"
+    },
+    {
+      "name": "browser_take_screenshot",
+      "description_hash": "sha256:f6b6ec720971f93e707340ae7bd2ea22899c5f27b0ea6b16c3b6920083ca7e6d",
+      "input_schema_hash": "sha256:8862e5da1b5030fc1a927c9ead00f2690872f24f282bc0d4cc3dbf017e041b34",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scale": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "css",
+              "device"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "jpeg",
+              "png",
+              "webp"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8867feab01f5d83f653262e525b5e2a86d4fca7cacb68ccf2ca6523c3058d95a"
+    },
+    {
+      "name": "browser_type",
+      "description_hash": "sha256:ec69f99a6bd0b8c2faa171c824d8791677e45878742babf62161e5c77c8158e9",
+      "input_schema_hash": "sha256:ed892740ebc14bb2a49467c08b8bb02717d50f1f3ef8ed06d51abf5ebb3249da",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "slowly": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "submit": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:73fa3cade9d1e31fb54faaa9d33904c31d99908e91e53dc6ec3a41c038f06b04"
+    },
+    {
+      "name": "browser_wait_for",
+      "description_hash": "sha256:1a33fccf390170eccd5f98080fb7b25cbf9fa108a07003c254e6418eecbb6521",
+      "input_schema_hash": "sha256:004b7fd9ce085dd4bb13f67caa6d23a23078ef24342e31c552a377a010e36d5d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "textGone": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "time": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8e9aaddfaf42a43846d5a82b071d99fd1a027616a6ed038fbb8fda537c211c54"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "play…(len=28)"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/browser_drop",
+      "message": "Tool derives capability 'fs-write' (property 'target')",
+      "snippet": "property 'target'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/browser_navigate",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/browser_network_request",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/browser_tabs",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/browser_type",
+      "message": "Tool derives capability 'fs-write' (property 'target')",
+      "snippet": "property 'target'"
+    }
+  ],
+  "overall_digest": "sha256:4eb3d12caf4a0109f15da069c77b66139ffa2bb72b8925abca5815bc32030df5",
+  "pin": {
+    "created_at": "2026-09-03T11:51:33Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:51:35Z",
+        "bound_digest": "sha256:4eb3d12caf4a0109f15da069c77b66139ffa2bb72b8925abca5815bc32030df5",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

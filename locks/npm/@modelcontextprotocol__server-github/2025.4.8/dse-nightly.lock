@@ -1,0 +1,2185 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-github",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-github/node_modules",
+      "GITHUB_PERSONAL_ACCESS_TOKEN=ghp_DUMMY_NOT_A_TOKEN",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-github/node_modules/.bin/mcp-server-github"
+    ],
+    "url": null,
+    "command_digest": "sha256:03e464742dd42ad36e09439b771ef3809d32bfd8c863e3ffc599a98e4c6fb765"
+  },
+  "tools": [
+    {
+      "name": "add_issue_comment",
+      "description_hash": "sha256:aa201a98a7cb73e0e1f7ad7c9ca7adfbf2c2ed2ca154a55c60cd04aaede5d309",
+      "input_schema_hash": "sha256:fa058d1607afc6274a474ed085e41642097a1229ea977a69f86d31cd09908813",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:575696c244a957f0f1447bfb27836037c8768677989e8a3dae2d11a10b47b47e"
+    },
+    {
+      "name": "create_branch",
+      "description_hash": "sha256:8fb37f2d7655d28ae432562ed1a0cdbff57cbdbf4b9cde3e6208f43b9b0114cc",
+      "input_schema_hash": "sha256:e4f58a46a50c75c2c3374f1dac5fff0b37174ef54f782aea1301e6a546722b75",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "branch": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "from_branch": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6054a73bdc87ae0b206c43233be0eec5e05c95c17d16c59d290ab949cc1ef5c7"
+    },
+    {
+      "name": "create_issue",
+      "description_hash": "sha256:37d290b4f8482947780532a3f12553ecdb7511ea807b863609035bb1a711de26",
+      "input_schema_hash": "sha256:b06130f66f945f4ca2bc4474340c7f934c5e7b10168978fb8f507ecc146c091b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "assignees": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "assignees[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "labels": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "labels[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "milestone": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8184c7baba21704daace5739c1e853f86d52a4b179201bd9648a66500a7a29c0"
+    },
+    {
+      "name": "create_or_update_file",
+      "description_hash": "sha256:957a7fd9d898a5f06f8ee28c0c2495f44c1a8d0c8467be9938dc65846a945f96",
+      "input_schema_hash": "sha256:8557e3b84eb46a2284f569a8bffc84c4eba2f8b879664deb690b31308ff00754",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "branch": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "content": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "message": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sha": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c1d67c1c8771ea26bfc2053c3181790fe310917b3f72bdfa1c827f83fb2d1f56"
+    },
+    {
+      "name": "create_pull_request",
+      "description_hash": "sha256:40702dfc5831388f70771881d9e8f5f9ecb479c284f31e07f5eefe63fecef1c3",
+      "input_schema_hash": "sha256:1b584db8e1f38ced183c5a1edef5a2b2b891bd6893c00d7d63714a33638036da",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "base": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "draft": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "head": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "maintainer_can_modify": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4538d8f7490c2150abc8a0a608e926324eedb28f471c959207d626eb069db559"
+    },
+    {
+      "name": "create_pull_request_review",
+      "description_hash": "sha256:9b894e542a8e62c27cdc25b1ca70471da25c07976f378807000514ec073c8d97",
+      "input_schema_hash": "sha256:5db127e52eb30852922d3a750cc73d7e4d7bf1a4c55e2863b1fd48361dd92093",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "comments": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "comments[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "commit_id": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "event": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "APPROVE",
+              "COMMENT",
+              "REQUEST_CHANGES"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:fd0b234725e570421d117d2f1e840358d873e68d5ece30000428bd0c01e5358a"
+    },
+    {
+      "name": "create_repository",
+      "description_hash": "sha256:84f19df89ee9e79026608530d04a67d38d2231c606fc59995608aa23945187bc",
+      "input_schema_hash": "sha256:f590d77090120a014b9b6865ad45fb169c6e345cfbefad5d997f81c9ff57741e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "autoInit": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "description": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "private": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ea084b068c6767ddcbb1beb3f320c06e889f8450d8c1e4c2543437ca3e8b724e"
+    },
+    {
+      "name": "fork_repository",
+      "description_hash": "sha256:9762de4680d6ab8616f163e8880aa81716714cff50d37de0e3d0fc7b4b1d29f3",
+      "input_schema_hash": "sha256:a98da6e4f1433a533b5b3caaf3891e7e177d66636d07d2fb728339ea2fb1e75e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "organization": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8457e705a6f1b029477587d3d3267cb1465f25f92a7eb6949f96a6e5e9583f7a"
+    },
+    {
+      "name": "get_file_contents",
+      "description_hash": "sha256:d5863ce3e85954f8ab9124a619ae6b514f68472d32c3887a7240eb936286addd",
+      "input_schema_hash": "sha256:7591de041ba0f24ed827c9bd2b528fee10503f0a04acb8250f83ac396d4e0d1d",
+      "capabilities": [
+        "fs-read"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "branch": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a64d2cf84a88c0b6829f8d950c00664b2bd9dd300ae39a0e2269ea24d434c578"
+    },
+    {
+      "name": "get_issue",
+      "description_hash": "sha256:a2b2d4cf479e1014c2552e4f1aeddaacb3bb7140bc7a43d8da4ec16d1fae878c",
+      "input_schema_hash": "sha256:282d6482299e93d9235718015f3b6f556e9cb29fc847d88f90a8a99cc69b855d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "issue_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:908f7701b69184ddff5a4c5c30ba2b0e2f4727e896578f6a4c710f07ffa0bdff"
+    },
+    {
+      "name": "get_pull_request",
+      "description_hash": "sha256:085c7145e426012eeaf969b833a15e52ff840e2ed44a7c98eddcb376138efd1e",
+      "input_schema_hash": "sha256:1b6162edef8210ec9d3f648211311e6a6edd6625934e877f512403446a3c0dbb",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7a4845d3232688aeec1a11b19bbfa82637237cdaedd4bd05145ff66ada6a65b5"
+    },
+    {
+      "name": "get_pull_request_comments",
+      "description_hash": "sha256:902044dd8e37073640e3cc63196b2b0033330bc6c8cce6dab4c08e450a6b74ca",
+      "input_schema_hash": "sha256:1b6162edef8210ec9d3f648211311e6a6edd6625934e877f512403446a3c0dbb",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a3f5f09705adaa08919c2f9b99c0f3d79dc9e498c75b339cdade5e2e5abdbc17"
+    },
+    {
+      "name": "get_pull_request_files",
+      "description_hash": "sha256:352050812e4c488031ac041cbcefb99a1432518a707648608d518f6ee83deedd",
+      "input_schema_hash": "sha256:1b6162edef8210ec9d3f648211311e6a6edd6625934e877f512403446a3c0dbb",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c42cb914ea70f901fdcbd27e883fa718ab398d55f42b239db9972ed38cf1cfd2"
+    },
+    {
+      "name": "get_pull_request_reviews",
+      "description_hash": "sha256:16271ff42bccbbbe575ef11c588297e53c6311527d0be4237938d47e1a02f2e0",
+      "input_schema_hash": "sha256:1b6162edef8210ec9d3f648211311e6a6edd6625934e877f512403446a3c0dbb",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4d0e3d2bead582cdd98e9c7450e8ccea3b447122f7b80a6f31e2c17ed7d19281"
+    },
+    {
+      "name": "get_pull_request_status",
+      "description_hash": "sha256:9c1c0a914fb44b2056fbdca6e3058924a90826672212007410c3d1ff11a1c68c",
+      "input_schema_hash": "sha256:1b6162edef8210ec9d3f648211311e6a6edd6625934e877f512403446a3c0dbb",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:49338ab00d5f52d88b7558d60da001f6e2e1af0a1167d84468be440cefea5d19"
+    },
+    {
+      "name": "list_commits",
+      "description_hash": "sha256:92dd0c6240d8c063e3a4950559b6242740ba929a92a8d7eaf2e2b22af1bcc898",
+      "input_schema_hash": "sha256:ce60b258f0f6de3187bb98ca12ca247a163530f5b57f2307c4396df3f0bebc0c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "perPage": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sha": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:90165dfba272a27f6434d6cba2e06259bc011a38176351b55856fa7ff159e973"
+    },
+    {
+      "name": "list_issues",
+      "description_hash": "sha256:287f3bac367a17ba00d0bf2c3e7ed5b5f42232ba530d906bf935e3124f992c72",
+      "input_schema_hash": "sha256:c8076a1100515a28d46616911046d5fc673d413ac1a3eec6a2ee923c021c7dc2",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "direction": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "labels": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "labels[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "per_page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "since": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "comments",
+              "created",
+              "updated"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "state": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "all",
+              "closed",
+              "open"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e70101a6f605c8c40a928c8dab8a50a5c356815fe0a96979f9948278083db93e"
+    },
+    {
+      "name": "list_pull_requests",
+      "description_hash": "sha256:c891ae1b5e8759cfa73a1b3d69ca9defee25271225b55647d7e3d1694057c747",
+      "input_schema_hash": "sha256:46ece9245f6e82ff79f5b49c071b972b82e5908b5855be8cc4c476d9fc0d1959",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "base": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "direction": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "head": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "per_page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "created",
+              "long-running",
+              "popularity",
+              "updated"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "state": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "all",
+              "closed",
+              "open"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:56cee48c2a6ebeea87a7ffe62b2cbcc3f6524a9873baedba3e90eba2dfc12c1f"
+    },
+    {
+      "name": "merge_pull_request",
+      "description_hash": "sha256:331324debe342d73286d6b50cd571fd6cabfc3861a13a99a267918395b845f9a",
+      "input_schema_hash": "sha256:dde18ca7fe684932f705af50c6e7ae5d0367ec051269f5d16c649f149b82bf3a",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "commit_message": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "commit_title": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "merge_method": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "merge",
+              "rebase",
+              "squash"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:4ca02540fe0dd31a58409b991e5d6bc98f4bd90ac8d84b8ae446d22bd8da5074"
+    },
+    {
+      "name": "push_files",
+      "description_hash": "sha256:1025f07d7e75209a003e6306179ed04f2eeedd2636c04a5b30fbc90dab030253",
+      "input_schema_hash": "sha256:0c04a7c2390498f3e3f839e8d1517ca79c342552849819f435382e0807c34cc8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "branch": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "files": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "files[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "files[].content": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "files[].path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "message": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:a5ab8afeb5bf6aaf8e6a9df754e4310825fb48002dda39caf51a530497805090"
+    },
+    {
+      "name": "search_code",
+      "description_hash": "sha256:0d1e75931a67040a181387e92e15c5d3d0b1ec51acfa39e2c9fd8cdaaf810695",
+      "input_schema_hash": "sha256:d879c3ee51f498aee27bd0523b444d39ab0d3312eb6280b38c3b72f61b4bb69d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "order": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "per_page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "q": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:27089b49c5ea5223b3d5b56714c1cfc5256f06a6f5339e3d541ab9accd439c4f"
+    },
+    {
+      "name": "search_issues",
+      "description_hash": "sha256:7198a7a7dd719dc5d6b388d279fc1faba57db65e1deb79552e6bd0208a6c04e4",
+      "input_schema_hash": "sha256:bf8b3753194a654b1f7f3a406306b69f46a5541df149799d233adb4e5606b3b3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "order": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "per_page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "q": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "comments",
+              "created",
+              "interactions",
+              "reactions",
+              "reactions-+1",
+              "reactions--1",
+              "reactions-heart",
+              "reactions-smile",
+              "reactions-tada",
+              "reactions-thinking_face",
+              "updated"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f133a1010bb69afc250304418ae3fe6c1ed2ce57a2ccdf5c6f107a8b94eafb44"
+    },
+    {
+      "name": "search_repositories",
+      "description_hash": "sha256:76c135985f455e63b3b57ae7bba61b260d1d9ec67876b18bf075993634e4bef6",
+      "input_schema_hash": "sha256:28ac466cfe581e51a54740bffd75c1ff1ecc1b1821b78ad2ee7d2ae78c13962d",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "perPage": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:cef09ad4908117c0750a613765b4dc9dbd1ce0e7dfad426472d8308d52043446"
+    },
+    {
+      "name": "search_users",
+      "description_hash": "sha256:d8d8490578967c68b369baa60470633d057361ec3e9803fad800f55d9f321f09",
+      "input_schema_hash": "sha256:4f9de7a940a7e99f27a0ca5d9c6e9a84495f355309feb4b6fb62331207f86f3f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "order": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minimum": 1
+            }
+          },
+          "per_page": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "q": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "followers",
+              "joined",
+              "repositories"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c0641a24d76533622c4e22c283ac4003b20bca628ad9b8e292590ba41fd0bd46"
+    },
+    {
+      "name": "update_issue",
+      "description_hash": "sha256:bff57f45a65ee1e81caa7cf7668040b76947b650fb4671dde8d69fd921fe870c",
+      "input_schema_hash": "sha256:70e547ffa32bc4d63b88264f5d9f99290f0226f529a314525eb350bb93d3465a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "assignees": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "assignees[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "body": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issue_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "labels": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "labels[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "milestone": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "state": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "closed",
+              "open"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:6245c1251d11e74f81455c66dc03310c2e707934dd51746f217de69de896a3ee"
+    },
+    {
+      "name": "update_pull_request_branch",
+      "description_hash": "sha256:a2c1ebd2595f15e11de1a09c02506a2644973f49c6eaca3fe701d31d2cc89cd1",
+      "input_schema_hash": "sha256:20a07977a4420bea98b9d8ad678261d54183e6e1ff90bdd8a9674e04693fdefc",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "expected_head_sha": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "owner": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pull_number": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:d043d61c5ccd796653799a15f012db09962e9fc1a8ca29d5079c1ac0bff7e183"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "GITH…(len=50)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=35)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=48)"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/create_or_update_file",
+      "message": "Tool derives capability 'fs-write' (name token 'create')",
+      "snippet": "name token 'create'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/create_pull_request",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/create_pull_request_review",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-READ",
+      "severity": "medium",
+      "target": "tools/get_file_contents",
+      "message": "Tool derives capability 'fs-read' (name token 'get')",
+      "snippet": "name token 'get'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/get_pull_request",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/get_pull_request_comments",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/get_pull_request_files",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/get_pull_request_reviews",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/get_pull_request_status",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/merge_pull_request",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search_repositories",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/update_pull_request_branch",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    }
+  ],
+  "overall_digest": "sha256:aaa2b5bad701c73778c26ff7ea12c86cdfcd3fef28df5a6ce8a9fa9fd023833a",
+  "pin": {
+    "created_at": "2026-09-03T11:50:05Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:50:07Z",
+        "bound_digest": "sha256:aaa2b5bad701c73778c26ff7ea12c86cdfcd3fef28df5a6ce8a9fa9fd023833a",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

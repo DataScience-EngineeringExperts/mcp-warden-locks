@@ -1,0 +1,340 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@browserbasehq__mcp-server-browserbase",
+      "NODE_PATH=/cache/npm/@browserbasehq__mcp-server-browserbase/node_modules",
+      "BROWSERBASE_API_KEY=DUMMY",
+      "BROWSERBASE_PROJECT_ID=DUMMY",
+      "node",
+      "/cache/npm/@browserbasehq__mcp-server-browserbase/node_modules/.bin/mcp-server-browserbase"
+    ],
+    "url": null,
+    "command_digest": "sha256:9caadd95573966b7029e096707301918f5a2aae9256cd4e78f43030916630a94"
+  },
+  "tools": [
+    {
+      "name": "browserbase_screenshot",
+      "description_hash": "sha256:ac39e0c68d27d136534683364db6cb9c6b7577c27c7f17e716ff216096a41dda",
+      "input_schema_hash": "sha256:c7e332017ea5b15d66a714c258c3435f8e6405d2c0ebcd7a366b9ab951dd5ccf",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:41ba02d0a18935aa453f03de7f5eeffda616c64a8a91bcdf0e0f5ae0134db4aa"
+    },
+    {
+      "name": "browserbase_session_close",
+      "description_hash": "sha256:76d08b5a5c4497e9a2b3041f31b304489f4b8c0e92ecff06c59494fe88df0616",
+      "input_schema_hash": "sha256:7a014b717a77aac971ea0ab5c0ff47bb13e6cae7ef9442d9dedb15ce36381b15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:288360171a313195b2779766b4321607c53eec353bc67cb1ca8519dfe5087534"
+    },
+    {
+      "name": "browserbase_session_create",
+      "description_hash": "sha256:c977196920af6d27d2bf999435d30624a7d75a36c653b468acbb1153ac21bee1",
+      "input_schema_hash": "sha256:fdd43f269642f76c21252a08df249dfbb695db868ff104864acd62f73f2640b1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "sessionId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e4397c7258c875caac08924600130617e7bc1e0b8ae4a755202c176598ed3b3d"
+    },
+    {
+      "name": "browserbase_stagehand_act",
+      "description_hash": "sha256:c92d2e2421115f2ed99647fadc23777457c02ebbedf2c2a2e55882f54e2d6d4d",
+      "input_schema_hash": "sha256:2e36d53ce9bad108e051debbdadc178b89b55c317ba4d1853f07b85a7873288f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "action": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "variables": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:5e45431129167b97a9bf587d94f05c2f9312ae0856012e368e875cb9dcbb361a"
+    },
+    {
+      "name": "browserbase_stagehand_agent",
+      "description_hash": "sha256:b4491e2c50d697ccbf6775a9fd960842c15e6c4e8d648f4f990ca0cd6537ac63",
+      "input_schema_hash": "sha256:b4639f2a452df8ff6a212d9cc77173d406e478e270345f04600124231ab19898",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "prompt": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:33e87dba282370c2d22c83475a1b0a7f6d937e0dd90e6f071fd57f3842072e59"
+    },
+    {
+      "name": "browserbase_stagehand_extract",
+      "description_hash": "sha256:36e24c780f5b87e53b73480c5964461c287207726b5e4211071a040308d84fb3",
+      "input_schema_hash": "sha256:7ba4fbbd2be94920793161954894275eb3dd1ddc4467a6f42c474fdfa918cfd9",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "instruction": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:dd07f880063aecb0207489f2d14aa1add55da8befa2056fff491cb8a6a0d723b"
+    },
+    {
+      "name": "browserbase_stagehand_get_url",
+      "description_hash": "sha256:e4ebd36066080d6a03d9244c8d4d37932e2dd3edff05638725c3caa7c8acc6f2",
+      "input_schema_hash": "sha256:7a014b717a77aac971ea0ab5c0ff47bb13e6cae7ef9442d9dedb15ce36381b15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:137be44df102fbc2cb84157efc49fb329dba912cb8e1af105bfc21c7ff8effcd"
+    },
+    {
+      "name": "browserbase_stagehand_navigate",
+      "description_hash": "sha256:14b7954d5a41c9c0bf559b6e25e1472476327c02b70e8b7d3c3ff8c4e843cf9e",
+      "input_schema_hash": "sha256:d28545b578dbd7f125847c1744f436556c5fb9b1d29e6c97bf3bbc59d83b9cd9",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:b09bcd6d8e29ca56a2d6c95df3475b70df60205bde20d390ad102e3d2fb2daf9"
+    },
+    {
+      "name": "browserbase_stagehand_observe",
+      "description_hash": "sha256:2685b5b00bf0eb8a89066ad7b9a9b59fd0a1a0cfed270009f9ba622c3ec4cb73",
+      "input_schema_hash": "sha256:d77cc191d28bcc9ce81b1383c72aaa427d25ef85858327f4f5370ef5b78a2b58",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "instruction": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c39fcc65097a2f34d8cbcca24de42cb0ead5dad22830122e3cb37db1a4887e43"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "BROW…(len=28)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/browserbase_stagehand_navigate",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    }
+  ],
+  "overall_digest": "sha256:26c1e12e64aa5a713ed458fa9b9092dda9e5efa88708fc97b763aa69cb0d97bc",
+  "pin": {
+    "created_at": "2026-09-03T11:53:38Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:53:40Z",
+        "bound_digest": "sha256:26c1e12e64aa5a713ed458fa9b9092dda9e5efa88708fc97b763aa69cb0d97bc",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

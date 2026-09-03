@@ -1,0 +1,1487 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@wonderwhy-er__desktop-commander",
+      "NODE_PATH=/cache/npm/@wonderwhy-er__desktop-commander/node_modules",
+      "node",
+      "/cache/npm/@wonderwhy-er__desktop-commander/node_modules/.bin/desktop-commander"
+    ],
+    "url": null,
+    "command_digest": "sha256:2ca850657f66f385e2de1ea4867e0178dac4e71b4cac223a8d1fdfb280ce7424"
+  },
+  "tools": [
+    {
+      "name": "create_directory",
+      "description_hash": "sha256:ceeab623dca3db7885a6ee7c5c0789913a8d6d87cd715c60041781c1372381aa",
+      "input_schema_hash": "sha256:2f8608730083530f48f482a8311b4565cb1e65526a5d1e6a8f20746eedf5555e",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:558f4a7e87da82fba9fdc68932834d5b2bf6965db052190880ce372d44e88ee4"
+    },
+    {
+      "name": "edit_block",
+      "description_hash": "sha256:8f902ccd1e69e444dfe8de97ccd28fb93635e48259422cf8839ff2270dad4110",
+      "input_schema_hash": "sha256:741dac21cdf2d5ee5233f1318ff42c6cff29d76bf9047120607915e531c35640",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "expected_replacements": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "file_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "new_string": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "old_string": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {}
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "range": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:90323d76ec2138a851f1b602eaa89b147dafa595a4a829ef1a29a1b02735bda0"
+    },
+    {
+      "name": "force_terminate",
+      "description_hash": "sha256:f351b943ee110227b3b1b29d6cc4f399da325ec5d959e475be8632c12dfe354c",
+      "input_schema_hash": "sha256:312f031f9a9d1a1a409e732dac2df92dfcfbc75a75ee2a2d9962f899ff77dff9",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "pid": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ffa26017f1fd9bf5907885e5f8d57bfd584586b96b4ad3c8aa9151bcd0c8e0b4"
+    },
+    {
+      "name": "get_config",
+      "description_hash": "sha256:10b2761c430f3eb2b7ee3c9e5081ead6f4798d126dd5599482095a73e32a4f2f",
+      "input_schema_hash": "sha256:b1fbc9064257dbfe7e33ffd2ee756295c189c194a8e3a1543a9b7952c6db240b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:784c776031529b2ef1d94066817edca894f0b31b93691fe98a1816a5bb67d9a9"
+    },
+    {
+      "name": "get_file_info",
+      "description_hash": "sha256:1d66ad4a3d3a40e6465d961a6c7fca18074ac03a9c111f65c0a9dadc73f3bd2f",
+      "input_schema_hash": "sha256:2f8608730083530f48f482a8311b4565cb1e65526a5d1e6a8f20746eedf5555e",
+      "capabilities": [
+        "fs-read"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ebaa4b082831d905e8e0af2f21ca9e419a159987dfd60c748b366f2e8fa6cc4a"
+    },
+    {
+      "name": "get_more_search_results",
+      "description_hash": "sha256:481cc171aad69c83b69b66e4befb2c0df15ef065430776bc1223269ceff611df",
+      "input_schema_hash": "sha256:69f6bc42819c8087e52b68155ac6b6f212295ea0347f7b89c6f337268acc0c98",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "length": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "offset": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sessionId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:7a8d8874d77008c5d0c04d11c3a35b9d7c739c16cf7f4b4c11f41bf53ce6bc7b"
+    },
+    {
+      "name": "get_prompts",
+      "description_hash": "sha256:992c3932e9cf1a464b30359ed7e6ae12e573e4adf144debe494db30f6593cc26",
+      "input_schema_hash": "sha256:86b4e911da7ed375babd91f7cb8ff569979c6aef356310a54ff78142a168683f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "action": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "get_prompt"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "promptId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:13eca0ddefe6885a40007a36b04c06a994d3c791d23dcfbf58b8622ac33b24e3"
+    },
+    {
+      "name": "get_recent_tool_calls",
+      "description_hash": "sha256:528fe1ab3440aed3ffa392f1ddfa1fda34e08e05e8d5c5906d781cc2e50265a8",
+      "input_schema_hash": "sha256:77614f8709c2867edfd2bcb8d748d8dfbfb63704303970dc032391f4024c1333",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "maxResults": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 1000,
+              "minimum": 1
+            }
+          },
+          "since": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "date-time"
+            }
+          },
+          "toolName": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c1817c58b593e6b5abd34311da5fb462a3d838fa37551ae65782319a22811444"
+    },
+    {
+      "name": "get_usage_stats",
+      "description_hash": "sha256:b9c369c38c82e089df951268bb5942a0760b899362f76291a1c82a7f33ec10ad",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:03dff7d66694c8c7caff55543e2f68cef9461d9a05ad928034c03d6ef55831ce"
+    },
+    {
+      "name": "give_feedback_to_desktop_commander",
+      "description_hash": "sha256:675271d363b770e3c61bbf86abfac3c5392988bfe6dc420c645809155ebca110",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:73ef493c53b9eaedcfd492ab84ba9843fcd032e131490d5fb17e8aa238904102"
+    },
+    {
+      "name": "interact_with_process",
+      "description_hash": "sha256:05eb36808387776c9226f4fc58b56e6af1db9d6b95d33a8c9ab22b6457f9023a",
+      "input_schema_hash": "sha256:477f02a58a6dfcb53895f87a2fc55c78ed4441cc6e16bab3049b1b51db0c14cd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "input": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pid": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timeout_ms": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "verbose_timing": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "wait_for_prompt": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0479e845ab9a96df0a4b0b7625a3f0cfae51ba33fed1b631c93d0aeb056c470e"
+    },
+    {
+      "name": "kill_process",
+      "description_hash": "sha256:ecc76510fe12a1de4ce4c82f7e20c7d03ac3d43f7389cf2e2b118ba11e54912a",
+      "input_schema_hash": "sha256:312f031f9a9d1a1a409e732dac2df92dfcfbc75a75ee2a2d9962f899ff77dff9",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "pid": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:3032644b42f28b6b44fc3c67a69c7fbc538b2e4e34235db33dd62a6aac76129d"
+    },
+    {
+      "name": "list_directory",
+      "description_hash": "sha256:6bf828761ba6df8261fcbc130bd867dfc02b9d387b400c5e5c7ef15d1e7b4be3",
+      "input_schema_hash": "sha256:23865dfb748ca69f9d10fd264bfb8a135c2ed0b1a182472c90c15ffee5c9ce6f",
+      "capabilities": [
+        "fs-read"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "depth": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:9a9af59f64865d7d33c447c2a8547709c5dc4b15d3da8f9bb4e90993c3fccfff"
+    },
+    {
+      "name": "list_processes",
+      "description_hash": "sha256:bb40976de7a63695368ca0d94619a267df0e4fea39bda43c1d2cac9fad59c3c8",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c8ac3a9c3d242812bc961412cff1fbc892c2c9ccf611c4381399113af3637c9b"
+    },
+    {
+      "name": "list_searches",
+      "description_hash": "sha256:7cfa93e9dbe99d0aba98a78782880a7d199a14d99e0bfb6e4c199af0ecad8ca8",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:33f8606b43143743b6eaf2118718644651f3b5a567d3eb54a75425e3a45b992c"
+    },
+    {
+      "name": "list_sessions",
+      "description_hash": "sha256:0eb56e7d2c882ad183a3a8e9896c5b93ad69a903144321a30a545f21004eb2c4",
+      "input_schema_hash": "sha256:f973399805c1c233633f5196cf8e2ad40ee100b94996d711dcd030813b671bc5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:0856c352d53621267b8603a2de52c3d7e9d1f8e9a1ee9db392eecae6aeb4263b"
+    },
+    {
+      "name": "move_file",
+      "description_hash": "sha256:bb2af761e47fc85df1c0aa08e2f0093f4ee4ff099f7ceb4ec4f1a07f81161cde",
+      "input_schema_hash": "sha256:884dd9a33fcf3d9422bfe2ecc41a2f831c616c88db36a26efc4c27f784ddeb4c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "destination": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "source": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1b95c1836b39ba155de8e45eae09853472655b2c60afe9b6756d4a083c28edbf"
+    },
+    {
+      "name": "read_file",
+      "description_hash": "sha256:237e9e511468527d6842baf754edc1bc1849f9a9d5ac7867cb6a1f05181de509",
+      "input_schema_hash": "sha256:056ee2cb6ef267ee5ee93da114c6a5da8d9f07a078251b3386e0acb9fb1a9787",
+      "capabilities": [
+        "fs-read",
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "isUrl": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "length": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "offset": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {}
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "range": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sheet": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f61fc6fe0424ed5a38a177d4d0e81e09412cebd53f6b99a634f676f99b961a0d"
+    },
+    {
+      "name": "read_multiple_files",
+      "description_hash": "sha256:e37339c2ece0041b08f76744047e09d80b6b549659cff53359315fd76037ba3d",
+      "input_schema_hash": "sha256:cd8c99678458799777898b2140163d8efebe497c81e233a3a9801af96d3444a5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "paths": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2e31e9330eb42fbde4860b89d48b920be2ad5e07316917232b37811972ce5879"
+    },
+    {
+      "name": "read_process_output",
+      "description_hash": "sha256:5bbc0504fd45b87a580fd2437200ef15761bf1e6e0f9f052caa17c5de6d07141",
+      "input_schema_hash": "sha256:c49ebdb47c683f95f0adace537d713e50ed2de407dcde9896b196e8f53570695",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "length": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "offset": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pid": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timeout_ms": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "verbose_timing": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1227a55bd6f56749ccd03793d00db087004e57f5d07acdef2ed897a40754cd7c"
+    },
+    {
+      "name": "set_config_value",
+      "description_hash": "sha256:a74c2acd2013500c1ca9483cdf2b5bf9c73e5d0cc6636a4765ae0803b656c1b8",
+      "input_schema_hash": "sha256:17498e0aba9db8e1c0b9695162dd6299400246b6f28b208a2c9cdef72ab85a93",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "value": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1d935743eac63da76184ebfcab717522cd4080cb0392aec193fe439991162585"
+    },
+    {
+      "name": "start_process",
+      "description_hash": "sha256:d27e28b9882d7c1470c97bea6f242dc4795e3f7a54dea94fad3a63a08fb79662",
+      "input_schema_hash": "sha256:41c0a6fda7a89c45cc30b191805e75aa63a0cb8f058a3d022d49720587b2a4bc",
+      "capabilities": [
+        "shell-exec"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "command": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "shell": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timeout_ms": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "verbose_timing": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:28bb717363ebf5e2cb2136dfb79c47c477819e0625b6ed6d2b3217545bc0d360"
+    },
+    {
+      "name": "start_search",
+      "description_hash": "sha256:3b68c821cca844be1d14662363f45b32aedd346ca4265e0c034c38d8e2ca329a",
+      "input_schema_hash": "sha256:ab10198bd70d9ec2b403db17807e29ff832b80d034dd7526e918e77ee37ae2da",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "contextLines": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "earlyTermination": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filePattern": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ignoreCase": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeHidden": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "literalSearch": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "maxResults": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "pattern": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "searchType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "content",
+              "files"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "timeout_ms": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:1fd41a4cbb5a35865913a555357cda0a7d1c1c4d954b7cee5adc264e6aa9ea31"
+    },
+    {
+      "name": "stop_search",
+      "description_hash": "sha256:f42576d7a58961a3bbc90b59666ffd7c443836ca527b6d8fcc65078261da9ae6",
+      "input_schema_hash": "sha256:103c37850b1d469e61c8cfd64c6fd657b895551578bd0e2e7d54ba9f696d4bd2",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "sessionId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:f2f441f31cf95539c8e61aab10b816a9434e6f234ca07cdb974c42547edf12c9"
+    },
+    {
+      "name": "write_file",
+      "description_hash": "sha256:a7f7d0b234d97fa666befa3e7891230052a1916a1f075297862d2d70259f00b2",
+      "input_schema_hash": "sha256:d10b58f0e832dc6e8cf7458ee4ff7cf559fd19ccae0e62c843ae0127f23fc95c",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "mode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "append",
+              "rewrite"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "origin": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "llm",
+              "ui"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:2195379a11524538863ebd585c2c73b114ff2f975c5a8cca6e446083363122c6"
+    },
+    {
+      "name": "write_pdf",
+      "description_hash": "sha256:5c93662adfb68b1b70e533e9a11315546d14d7e84e71536d72a6d9683bc7266b",
+      "input_schema_hash": "sha256:9c0a9a190359f7be23726bf207cabffd737ee82c55100aebfddb5f62f0fe7d50",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "content": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "options": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "outputPath": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:23c611c2fdfe6a4502d7b4c4a66f28421f481b24ddcf1a4ce5327a348fe84505"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "ui://desktop-commander/config-editor",
+      "name": "Desktop Commander Config Editor",
+      "description_hash": "sha256:c0398e66cb2eb8a25617296dbd5654f944abbe636eecf3cd146bc01edcf33311",
+      "mime_type": "text/html;profile=mcp-app",
+      "entry_digest": "sha256:8390cc1fa97fc793008d8ce059b88b17a78797179237fddc1d273161fc5e5f9a"
+    },
+    {
+      "uri": "ui://desktop-commander/file-preview",
+      "name": "Desktop Commander File Preview",
+      "description_hash": "sha256:ae2d878b17369820a75694ab487ed5918f4a0dff4d596286642f15eb9e07bc01",
+      "mime_type": "text/html;profile=mcp-app",
+      "entry_digest": "sha256:41d78a45e06201418742aca027173ce027e24c53bd39a7ed93ecec46a7f82fa0"
+    }
+  ],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "wond…(len=44)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "resources/ui://desktop-commander/file-preview",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "//de…(len=32)"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/create_directory",
+      "message": "Tool derives capability 'fs-write' (name token 'create')",
+      "snippet": "name token 'create'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/edit_block",
+      "message": "Tool derives capability 'fs-write' (property 'file_path')",
+      "snippet": "property 'file_path'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-READ",
+      "severity": "medium",
+      "target": "tools/get_file_info",
+      "message": "Tool derives capability 'fs-read' (name token 'get')",
+      "snippet": "name token 'get'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-READ",
+      "severity": "medium",
+      "target": "tools/list_directory",
+      "message": "Tool derives capability 'fs-read' (name token 'list')",
+      "snippet": "name token 'list'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-READ",
+      "severity": "medium",
+      "target": "tools/read_file",
+      "message": "Tool derives capability 'fs-read' (name token 'read')",
+      "snippet": "name token 'read'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/read_file",
+      "message": "Tool derives capability 'http-request' (property 'isUrl')",
+      "snippet": "property 'isUrl'"
+    },
+    {
+      "rule_id": "WRD-CAP-SHELL",
+      "severity": "critical",
+      "target": "tools/start_process",
+      "message": "Tool derives capability 'shell-exec' (property 'command')",
+      "snippet": "property 'command'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/write_file",
+      "message": "Tool derives capability 'fs-write' (name token 'write')",
+      "snippet": "name token 'write'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/write_pdf",
+      "message": "Tool derives capability 'fs-write' (name token 'write')",
+      "snippet": "name token 'write'"
+    }
+  ],
+  "overall_digest": "sha256:1448f9c839ba4b645b40e5b61e70962f16fb2c5075e6e5429f06fa40c82fe46c",
+  "pin": {
+    "created_at": "2026-09-03T11:53:36Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:53:39Z",
+        "bound_digest": "sha256:1448f9c839ba4b645b40e5b61e70962f16fb2c5075e6e5429f06fa40c82fe46c",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

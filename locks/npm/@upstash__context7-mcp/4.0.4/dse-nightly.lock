@@ -1,0 +1,160 @@
+{
+  "schema_version": 3,
+  "warden_version": "1.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@upstash__context7-mcp",
+      "NODE_PATH=/cache/npm/@upstash__context7-mcp/node_modules",
+      "node",
+      "/cache/npm/@upstash__context7-mcp/node_modules/.bin/context7-mcp"
+    ],
+    "url": null,
+    "command_digest": "sha256:dbd748afb01e03ad53dfc60d2946a4f4035103738941d242f162b1d2e3c9dcec"
+  },
+  "tools": [
+    {
+      "name": "query-docs",
+      "description_hash": "sha256:35c9b442f015e59adce20f9b7ac976cbb549373817c184e04504d09b3eef82bf",
+      "input_schema_hash": "sha256:6b6c59ee65e0d7fcbf0aaf4eb42f419e6b13927808ec75af09e62e55921b8942",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "libraryId": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:47630d33aac12298f68c7823c4e1e2c9fdc9be5a715a27189f3af1ec911e47fe"
+    },
+    {
+      "name": "resolve-library-id",
+      "description_hash": "sha256:1ed313b9c2c5767a1b5411a9b8f2cbfc2ef20751d9559a187664c4bbe15cf3db",
+      "input_schema_hash": "sha256:ff2f303df2072ada223b45bd44955411763b5b6513f9a680400872732fe976b6",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "libraryName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8c7d4cb4df06fe5f5de53e95b6dd461900061d0c2f5b79a1b20540b4dd6b1d6d"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "upst…(len=34)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/query-docs",
+      "message": "Tool derives capability 'sql-query' (name token 'query')",
+      "snippet": "name token 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/resolve-library-id",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:527ed00ff8e1221cc6c140aff3a1a5c8bb67d37cc3ea0b3dd25a5b30e97e58e5",
+  "pin": {
+    "created_at": "2026-09-03T11:51:51Z",
+    "warden_version": "1.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "1.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-09-03T11:51:53Z",
+        "bound_digest": "sha256:527ed00ff8e1221cc6c140aff3a1a5c8bb67d37cc3ea0b3dd25a5b30e97e58e5",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}
