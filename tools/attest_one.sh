@@ -8,7 +8,7 @@ set -euo pipefail
 : "${TARGET_JSON:?TARGET_JSON (one plan.py entry) is required}"
 : "${IMAGE:?IMAGE is required}"
 OUT="${OUT:-$PWD/out}"; CACHE="${CACHE:-$PWD/cache}"
-mkdir -p "$OUT" "$CACHE"
+mkdir -p "$OUT" "$CACHE" "$CACHE/.tmp"   # stage-1 scratch is disk-backed: dependency trees can exceed any sane tmpfs
 coord=$(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys;print(json.load(sys.stdin)["coordinate"])')
 lock_rel=$(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys;print(json.load(sys.stdin)["lock_rel"])')
 mapfile -t spawn < <(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys;[print(a) for a in json.load(sys.stdin)["spawn"]]')
@@ -21,22 +21,26 @@ echo "== [$coord] stage 1: pre-fetch (network on, --ignore-scripts / --only-bina
 case "$eco" in
   npm)
     docker run --rm --network bridge --user "$uid:$gid" -e HOME=/tmp -e npm_config_cache=/tmp/npm-cache \
-      --tmpfs /tmp:rw,nosuid,size=256m -v "$CACHE:/cache" "$IMAGE" \
+      -v "$CACHE/.tmp:/tmp" -v "$CACHE:/cache" "$IMAGE" \
       npm install --prefix "/cache/npm/$segment" --ignore-scripts --no-audit --no-fund --no-package-lock --loglevel=error "$name@$version" ;;
   pypi)
     docker run --rm --network bridge --user "$uid:$gid" -e HOME=/tmp \
-      --tmpfs /tmp:rw,nosuid,size=256m -v "$CACHE:/cache" "$IMAGE" \
+      -v "$CACHE/.tmp:/tmp" -e TMPDIR=/tmp -v "$CACHE:/cache" "$IMAGE" \
       pip install --quiet --no-cache-dir --only-binary :all: --target "/cache/pypi/$segment" "$name==$version" ;;
   *) echo "unknown ecosystem $eco" >&2; exit 2 ;;
 esac
 echo "== [$coord] stage 2: sandboxed capture (network none, non-root, read-only, cap-drop ALL)"
-envflags=(); for kv in "${envkv[@]:-}"; do [ -n "$kv" ] && envflags+=(-e "$kv"); done
+# The MCP SDK spawns stdio servers with a MINIMAL default environment (HOME, PATH,
+# USER…), not the parent's — so the target's env, and PYTHONPATH for PyPI targets, are
+# delivered by wrapping the spawn in `env K=V …` inside the sandbox. The lock records
+# `env` as the command; the surface digest consensus compares excludes `server`.
+wrap=(env "HOME=/tmp" "PYTHONDONTWRITEBYTECODE=1" "PYTHONPATH=/cache/pypi/$segment" "NODE_PATH=/cache/npm/$segment/node_modules")
+for kv in "${envkv[@]:-}"; do [ -n "$kv" ] && wrap+=("$kv"); done
 docker run --rm --network none --user "$uid:$gid" --read-only --cap-drop ALL \
   --security-opt no-new-privileges --pids-limit 256 --memory 512m \
-  --tmpfs /tmp:rw,noexec,nosuid,size=64m -e HOME=/tmp -e PYTHONDONTWRITEBYTECODE=1 \
-  -e "PYTHONPATH=/cache/pypi/$segment" -e "NODE_PATH=/cache/npm/$segment/node_modules" "${envflags[@]}" \
+  --tmpfs /tmp:rw,noexec,nosuid,size=64m -e HOME=/tmp \
   -v "$CACHE:/cache:ro" -v "$OUT:/out" "$IMAGE" \
-  timeout 120 mcp-warden pin --lock "/out/$lock_rel" -- "${spawn[@]}"
+  timeout 120 mcp-warden pin --lock "/out/$lock_rel" -- "${wrap[@]}" "${spawn[@]}"
 test -s "$lock_path"
 if [ "${SIGN:-0}" = "1" ]; then
   echo "== [$coord] stage 3: sign on host (v2 statement, ambient OIDC)"

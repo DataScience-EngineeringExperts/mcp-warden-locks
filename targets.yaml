@@ -66,7 +66,8 @@ targets:
   - node
   - /cache/npm/@modelcontextprotocol__server-redis/node_modules/.bin/mcp-server-redis
   - redis://127.0.0.1:6379
-  note: connects at startup
+  note: connects to Redis at startup (ECONNREFUSED under --network none); cannot list a surface without a live backend
+  skip: true
 - coordinate: npm:@modelcontextprotocol/server-everart@0.6.2
   spawn:
   - node
@@ -129,6 +130,8 @@ targets:
   - /cache/npm/@stripe__mcp/node_modules/.bin/mcp
   - --tools=all
   - --api-key=sk_test_DUMMY
+  skip: true
+  note: never completes the MCP handshake in the sandbox (30 s); needs investigation before attesting
 - coordinate: npm:@sentry/mcp-server@0.39.0
   spawn:
   - node
@@ -174,7 +177,8 @@ targets:
   - /cache/npm/mcp-server-kubernetes/node_modules/.bin/mcp-server-kubernetes
   env:
     KUBECONFIG: /tmp/kubeconfig
-  note: may need a cluster
+  note: crashes without a reachable cluster/kubeconfig
+  skip: true
 - coordinate: npm:@agentdeskai/browser-tools-mcp@2.0.2
   spawn:
   - node
@@ -202,6 +206,8 @@ targets:
   - from mcp_server_sqlite import main; main()
   - --db-path
   - /tmp/test.db
+  skip: true
+  note: "incompatible with mcp 2.x (Server.list_resources removed) \u2014 what uvx resolves today also crashes"
 - coordinate: pypi:mcp-server-sentry@2025.1.14
   spawn:
   - python3
@@ -209,6 +215,8 @@ targets:
   - from mcp_server_sentry import main; main()
   - --auth-token
   - DUMMY
+  skip: true
+  note: incompatible with mcp 2.x (McpError import)
 - coordinate: pypi:mcp-atlassian@0.23.1
   spawn:
   - python3
@@ -226,6 +234,8 @@ targets:
   - python3
   - -c
   - from mcp_server_tree_sitter.server import main; main()
+  skip: true
+  note: incompatible with mcp 2.x (mcp.server.fastmcp renamed)
 - coordinate: pypi:arxiv-mcp-server@0.7.2
   spawn:
   - python3
@@ -249,6 +259,8 @@ targets:
   env:
     QDRANT_URL: http://127.0.0.1:6333
     COLLECTION_NAME: x
+  skip: true
+  note: resolves a hostname at startup (fastembed model fetch) under --network none; cannot list a surface offline
 - coordinate: pypi:duckduckgo-mcp-server@0.6.1
   spawn:
   - python3
@@ -259,14 +271,15 @@ targets:
   - python3
   - -c
   - from mcp_server_docker import main; main()
-  note: needs a docker socket
+  note: requires Python >= 3.12; attester image is 3.11
+  skip: true
 - coordinate: pypi:mcp-server-motherduck@1.0.8
   spawn:
   - python3
   - -c
   - from mcp_server_motherduck import main; main()
   - --db-path
-  - ':memory:'
+  - /tmp/attest.duckdb
 - coordinate: pypi:mcp-neo4j-cypher@0.6.0
   spawn:
   - python3

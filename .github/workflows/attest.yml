@@ -16,6 +16,11 @@ on:
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
+    inputs:
+      max_targets:
+        description: "Attest at most N pending targets (0 = all). Use a small N for a smoke run."
+        required: false
+        default: "0"
 
 permissions:
   contents: read
@@ -38,9 +43,11 @@ jobs:
         with:
           python-version: "3.12"
       - id: plan
+        env:
+          MAX_TARGETS: ${{ inputs.max_targets || '0' }}
         run: |
           pip install --quiet "pyyaml==6.0.3"
-          m=$(python3 tools/plan.py --attester "$ATTESTER_ID")
+          m=$(python3 tools/plan.py --attester "$ATTESTER_ID" --limit "$MAX_TARGETS")
           n=$(printf '%s' "$m" | python3 -c 'import json,sys;print(len(json.load(sys.stdin)))')
           echo "matrix=$m" >> "$GITHUB_OUTPUT"
           echo "count=$n" >> "$GITHUB_OUTPUT"
