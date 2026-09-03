@@ -1,0 +1,7 @@
+[
+  {
+    "id": "dse-nightly",
+    "certificate_identity": "https://github.com/DataScience-EngineeringExperts/mcp-warden-locks/.github/workflows/attest.yml@refs/heads/main",
+    "oidc_issuer": "https://token.actions.githubusercontent.com"
+  }
+]

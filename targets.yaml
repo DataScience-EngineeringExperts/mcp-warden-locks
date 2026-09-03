@@ -1,0 +1,291 @@
+# Attestation targets for the dse-nightly attester. Every coordinate is an exact
+# published version; `spawn` is the argv run INSIDE the sandbox after stage-1 pre-fetch
+# (packages live under /cache/<ecosystem>/<segment>). `env` holds obviously fake
+# credentials for servers that refuse to start without one. `skip: true` + `note`
+# records a target that cannot list its surface without a live backend.
+targets:
+- coordinate: npm:@modelcontextprotocol/server-filesystem@2026.8.31
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-filesystem/node_modules/.bin/mcp-server-filesystem
+  - /tmp
+- coordinate: npm:@modelcontextprotocol/server-memory@2026.8.31
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-memory/node_modules/.bin/mcp-server-memory
+  env:
+    MEMORY_FILE_PATH: /tmp/memory.json
+- coordinate: npm:@modelcontextprotocol/server-everything@2026.8.31
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-everything/node_modules/.bin/mcp-server-everything
+- coordinate: npm:@modelcontextprotocol/server-sequential-thinking@2026.8.31
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-sequential-thinking/node_modules/.bin/mcp-server-sequential-thinking
+- coordinate: npm:@modelcontextprotocol/server-github@2025.4.8
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-github/node_modules/.bin/mcp-server-github
+  env:
+    GITHUB_PERSONAL_ACCESS_TOKEN: ghp_DUMMY_NOT_A_TOKEN
+  note: archived upstream; still widely pinned
+- coordinate: npm:@modelcontextprotocol/server-puppeteer@2025.5.12
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-puppeteer/node_modules/.bin/mcp-server-puppeteer
+  env:
+    PUPPETEER_SKIP_DOWNLOAD: '1'
+- coordinate: npm:@modelcontextprotocol/server-brave-search@0.6.2
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-brave-search/node_modules/.bin/mcp-server-brave-search
+  env:
+    BRAVE_API_KEY: DUMMY
+- coordinate: npm:@modelcontextprotocol/server-google-maps@0.6.2
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-google-maps/node_modules/.bin/mcp-server-google-maps
+  env:
+    GOOGLE_MAPS_API_KEY: DUMMY
+- coordinate: npm:@modelcontextprotocol/server-slack@2025.4.25
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-slack/node_modules/.bin/mcp-server-slack
+  env:
+    SLACK_BOT_TOKEN: xoxb-DUMMY
+    SLACK_TEAM_ID: T00000000
+- coordinate: npm:@modelcontextprotocol/server-gitlab@2025.4.25
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-gitlab/node_modules/.bin/mcp-server-gitlab
+  env:
+    GITLAB_PERSONAL_ACCESS_TOKEN: DUMMY
+- coordinate: npm:@modelcontextprotocol/server-redis@2025.4.25
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-redis/node_modules/.bin/mcp-server-redis
+  - redis://127.0.0.1:6379
+  note: connects at startup
+- coordinate: npm:@modelcontextprotocol/server-everart@0.6.2
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-everart/node_modules/.bin/mcp-server-everart
+  env:
+    EVERART_API_KEY: DUMMY
+- coordinate: npm:@modelcontextprotocol/server-aws-kb-retrieval@0.6.2
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-aws-kb-retrieval/node_modules/.bin/mcp-server-aws-kb-retrieval
+  env:
+    AWS_ACCESS_KEY_ID: AKIADUMMYDUMMYDUMMY0
+    AWS_SECRET_ACCESS_KEY: DUMMY
+    AWS_REGION: us-east-1
+- coordinate: npm:@modelcontextprotocol/server-postgres@0.6.2
+  spawn:
+  - node
+  - /cache/npm/@modelcontextprotocol__server-postgres/node_modules/.bin/mcp-server-postgres
+  - postgresql://127.0.0.1:5432/db
+  note: resources/list queries the DB
+- coordinate: npm:@playwright/mcp@0.0.80
+  spawn:
+  - node
+  - /cache/npm/@playwright__mcp/node_modules/.bin/playwright-mcp
+- coordinate: npm:@upstash/context7-mcp@4.0.4
+  spawn:
+  - node
+  - /cache/npm/@upstash__context7-mcp/node_modules/.bin/context7-mcp
+- coordinate: npm:firecrawl-mcp@3.24.0
+  spawn:
+  - node
+  - /cache/npm/firecrawl-mcp/node_modules/.bin/firecrawl-mcp
+  env:
+    FIRECRAWL_API_KEY: fc-DUMMY
+- coordinate: npm:@notionhq/notion-mcp-server@2.5.1
+  spawn:
+  - node
+  - /cache/npm/@notionhq__notion-mcp-server/node_modules/.bin/notion-mcp-server
+  env:
+    OPENAPI_MCP_HEADERS: '{"Authorization":"Bearer ntn_DUMMY","Notion-Version":"2022-06-28"}'
+- coordinate: npm:@supabase/mcp-server-supabase@0.11.0
+  spawn:
+  - node
+  - /cache/npm/@supabase__mcp-server-supabase/node_modules/.bin/mcp-server-supabase
+  - --access-token
+  - sbp_DUMMY
+- coordinate: npm:@wonderwhy-er/desktop-commander@0.2.48
+  spawn:
+  - node
+  - /cache/npm/@wonderwhy-er__desktop-commander/node_modules/.bin/desktop-commander
+- coordinate: npm:@hubspot/mcp-server@0.4.0
+  spawn:
+  - node
+  - /cache/npm/@hubspot__mcp-server/node_modules/.bin/mcp-hubspot
+  env:
+    PRIVATE_APP_ACCESS_TOKEN: DUMMY
+- coordinate: npm:@stripe/mcp@0.3.3
+  spawn:
+  - node
+  - /cache/npm/@stripe__mcp/node_modules/.bin/mcp
+  - --tools=all
+  - --api-key=sk_test_DUMMY
+- coordinate: npm:@sentry/mcp-server@0.39.0
+  spawn:
+  - node
+  - /cache/npm/@sentry__mcp-server/node_modules/.bin/sentry-mcp
+  env:
+    SENTRY_ACCESS_TOKEN: DUMMY
+    SENTRY_HOST: sentry.example.com
+- coordinate: npm:@browserbasehq/mcp-server-browserbase@2.4.3
+  spawn:
+  - node
+  - /cache/npm/@browserbasehq__mcp-server-browserbase/node_modules/.bin/mcp-server-browserbase
+  env:
+    BROWSERBASE_API_KEY: DUMMY
+    BROWSERBASE_PROJECT_ID: DUMMY
+- coordinate: npm:@executeautomation/playwright-mcp-server@1.0.12
+  spawn:
+  - node
+  - /cache/npm/@executeautomation__playwright-mcp-server/node_modules/.bin/playwright-mcp-server
+- coordinate: npm:tavily-mcp@0.2.22
+  spawn:
+  - node
+  - /cache/npm/tavily-mcp/node_modules/.bin/tavily-mcp
+  env:
+    TAVILY_API_KEY: tvly-DUMMY
+- coordinate: npm:exa-mcp-server@3.4.1
+  spawn:
+  - node
+  - /cache/npm/exa-mcp-server/node_modules/.bin/exa-mcp-server
+  env:
+    EXA_API_KEY: DUMMY
+- coordinate: npm:@openbnb/mcp-server-airbnb@0.3.0
+  spawn:
+  - node
+  - /cache/npm/@openbnb__mcp-server-airbnb/node_modules/.bin/mcp-server-airbnb
+  - --ignore-robots-txt
+- coordinate: npm:@kimtaeyoon83/mcp-server-youtube-transcript@0.1.1
+  spawn:
+  - node
+  - /cache/npm/@kimtaeyoon83__mcp-server-youtube-transcript/node_modules/.bin/mcp-server-youtube-transcript
+- coordinate: npm:mcp-server-kubernetes@4.1.6
+  spawn:
+  - node
+  - /cache/npm/mcp-server-kubernetes/node_modules/.bin/mcp-server-kubernetes
+  env:
+    KUBECONFIG: /tmp/kubeconfig
+  note: may need a cluster
+- coordinate: npm:@agentdeskai/browser-tools-mcp@2.0.2
+  spawn:
+  - node
+  - /cache/npm/@agentdeskai__browser-tools-mcp/node_modules/.bin/browser-tools-mcp
+  note: expects a connector server
+- coordinate: pypi:mcp-server-fetch@2026.8.18
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_fetch import main; main()
+- coordinate: pypi:mcp-server-git@2026.8.18
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_git import main; main()
+- coordinate: pypi:mcp-server-time@2026.8.18
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_time import main; main()
+- coordinate: pypi:mcp-server-sqlite@2025.4.25
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_sqlite import main; main()
+  - --db-path
+  - /tmp/test.db
+- coordinate: pypi:mcp-server-sentry@2025.1.14
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_sentry import main; main()
+  - --auth-token
+  - DUMMY
+- coordinate: pypi:mcp-atlassian@0.23.1
+  spawn:
+  - python3
+  - -c
+  - from mcp_atlassian import main; main()
+  env:
+    CONFLUENCE_URL: https://example.atlassian.net/wiki
+    CONFLUENCE_USERNAME: u@example.com
+    CONFLUENCE_API_TOKEN: DUMMY
+    JIRA_URL: https://example.atlassian.net
+    JIRA_USERNAME: u@example.com
+    JIRA_API_TOKEN: DUMMY
+- coordinate: pypi:mcp-server-tree-sitter@0.7.0
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_tree_sitter.server import main; main()
+- coordinate: pypi:arxiv-mcp-server@0.7.2
+  spawn:
+  - python3
+  - -c
+  - from arxiv_mcp_server import main; main()
+  env:
+    ARXIV_STORAGE_PATH: /tmp/arxiv
+- coordinate: pypi:mcp-obsidian@0.2.3
+  spawn:
+  - python3
+  - -c
+  - from mcp_obsidian import main; main()
+  env:
+    OBSIDIAN_API_KEY: DUMMY
+    OBSIDIAN_HOST: 127.0.0.1
+- coordinate: pypi:mcp-server-qdrant@0.8.1
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_qdrant.main import main; main()
+  env:
+    QDRANT_URL: http://127.0.0.1:6333
+    COLLECTION_NAME: x
+- coordinate: pypi:duckduckgo-mcp-server@0.6.1
+  spawn:
+  - python3
+  - -c
+  - from duckduckgo_mcp_server.server import main; main()
+- coordinate: pypi:mcp-server-docker@0.3.0
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_docker import main; main()
+  note: needs a docker socket
+- coordinate: pypi:mcp-server-motherduck@1.0.8
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_motherduck import main; main()
+  - --db-path
+  - ':memory:'
+- coordinate: pypi:mcp-neo4j-cypher@0.6.0
+  spawn:
+  - python3
+  - -c
+  - from mcp_neo4j_cypher import main; main()
+  env:
+    NEO4J_URI: bolt://127.0.0.1:7687
+    NEO4J_USERNAME: neo4j
+    NEO4J_PASSWORD: DUMMY
+  note: connects at startup
+- coordinate: pypi:chroma-mcp@0.2.6
+  spawn:
+  - python3
+  - -c
+  - from chroma_mcp import main; main()
+  - --client-type
+  - ephemeral
+- coordinate: pypi:mcp-server-calculator@0.2.1
+  spawn:
+  - python3
+  - -c
+  - from mcp_server_calculator import main; main()

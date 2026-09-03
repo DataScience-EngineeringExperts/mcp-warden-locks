@@ -1,0 +1,33 @@
+name: append-only
+
+# The required PR check. It fails if any path under locks/ or attesters.json is
+# modified or deleted; additions are the only permitted change. An attesters.json
+# addition additionally requires the `attester-onboarding` label.
+#
+# PRs opened by the attester workflow with GITHUB_TOKEN do not trigger this
+# workflow (GitHub suppresses token-caused events); the attester runs the same
+# script and reports the result as an `append-only` check-run on its head commit.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  append-only:
+    name: append-only
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history for merge-base)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Enforce append-only on locks/ and attesters.json
+        run: |
+          base=$(python3 -c 'import json,os;print(json.load(open(os.environ["GITHUB_EVENT_PATH"]))["pull_request"]["base"]["sha"])')
+          head=$(python3 -c 'import json,os;print(json.load(open(os.environ["GITHUB_EVENT_PATH"]))["pull_request"]["head"]["sha"])')
+          mapfile -t labels < <(python3 -c 'import json,os;[print(l["name"]) for l in json.load(open(os.environ["GITHUB_EVENT_PATH"]))["pull_request"]["labels"]]')
+          bash tools/append_only_check.sh "$base" "$head" "${labels[@]}"

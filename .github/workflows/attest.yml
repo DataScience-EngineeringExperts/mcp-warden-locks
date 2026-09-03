@@ -1,0 +1,146 @@
+name: attest
+
+# Nightly attester. For every target in targets.yaml that has no lock yet:
+#   stage 1  pre-fetch the package with scripts disabled (network on, no third-party code runs)
+#   stage 2  capture the declared surface inside a network-less, non-root, read-only sandbox
+#   stage 3  Sigstore-sign the lock on the runner, bound to the package coordinate (v2 statement)
+# then open ONE pull request containing only new paths. See docs/SANDBOX.md.
+#
+# The signing identity is this workflow at main:
+#   https://github.com/DataScience-EngineeringExperts/mcp-warden-locks/.github/workflows/attest.yml@refs/heads/main
+# which is what attesters.json declares for `dse-nightly`. Consumers pin that
+# identity themselves (`--attester`); the corpus never names its own trust root.
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  # mcp-warden commit the attester runs. Bump deliberately; never float.
+  WARDEN_REF: c0fd858f88daf67d9b434756acadb601a45557cd
+  ATTESTER_ID: dse-nightly
+
+jobs:
+  plan:
+    name: plan
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      count: ${{ steps.plan.outputs.count }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - id: plan
+        run: |
+          pip install --quiet "pyyaml==6.0.3"
+          m=$(python3 tools/plan.py --attester "$ATTESTER_ID")
+          n=$(printf '%s' "$m" | python3 -c 'import json,sys;print(len(json.load(sys.stdin)))')
+          echo "matrix=$m" >> "$GITHUB_OUTPUT"
+          echo "count=$n" >> "$GITHUB_OUTPUT"
+          echo "$n target(s) to attest"
+
+  attest:
+    name: attest
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write   # Sigstore keyless signing (stage 3 only, on the runner)
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        target: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Install mcp-warden (signing side, pinned commit)
+        run: pip install --quiet "mcp-warden-cli[sigstore] @ git+https://github.com/DataScience-EngineeringExperts/mcp-warden@$WARDEN_REF"
+
+      - name: Build attester image (digest-pinned base, pinned mcp-warden)
+        run: docker build -q --build-arg "WARDEN_REF=$WARDEN_REF" -t attester:local .
+
+      - name: Attest one target (pre-fetch → sandboxed capture → sign)
+        env:
+          TARGET_JSON: ${{ toJSON(matrix.target) }}
+          IMAGE: attester:local
+          SIGN: "1"
+          OUT: ${{ github.workspace }}/out
+          CACHE: ${{ github.workspace }}/cache
+        run: bash tools/attest_one.sh
+
+      - name: Artifact name
+        id: name
+        env:
+          TARGET_JSON: ${{ toJSON(matrix.target) }}
+        run: |
+          n=$(printf '%s' "$TARGET_JSON" | python3 -c 'import json,sys,re;print(re.sub(r"[^A-Za-z0-9._-]","_",json.load(sys.stdin)["coordinate"]))')
+          echo "name=lock-$n" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: ${{ steps.name.outputs.name }}
+          path: out/locks
+          if-no-files-found: error
+
+  publish:
+    name: publish
+    needs: [plan, attest]
+    if: always() && needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      checks: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: lock-*
+          path: incoming
+          merge-multiple: true
+
+      - name: Open one PR with only new paths, then report + arm the gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          n=$(find incoming -type f \( -name '*.lock' -o -name '*.lock.sigstore' \) | wc -l | tr -d ' ')
+          if [ "$n" = "0" ]; then echo "no locks produced"; exit 0; fi
+          # Only NEW paths may land (append-only); anything already on main is dropped here.
+          (cd incoming && find . -type f | sed 's#^\./##') | while read -r f; do
+            if [ -e "locks/$f" ]; then echo "skip existing locks/$f"; else mkdir -p "$(dirname "locks/$f")"; cp "incoming/$f" "locks/$f"; fi
+          done
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard locks)" ]; then echo "nothing new"; exit 0; fi
+          day=$(date -u +%Y-%m-%d); run="$GITHUB_RUN_ID"
+          branch="attest/$day-$run"
+          count=$(git ls-files --others --exclude-standard locks | grep -c '\.lock$' || true)
+          git config user.name "mcp-warden-locks attester"
+          git config user.email "attester@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add locks
+          git commit -q -m "attest: $day ($count new locks)" -m "attester=$ATTESTER_ID warden=$WARDEN_REF run=$run"
+          git push -u origin "$branch"
+          head=$(git rev-parse HEAD)
+          # The same gate the pull_request workflow runs — reported as a check-run because
+          # token-caused events do not start workflows. Fails closed: a violation aborts here.
+          bash tools/append_only_check.sh origin/main "$head"
+          pr=$(gh pr create --base main --head "$branch" --title "attest: $day ($count new locks)" \
+               --body "Nightly attestation by \`$ATTESTER_ID\` — $count new lock(s), mcp-warden \`$WARDEN_REF\`, run $run. Only new paths; see docs/SANDBOX.md. Consensus attests observation, not safety.")
+          gh api "repos/$GITHUB_REPOSITORY/check-runs" -f name=append-only -f head_sha="$head" \
+             -f status=completed -f conclusion=success \
+             -f 'output[title]=append-only OK' -f "output[summary]=$count new lock path(s); no modifications or deletions under locks/ or attesters.json." >/dev/null
+          gh pr merge --squash --auto "$pr"
+          echo "opened $pr"
