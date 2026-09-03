@@ -66,8 +66,10 @@ Signature verification needs network to Sigstore's trust root on first use.
 
 `.github/workflows/attest.yml` runs nightly: for each target in `targets.yaml` with no lock
 yet — pre-fetch with install scripts disabled → capture inside a **network-less, non-root,
-read-only, capability-dropped** container → sign on the runner with ambient OIDC → one PR
-with only new paths, merged automatically once the `append-only` gate passes. The full
+read-only, capability-dropped** container → sign on the runner with ambient OIDC → one commit
+with only new paths, landed on `main` only after the `append-only` gate has passed on that
+exact commit (the org forbids Actions from opening PRs, so the attester fast-forwards `main`
+behind the same required check every human PR must pass). The full
 contract, and what it does *not* defend against, is in [`docs/SANDBOX.md`](docs/SANDBOX.md).
 
 Targets are pinned exact versions from the official MCP servers and widely used third-party
