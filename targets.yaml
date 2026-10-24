@@ -56,6 +56,8 @@ targets:
     SLACK_BOT_TOKEN: xoxb-DUMMY
     SLACK_TEAM_ID: T00000000
 - coordinate: npm:@modelcontextprotocol/server-gitlab@2025.4.25
+  note: tools omit inputSchema.type (MCP spec violation); mcp-warden 2.x capture refuses the ListToolsResult (attest run 40083023186)
+  skip: true
   spawn:
   - node
   - /cache/npm/@modelcontextprotocol__server-gitlab/node_modules/.bin/mcp-server-gitlab
@@ -83,6 +85,8 @@ targets:
     AWS_SECRET_ACCESS_KEY: DUMMY
     AWS_REGION: us-east-1
 - coordinate: npm:@modelcontextprotocol/server-postgres@0.6.2
+  note: resources/list connects to Postgres (ECONNREFUSED under --network none); cannot list a surface without a live backend
+  skip: true
   spawn:
   - node
   - /cache/npm/@modelcontextprotocol__server-postgres/node_modules/.bin/mcp-server-postgres
@@ -109,6 +113,8 @@ targets:
   env:
     OPENAPI_MCP_HEADERS: '{"Authorization":"Bearer ntn_DUMMY","Notion-Version":"2022-06-28"}'
 - coordinate: npm:@supabase/mcp-server-supabase@0.11.0
+  note: tools/list fetches from the Supabase API (fetch failed under --network none); cannot list a surface without a live backend
+  skip: true
   spawn:
   - node
   - /cache/npm/@supabase__mcp-server-supabase/node_modules/.bin/mcp-server-supabase
@@ -119,6 +125,8 @@ targets:
   - node
   - /cache/npm/@wonderwhy-er__desktop-commander/node_modules/.bin/desktop-commander
 - coordinate: npm:@hubspot/mcp-server@0.4.0
+  note: declares the resources capability but answers resources/list with Method not found; mcp-warden 2.x capture fails closed on it
+  skip: true
   spawn:
   - node
   - /cache/npm/@hubspot__mcp-server/node_modules/.bin/mcp-hubspot
@@ -291,6 +299,8 @@ targets:
     NEO4J_PASSWORD: DUMMY
   note: connects at startup
 - coordinate: pypi:chroma-mcp@0.2.6
+  note: its resolved dependency set breaks at import (mcp imports pydantic eval_type_backport, absent in the resolved pydantic); target-side
+  skip: true
   spawn:
   - python3
   - -c
