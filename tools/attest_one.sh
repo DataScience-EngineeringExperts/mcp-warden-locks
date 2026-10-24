@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Attest ONE target: stage 1 pre-fetch (network on, package managers only, no
 # third-party code executes), stage 2 sandboxed capture (network none, non-root,
-# read-only, no caps), stage 3 signing on the host (see tools/sign_lock.py).
+# read-only, no caps), stage 3 signing on the host (`mcp-warden lock sign`).
 # Reads the target as JSON on $TARGET_JSON (never via ${{ }} interpolation).
 # Env: IMAGE (attester image), OUT (output root, default ./out), SIGN=1 to sign.
 set -euo pipefail
@@ -44,7 +44,7 @@ docker run --rm --network none --user "$uid:$gid" --read-only --cap-drop ALL \
 test -s "$lock_path"
 if [ "${SIGN:-0}" = "1" ]; then
   echo "== [$coord] stage 3: sign on host (v2 statement, ambient OIDC)"
-  python3 "$(dirname "$0")/sign_lock.py" "$lock_path" "$coord"
+  mcp-warden lock sign "$lock_path" --coordinate "$coord"
   test -s "$lock_path.sigstore"
 fi
 echo "== [$coord] OK -> $lock_rel"

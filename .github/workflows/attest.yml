@@ -27,7 +27,7 @@ permissions:
 
 env:
   # mcp-warden commit the attester runs. Bump deliberately; never float.
-  WARDEN_REF: c0fd858f88daf67d9b434756acadb601a45557cd
+  WARDEN_REF: 5fc99e80bd455571e4ce87634f68554c3ba018c5  # v2.1.0 (lock schema 4, `lock sign`)
   ATTESTER_ID: dse-nightly
 
 jobs:
