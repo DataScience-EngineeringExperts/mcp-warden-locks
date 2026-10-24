@@ -1,0 +1,645 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/mcp-server-git",
+      "NODE_PATH=/cache/npm/mcp-server-git/node_modules",
+      "python3",
+      "-c",
+      "from mcp_server_git import main; main()"
+    ],
+    "url": null,
+    "command_digest": "sha256:fad8647f58f62c74de25a6b4b1e23f9933473973fc6694482e90d8b304381612"
+  },
+  "tools": [
+    {
+      "name": "git_add",
+      "description_hash": "sha256:63a3fcab5ef606c31226534328ed217c0c5c375ed428256600eb43f9613feb78",
+      "input_schema_hash": "sha256:b4964794372fb87d87e2d0d04d5c8771f1ba8fe23701ae9574d2831036e18055",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "files": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "files[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:73a3e8d549eea999d3de31ff52b0e27d51638d6060a922263264427c67a8cbb4",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:0f76d53e8cfa21c2d84eed4c48326320279b3118e3630a69818ca36445866a5b"
+    },
+    {
+      "name": "git_branch",
+      "description_hash": "sha256:66e4ef57f7e4eaacde42c12f4503c6daac5ddc06b1f205410945029760226a23",
+      "input_schema_hash": "sha256:57d04063c4a36858343773eb6928ffd7a2e52a4d95545a310845d8facdc0211c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "branch_type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "contains": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "not_contains": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:6c61e0c367319cd2bb0234dd238c94166f10190d0a44167345b457db19237bc9"
+    },
+    {
+      "name": "git_checkout",
+      "description_hash": "sha256:1764f2137b70764a42aa4ef06fe68f1658bf81d896bdd92b636303a75ed3d948",
+      "input_schema_hash": "sha256:516dc2e905ce6d79254be1035b338c26992f1c8e66a4e5d88d7b6a7485833969",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "branch_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d72d3cb182e3d7fcf0b1c6782251eee772cdf2a99470e1a4bd6a006b5c8f4e25",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:0efdb243a907c7970335038421b3874f7e5647e76ab25649ee73bedf5b4b9a4e"
+    },
+    {
+      "name": "git_commit",
+      "description_hash": "sha256:acc2ab5eeaabdf5faf56f596b8fec5d49d2546c654639cc1e3c6f1b31fc81695",
+      "input_schema_hash": "sha256:292f379542fc33ea01f62648f50aab4b07518bb7614f79895e9a77639043f3c3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "message": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d72d3cb182e3d7fcf0b1c6782251eee772cdf2a99470e1a4bd6a006b5c8f4e25",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:5b3d6c1eae5e45a2eddc7441d7d35ceb0cc72065acf4be08fd38f74c3190d417"
+    },
+    {
+      "name": "git_create_branch",
+      "description_hash": "sha256:4dbdc6c993626b65f67fa0c394da2084fcf55b3e125c192d51c54379b6d7d359",
+      "input_schema_hash": "sha256:a729d00b7ca12f742eace3e299d98df0290c382a2fa54033f487aaefa787b0ed",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "base_branch": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "branch_name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d72d3cb182e3d7fcf0b1c6782251eee772cdf2a99470e1a4bd6a006b5c8f4e25",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:a234c0088337d12ecd5e25e13b73369cb7168f376adb0d8bea16ce0ee6ef895b"
+    },
+    {
+      "name": "git_diff",
+      "description_hash": "sha256:e04e0b0169eeae6131e83e03f81f76b46d8108970f2bf65896638f067a036a7a",
+      "input_schema_hash": "sha256:3028417740cd7f02a8ada0da7f65571b0a98309b3b308c5226ad40dbeeea2eb0",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "context_lines": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:a05ffae759b3584683721dfdd257719b67aed3ed8e65535c4633e7790547cb76"
+    },
+    {
+      "name": "git_diff_staged",
+      "description_hash": "sha256:9c8034a6c14eedf096d4736483d1223ed512c0bc35f5c9485167f631fe61fa05",
+      "input_schema_hash": "sha256:edcbb5d9ac0831c9d613d55e28fc6e5a446313ce413a7bb6fba7ba11d5cc6d5b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "context_lines": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:1b8ecc86f9bacfad604e4b30546bd234c5d72aa9b2a9e6811a9289f1fc861cee"
+    },
+    {
+      "name": "git_diff_unstaged",
+      "description_hash": "sha256:a54eb8e9b7d3d6e83b00093cf280b69b5f8dce528683404d8e80a0fbb0fcc14f",
+      "input_schema_hash": "sha256:f6d9cece66ac042e727f712545825c152c5d6dc39c944dc99c3319b3464bd5db",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "context_lines": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:de167da87438657b1d14e1a93bfc26cc0fe9914eacea7f168b13d89c6f9b3a4e"
+    },
+    {
+      "name": "git_log",
+      "description_hash": "sha256:462df1609677f94c767ff83f4805248419ce089497cc8b15c3dafdbb2d9556ff",
+      "input_schema_hash": "sha256:6a12081f35d8069ddca7d1e70de8c4181cbb0475098b23cb24b13f8ad385240e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "end_timestamp": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "max_count": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_timestamp": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:97a016e87aa032c73e0dc95267dd1e702697863cb2260dd2c58c3ca0d5068f7d"
+    },
+    {
+      "name": "git_reset",
+      "description_hash": "sha256:6b041b5cf2cadbb9c9f80975921e2edf8f262fbde743c1d5b0277d23dd1cf4e3",
+      "input_schema_hash": "sha256:5e4fc873d15789835f724f59e69d268a2d3cb614605712363eb16549ce0c6563",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:eac8ce4ef2f806dc71b6ab74b1b7f45db5d763fc21c243fac665161bb8d6fb60",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:8964845b2bfcfce805f67b04a5b96b1e49edecd092789bd0957ae43dd3beb2dc"
+    },
+    {
+      "name": "git_show",
+      "description_hash": "sha256:9d6a764cf896a517bbe85f4d15bb4527c6d0a8de71a1ec9c82d1bb075ba89d0e",
+      "input_schema_hash": "sha256:5ba0f464a65a0e4d67c6944e157bdf9fc35447b568ac17f11db31e7adc4716f4",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "revision": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:81716b8787a802666d1073291a4091eb530c24715aba1bf99b8cffdbd7cf4370"
+    },
+    {
+      "name": "git_status",
+      "description_hash": "sha256:740f85faf30cca3f3ec970fab6c9962dc9fa4a2c399129d2ba4864a661ce4f04",
+      "input_schema_hash": "sha256:e3eb0910a0b7d725877173b42aa54849c5a978932a2192e3f814a9d92794db25",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "repo_path": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:2aa2c5a2d46efa65a0aa5986b9857ea650e69340064004a1c54dfad0a169ad25"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "NODE…(len=48)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "PYTH…(len=37)"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/git_create_branch",
+      "message": "Tool derives capability 'fs-write' (name token 'create')",
+      "snippet": "name token 'create'"
+    }
+  ],
+  "overall_digest": "sha256:43b869dfb23b60dc9c8328b97cc3da3723ca31e17a0f50f765a46d652d455d84",
+  "pin": {
+    "created_at": "2026-10-24T09:43:39Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:43:42Z",
+        "bound_digest": "sha256:43b869dfb23b60dc9c8328b97cc3da3723ca31e17a0f50f765a46d652d455d84",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}
