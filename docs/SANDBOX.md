@@ -36,7 +36,8 @@ docker run --rm --network none --user <runner-uid>:<gid> --read-only --cap-drop 
 - **No capabilities, no privilege escalation, 256 pids, 512 MiB, 120 s** — a fork bomb,
   memory bomb, or hang is contained and the target is simply skipped.
 - **Digest-pinned image** (`Dockerfile`: `node:22-bookworm-slim@sha256:…`) with mcp-warden
-  installed from a pinned commit (`WARDEN_REF`). Nothing from any target is baked in.
+  installed with `--require-hashes` from `tools/attester-requirements.lock` (the same
+  lock the signing runner installs). Nothing from any target is baked in.
 - **Pre-fetch with scripts disabled** — `npm install --ignore-scripts`, `pip install
   --only-binary :all:` — so `postinstall` hooks and `setup.py` never execute anywhere, on
   either side of the sandbox. Packages that ship no wheel are dropped, not built.
