@@ -3,8 +3,10 @@
 # target package is ever baked in.
 ARG NODE_BASE=node:22-bookworm-slim@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5
 FROM ${NODE_BASE}
+# git is a target runtime dependency (mcp-server-git shells out to it), not
+# mcp-warden's: mcp-warden installs from the hashed lock below.
 RUN apt-get update \
- && apt-get install -y --no-install-recommends python3 python3-venv python3-pip ca-certificates \
+ && apt-get install -y --no-install-recommends python3 python3-venv python3-pip git ca-certificates \
  && rm -rf /var/lib/apt/lists/*
 COPY tools/attester-requirements.lock /tmp/attester-requirements.lock
 RUN python3 -m venv /opt/warden \
