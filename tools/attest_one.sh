@@ -42,6 +42,15 @@ docker run --rm --network none --user "$uid:$gid" --read-only --cap-drop ALL \
   -v "$CACHE:/cache:ro" -v "$OUT:/out" "$IMAGE" \
   timeout 120 mcp-warden pin --lock "/out/$lock_rel" -- "${wrap[@]}" "${spawn[@]}"
 test -s "$lock_path"
+# $OUT was writable by the target during stage 2. Before anything on the host reads
+# it, refuse any symlink under $OUT and require the lock to be a regular file inside it.
+if [ -n "$(find "$OUT" -type l -print -quit)" ]; then
+  echo "refusing: symlink under $OUT after capture" >&2; exit 2
+fi
+out_real=$(realpath -e "$OUT"); lock_real=$(realpath -e "$lock_path")
+if [ ! -f "$lock_path" ] || [ "${lock_real#"$out_real"/}" = "$lock_real" ]; then
+  echo "refusing: $lock_rel is not a regular file under $OUT" >&2; exit 2
+fi
 if [ "${SIGN:-0}" = "1" ]; then
   echo "== [$coord] stage 3: sign on host (v2 statement, ambient OIDC)"
   mcp-warden lock sign "$lock_path" --coordinate "$coord"

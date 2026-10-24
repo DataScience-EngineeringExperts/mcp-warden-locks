@@ -1,0 +1,7 @@
+# Everything the attester installs, on the signing runner and in the capture image.
+# Compile (uv 0.6.16, same flags as mcp-warden's own locks):
+#   uv pip compile --universal --generate-hashes --python-version 3.11 \
+#     tools/attester-requirements.in -o tools/attester-requirements.lock
+# Install only with `pip install --require-hashes -r tools/attester-requirements.lock`.
+mcp-warden-cli[sigstore]==2.1.0
+pyyaml==6.0.3
