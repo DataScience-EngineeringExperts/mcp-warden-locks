@@ -22,8 +22,9 @@ observe against what *the attesters they trust* observed.
 ```
 attesters.json                      discovery list of attester ids → identities (NOT the trust root)
 targets.yaml                        what dse-nightly attests: pinned coordinates + sandbox spawn argv
-locks/<ecosystem>/<segment>/<version>/<attester-id>.lock            the captured surface
-locks/<ecosystem>/<segment>/<version>/<attester-id>.lock.sigstore   Sigstore bundle over the v2 statement
+locks/schema-4/<ecosystem>/<segment>/<version>/<attester-id>.lock   lock schema 4 (mcp-warden >= 2.2.0)
+locks/schema-4/.../<attester-id>.lock.sigstore                      Sigstore bundle over the v2 statement
+locks/<ecosystem>/<segment>/<version>/<attester-id>.lock            lock schema 3 (mcp-warden 1.x), frozen
 ```
 
 `ecosystem` is `npm` or `pypi`; `segment` is the package name with `/` → `__`
@@ -90,11 +91,12 @@ Phase 2 of [DSE-1515](https://linear.app/dseofficial/issue/DSE-1515) (mcp-warden
 side shipped in mcp-warden `c0fd858` (`check --against-community`). Requests, second
 attesters, and target additions: open an issue or PR here.
 
-**Lock schema.** Locks attested before 2026-10-24 are lock schema 3 and verify only
-with mcp-warden 1.x; mcp-warden 2.x requires schema 4 and refuses them
-(`schema_version 3 != implemented 4`). The attester now runs mcp-warden 2.1.0, so
-new locks are schema 4. Migration of the existing schema-3 entries is tracked in
-[DSE-2143](https://linear.app/dseofficial/issue/DSE-2143).
+**Lock schema.** Each path serves one lock schema. `locks/schema-4/` is read by
+mcp-warden 2.2.0 and later and is where `dse-nightly` writes today. The legacy
+`locks/<ecosystem>/` tree holds the schema-3 locks attested on 2026-09-03 for
+mcp-warden 1.x; it is frozen (append-only) and 2.x never reads it. mcp-warden 2.0.0
+and 2.1.0 read the legacy tree and refuse it as a schema mismatch, so use 2.2.0+
+([DSE-2143](https://linear.app/dseofficial/issue/DSE-2143)).
 
 License: MIT (tooling and docs). Lock files are factual records of published package
 metadata.

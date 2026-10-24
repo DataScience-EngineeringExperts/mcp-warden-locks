@@ -22,6 +22,9 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+#: Lock schema the attester writes (mcp-warden 2.x). Must match the subtree the
+#: consumer reads (`CORPUS_SCHEMA_DIR` in mcp-warden >= 2.2.0).
+SCHEMA_DIR = "schema-4"
 _COORD = re.compile(r"^(npm|pypi):([^@\s]+|@[^/\s]+/[^@\s]+)@([0-9][^\s@]*)$")
 
 
@@ -31,7 +34,7 @@ def lock_dir(coordinate: str) -> Path:
         raise SystemExit(f"bad coordinate in targets.yaml: {coordinate!r}")
     eco, name, version = m.groups()
     segment = name.replace("/", "__")
-    return ROOT / "locks" / eco / segment / version
+    return ROOT / "locks" / SCHEMA_DIR / eco / segment / version
 
 
 def main() -> int:

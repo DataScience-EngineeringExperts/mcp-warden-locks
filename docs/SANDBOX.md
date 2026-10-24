@@ -66,7 +66,7 @@ docker run --rm --network none --user <runner-uid>:<gid> --read-only --cap-drop 
    `oidc_issuer`) with the `attester-onboarding` label. The append-only gate refuses
    `attesters.json` changes without it.
 3. Submit locks as PRs containing **only new paths**
-   `locks/<ecosystem>/<segment>/<version>/<your-id>.lock` + `.lock.sigstore`.
+   `locks/schema-4/<ecosystem>/<segment>/<version>/<your-id>.lock` + `.lock.sigstore`.
 
 Consumers decide whom to trust: your id does nothing until someone pins it with
 `--attester`. **Consensus attests observation, not safety.**
