@@ -1,0 +1,265 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-sequential-thinking",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-sequential-thinking/node_modules",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-sequential-thinking/node_modules/.bin/mcp-server-sequential-thinking"
+    ],
+    "url": null,
+    "command_digest": "sha256:1acd0897e443bea62b5b4f351a6d87e44b8eddebb181b448e49f06bcd109fe89"
+  },
+  "tools": [
+    {
+      "name": "sequentialthinking",
+      "description_hash": "sha256:c0e7d6fa7a318b31cc428cc694acc1f1a93ac3c85807fb2bbeecc10ba82939a0",
+      "input_schema_hash": "sha256:9b7a7f7db32440b9150d1b9d0d8446fc3eb92fbb52f9a50fb64bcd0c0268a1e0",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "branchFromThought": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 1
+            }
+          },
+          "branchId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "isRevision": {
+            "type": [
+              "boolean",
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "needsMoreThoughts": {
+            "type": [
+              "boolean",
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "nextThoughtNeeded": {
+            "type": [
+              "boolean",
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "revisesThought": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 1
+            }
+          },
+          "thought": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "thoughtNumber": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 1
+            }
+          },
+          "totalThoughts": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:b157dfbca04cf3213646a212215d93d3e049b333e61643eb5c7a9c628979ac30",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "branches": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "branches[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "nextThoughtNeeded": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "thoughtHistoryLength": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "thoughtNumber": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "totalThoughts": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:57212849a6f87a6054927df1d7f769679b00de5f94f5f1b335af96d3d18621c9"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=48)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=61)"
+    }
+  ],
+  "overall_digest": "sha256:5451331dad5f9cbea1fc5bf617c1ac09965d2017e59e0c6623c60c75dd074742",
+  "pin": {
+    "created_at": "2026-10-24T09:26:18Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:26:20Z",
+        "bound_digest": "sha256:5451331dad5f9cbea1fc5bf617c1ac09965d2017e59e0c6623c60c75dd074742",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

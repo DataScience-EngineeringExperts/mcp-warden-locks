@@ -1,0 +1,120 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@kimtaeyoon83__mcp-server-youtube-transcript",
+      "NODE_PATH=/cache/npm/@kimtaeyoon83__mcp-server-youtube-transcript/node_modules",
+      "node",
+      "/cache/npm/@kimtaeyoon83__mcp-server-youtube-transcript/node_modules/.bin/mcp-server-youtube-transcript"
+    ],
+    "url": null,
+    "command_digest": "sha256:1e2087929451464573c35cd70b7d0b9fe252d160b602db65ddf349561891c1f8"
+  },
+  "tools": [
+    {
+      "name": "get_transcript",
+      "description_hash": "sha256:8e4927cb3de989711d11e678aec2ab4bc2a0936f3f094ec67d95d5fe0af1b7f0",
+      "input_schema_hash": "sha256:079220a981176c861d7002045c90c51f246514dee6e45a3fe42640b688223c10",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "lang": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:37f1473b549a65faa8f1756f8a936de8350716413526f3112cb1c13db2caa5d9"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "kimt…(len=43)"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "kimt…(len=56)"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/get_transcript",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    }
+  ],
+  "overall_digest": "sha256:6ccb1820c2bf1f744c63038e70a66682c3016618aac4c1659bf5f5381598969f",
+  "pin": {
+    "created_at": "2026-10-24T09:29:55Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:29:57Z",
+        "bound_digest": "sha256:6ccb1820c2bf1f744c63038e70a66682c3016618aac4c1659bf5f5381598969f",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

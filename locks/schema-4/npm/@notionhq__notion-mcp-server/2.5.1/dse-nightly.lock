@@ -1,0 +1,1417 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@notionhq__notion-mcp-server",
+      "NODE_PATH=/cache/npm/@notionhq__notion-mcp-server/node_modules",
+      "OPENAPI_MCP_HEADERS={\"Authorization\":\"Bearer ntn_DUMMY\",\"Notion-Version\":\"2022-06-28\"}",
+      "node",
+      "/cache/npm/@notionhq__notion-mcp-server/node_modules/.bin/notion-mcp-server"
+    ],
+    "url": null,
+    "command_digest": "sha256:5e88a3f9537d197cad10d24640aac99bff71348eee8ff4ab546cba4bfaf7da82"
+  },
+  "tools": [
+    {
+      "name": "API-create-a-comment",
+      "description_hash": "sha256:580b392e046f2a325cd02c85294ad7ca346fb99bfb1ade09294be37513927587",
+      "input_schema_hash": "sha256:1651488de0e161f183310265d99b9c3bd8d06e64c0133505bb8e7a4877fc76e4",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parent": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "rich_text": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "rich_text[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:2390d82e9f7bbb43a84ce52bc3e75ab1c392cf32433e90f663935fceb44a5173",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:a5c461b030f8712772ab72562f8d9077df8404e1f15279750806ff7ddb85ddad"
+    },
+    {
+      "name": "API-create-a-data-source",
+      "description_hash": "sha256:9a0a04d5b82d20e9b383df2598ec5653521ee8f2f9367e5dc403d3dc93ea3dcb",
+      "input_schema_hash": "sha256:a8a254b9a0d92ab1de6e657b10d3a48de47c0b97df0c65b32a78cc94fe11872f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "parent": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:5c8a2ff800e1ae10f10d2fe2efa0d1f081c3f44920d4a66c4c697e3b9524f6d8",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:7ba56cfd1ace31d3804f4999ccf29b5dcf236452ca7f5487707c062ecda2a57b"
+    },
+    {
+      "name": "API-delete-a-block",
+      "description_hash": "sha256:52f9e771a6fd7fa795533fd638f7838cc26193b3b529d41cec964946886a8e67",
+      "input_schema_hash": "sha256:c9f3490169076f620588192f530d1a772958fd3f74b37392490622447f43e3b6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "block_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:6ab1a94c3db9f319a199c9f1845632420bc97c9d698f93885f0415d89f930984",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:be540fe549fa8af2dc59954aecc23376892a56cbd07303781d2552d40e107ec5"
+    },
+    {
+      "name": "API-get-block-children",
+      "description_hash": "sha256:bc4b71d5b319125d3f19018c62732b6f5e3e7041a5e310eb2ae3004a1f84ac15",
+      "input_schema_hash": "sha256:fbb71511eed10a361ff9bb1b45c15e0184ee20ce723b49adb265496745ef0358",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "block_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "int32"
+            }
+          },
+          "start_cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:55782e1799e3506e79451c79d8ae64690385308fc33092d303a007b2e918c46b",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:60747b9fb12bb9448b4b29196ff1b7b84e3f906f34ec7b22d168872e98bcfb20"
+    },
+    {
+      "name": "API-get-self",
+      "description_hash": "sha256:7555a676f720fdfb5eef7a1c08ead2ec90545909a29797322e5153fb8c5b3110",
+      "input_schema_hash": "sha256:5c6baa56325858d191abb76f8ca31666a0ea8281d22978e2718f7d416350e1ab",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ce41ad01bc6f4b85b4b356d48012f204452764f0ccf3c1176012d2f2d3dfe674",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:0566794c53427cd4b4ac4b3f329ea347b66ac9547b171809a0980970125b06ed"
+    },
+    {
+      "name": "API-get-user",
+      "description_hash": "sha256:5a9e434dfce4c89ec41e20461781b931586971b8e8fd9339ee74f61d13baf38c",
+      "input_schema_hash": "sha256:ca57eb311e1a2ae3943d79f0b2e98df9c7bde15ee5c2aa3f8a926f1150656f71",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "user_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:749531fc4ef853b720c355bca38c870364920d8643841bf496c104c930c84af2",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:e570dae4c4454a06c69d654139da2b95bcc8b18f9d3be31a78eccdfebee73361"
+    },
+    {
+      "name": "API-get-users",
+      "description_hash": "sha256:df9a298081a11fac559f9c282d2901ceabc4a02b3d737cae7b8e2fb72d101e21",
+      "input_schema_hash": "sha256:d9551699baeb090a405077cdee10434a06f4785ac9862424b0562907d588c32f",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ab8c2723a42dc4083cebf78dbcd8636e0704cab8778ee80e51223f3a2a2d3c2b",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:51ec78236d7f0c4c1ec103325e8ffd8c548e5916b55fcdd05930feffb0a2e12e"
+    },
+    {
+      "name": "API-list-data-source-templates",
+      "description_hash": "sha256:63d3179722f1eaf7830da2c4497933041b0019b78fe89afa53c98bc865a9f31c",
+      "input_schema_hash": "sha256:98278348b1e5421f7ef67b58addd10e7c1fd3177b08262d9796a2eb73b2cfc65",
+      "capabilities": [
+        "fs-read"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "data_source_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:8ab6c5d969265ccce5c2447564d52560ab93e60c8f30629594888fa40ccd02d8",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:a4489e216823cb08b2b0c7f45e9ede507c43b7075ae0cfc8821dc9d3d4232264"
+    },
+    {
+      "name": "API-move-page",
+      "description_hash": "sha256:f2b402a6a2b000f812b881a812a953b13b13d0ff223b708c972bc167dda68223",
+      "input_schema_hash": "sha256:f4c99092a0d6bb2243ad300d56d0eac41360a97332bd652273eda6859cac2035",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uuid"
+            }
+          },
+          "parent": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:20bc6c047e90dab007c6bb803d7f9592cd5e046a461ee482a4f874f88b5d0d89",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:642f49656a8d8ae22e61b5caccea492e9e9dd4a3acfcffda3b83d445438bf22e"
+    },
+    {
+      "name": "API-patch-block-children",
+      "description_hash": "sha256:1cff12e71b09bf32d4def63c45bb62d81548820d0119da1ba2d72ae8fffeca49",
+      "input_schema_hash": "sha256:91ea78cb4b23afbf8adefef55ad0b8fa4754427a617eb992e90812874ac609f8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "after": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "block_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "children": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "children[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:b31c09c6348da33394d0ac01dac78d17f6c4eb66ce726a4bfae09e7804dae7cd",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:67a3b9e077fd9193f45ddd553973f5f5d2f637fdb093b28f73376e90f753a07f"
+    },
+    {
+      "name": "API-patch-page",
+      "description_hash": "sha256:707d11a0c6331bd10693d32207b8ab91b7d4867128901d51dfbbe8347a82eb89",
+      "input_schema_hash": "sha256:6dff3e37a72390b7073a6b216633789d37a0a742d88a7a7f0f8ccf62e6aaa3c5",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "archived": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "cover": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "icon": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "in_trash": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d98e7420a346207bce806bc0862046b95dfbeb0d97e81f6522fe14f7f9f6104b",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:96fca306f40574cb79fec7c1a6711d6028ec430cac7833565d424345b168d6fa"
+    },
+    {
+      "name": "API-post-page",
+      "description_hash": "sha256:4fb2af1051af9e5468661a3d755c6c53e20ae164abe6e0960852b0c069e182ba",
+      "input_schema_hash": "sha256:378456ee9948181308bb066479413637872cdcfb252a71c6d712fcad4c0a47d1",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "children": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "children[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "cover": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "json"
+            }
+          },
+          "icon": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "json"
+            }
+          },
+          "parent": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ff111c6296e9c18cddc037b245021bd985d8092d141f4aa7482ba025ed550dec",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:0622c0eb8da867396c2ebedf57fa01096b4c1892d32ee498a38f9cbab2cd284a"
+    },
+    {
+      "name": "API-post-search",
+      "description_hash": "sha256:9bf53971f22009c3d27f80d37eadcdf38e1b363e54d3d649240127b8e80539da",
+      "input_schema_hash": "sha256:832536fa4d1043586fa8d9923325924c0037a595cee58ef42480489bd87663a3",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filter": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "int32"
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:6788c316969e2d7689f13d44d98953629ee658744833e507bfafe1ec5f263f92",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:2fac10287f49ff696ce53d3407048b87b3758635a6059adc56e277b1d4cc54a3"
+    },
+    {
+      "name": "API-query-data-source",
+      "description_hash": "sha256:6565492888994f7d47befdb49df10c0b76de10aefaebb961a9a531733664fb7f",
+      "input_schema_hash": "sha256:53fe0f1928671057b821652bc63333fe8c6a02f5284ff45c6cd777ddc99df529",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "archived": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "data_source_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filter": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filter_properties": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filter_properties[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "in_trash": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sorts": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sorts[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:253dd74769bdd29a4ff009a25125ebb78f556023ad1f019e735f2fa6a1d9512e",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:3c9badc88eece040809e1076090f45e4e34e0f7f3b461412a3683fa2154c7f8e"
+    },
+    {
+      "name": "API-retrieve-a-block",
+      "description_hash": "sha256:9f0adb1cf85745257de9dbf644bacc9fd3fe13e1487a359063291aa2e909e730",
+      "input_schema_hash": "sha256:c9f3490169076f620588192f530d1a772958fd3f74b37392490622447f43e3b6",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "block_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:360a88717d6b7c60b3c7cd285457cdde9efe5f49d8e4f31adf29900b73b80277",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:bce3216fcd439bf6aa4fb177e52037c8e9944323181e38bc02d0ae37ad2f45e4"
+    },
+    {
+      "name": "API-retrieve-a-comment",
+      "description_hash": "sha256:449e63ca872c2f7356dc54d0aff666e944692f73bb50adf546066ce32d6d69b7",
+      "input_schema_hash": "sha256:467a4815f8ecf55fb096dab29c657f608fcf2221dd5a5aec17c9fa0c65e32c48",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "block_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "int32"
+            }
+          },
+          "start_cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:4d81e9a236137ef30b8a1c161368f39fe2cfa447e13ef8916f90f882aa582082",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:1e8299be0ab5ffa2c379c3c1a415729a228aca2eb76ac2fcf77793320fbc0f20"
+    },
+    {
+      "name": "API-retrieve-a-data-source",
+      "description_hash": "sha256:db5fccad3debb1103f71c4ce2b345f19502aa4bdcd45065130347760330087b0",
+      "input_schema_hash": "sha256:ae821dc37e42061564b9a210d379f159986d59884b3c94cceab95fab42ba8911",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "data_source_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:e1ffb1fe7eb989298edd7ebf1ae4dedd8aa1b3b88fd15669d52d95ea1fb7428f",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:1aa19be38db355d7284882f5e4985f0ef7a8271042b3ed978e1795c427f0ef60"
+    },
+    {
+      "name": "API-retrieve-a-database",
+      "description_hash": "sha256:de37e2728f0d928354184ba76e30751a1b0e9e460a02d81f87bb7b6195446857",
+      "input_schema_hash": "sha256:9e813751eedb5c1126940fe5906264fc0954f0fc445ec38d42d2f7164c023b1e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "database_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:4bdf01799bc2287447b28179ae8ae16a62dd439442a92c5ca2dfd32cfc544908",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:316f39e858f5fb0ccea21fdce079f14cf1f9931738e96c828cc45d60eb5e0bce"
+    },
+    {
+      "name": "API-retrieve-a-page",
+      "description_hash": "sha256:f334e253b458c07b30dacf26383ab3f6ea59c2524c1b0cc1369a77fcc5669f0a",
+      "input_schema_hash": "sha256:70dd70561cde1aa7bee9a6a7c2c8dfb7d2e62395096187e490693137f737d434",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filter_properties": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:17500cf6a9033c14792b767acb6b6721ef6aaed16b93c5a88454479cdfa6adc3",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:6fd6eaf4919e901775090d65cc1e5201675248b3cb1167c82b1c05143af2deb1"
+    },
+    {
+      "name": "API-retrieve-a-page-property",
+      "description_hash": "sha256:027bc3f33f5b79dc5b3a845232f857075170fbb96df37304a9eb8b9ccb4607af",
+      "input_schema_hash": "sha256:9817060ff8c95a274488d1088789b335878fe5a6b03e854fafe0e8e6abbf0494",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_size": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "int32"
+            }
+          },
+          "property_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "start_cursor": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:104a8878f158b6a63aabc50148ed74bb98e7263290f94f9b88c6ae647705af3f",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:895dfa264c66385054b318bdda5b7fb203d1f5fcfaa6d12f7f41345721c64ea1"
+    },
+    {
+      "name": "API-retrieve-page-markdown",
+      "description_hash": "sha256:388d4e384e2715d647cbb7c713b871580aa46075680113f30d52271215e98263",
+      "input_schema_hash": "sha256:417e1613339d5c7a3d1d38e5535ba16e042b61b011ce02b2eb0c8614bbf89bbf",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "include_transcript": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:e9f5be8abac9b27319b800724794bbf1a525529ad01cbada323b7f40e2d11d5e",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:f713672863c07286057858c37007a260638c72ba9514b4309f1b3fb361cdad7a"
+    },
+    {
+      "name": "API-update-a-block",
+      "description_hash": "sha256:1dbe04a67bcb1d4d169cc987492178f4294ed2691daff2a9eba0e441daf91ac0",
+      "input_schema_hash": "sha256:936221c4f98eb26bee47eced0638a59e4ba715be7aacaf3145d0c55123d849b8",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "archived": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "block_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:93c17f1cb41ab94149a56d9a9e22d9583ddda0adff5222868d37879a29a68273",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:07fdfe8fbb1666c76926c880925e30f5840a4cc44e057bfead8136e977e03512"
+    },
+    {
+      "name": "API-update-a-data-source",
+      "description_hash": "sha256:c54ff8dc4a256e85b6fc6f3b3e6b4130598a7c6c121a50c10a5a40c03f7de6de",
+      "input_schema_hash": "sha256:7a6fba547b77fb2acb45412170a409d19508de6daea934bf17504de4d14e3d2e",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "data_source_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "description": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "description[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "properties": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "title[]": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:05e8553ce75353013a204998ddbe1812878c05813403836a33cfd3adf98421b1",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:98e2cbd3d4b37748225b2d6500f125533bb1d10df75dbe2b1c3b4f79534f7592"
+    },
+    {
+      "name": "API-update-page-markdown",
+      "description_hash": "sha256:455e1c6b9b2d924f144917a6f4d7f0dad78ac5a27712b0ce29c63135dfe7f986",
+      "input_schema_hash": "sha256:5e888c269af736a2b183ee8675ab797d68f2c017ddd3f99bb6ffb406ef972dad",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "insert_content": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "page_id": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uuid"
+            }
+          },
+          "replace_content": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "replace_content_range": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "insert_content",
+              "replace_content",
+              "replace_content_range",
+              "update_content"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "update_content": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:c5c78b2b2713b186504dde924fc5fe4518636bd33ba8d947736a5f6e11cf0c9c",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:c20af721463f994373fe1afa6b753e2ad48e5ba196e4ab9cfb67dae5f92214f9"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-CAP-FS-READ",
+      "severity": "medium",
+      "target": "tools/API-list-data-source-templates",
+      "message": "Tool derives capability 'fs-read' (name token 'list')",
+      "snippet": "name token 'list'"
+    },
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "tools/API-patch-block-children",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "API-…(len=24)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/API-post-search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/API-query-data-source",
+      "message": "Tool derives capability 'sql-query' (name token 'query')",
+      "snippet": "name token 'query'"
+    }
+  ],
+  "overall_digest": "sha256:9e308053347898adc76b11b2d4673cfec9a2bc02f16a7fc1d81a96c922548e1b",
+  "pin": {
+    "created_at": "2026-10-24T09:28:08Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:28:11Z",
+        "bound_digest": "sha256:9e308053347898adc76b11b2d4673cfec9a2bc02f16a7fc1d81a96c922548e1b",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

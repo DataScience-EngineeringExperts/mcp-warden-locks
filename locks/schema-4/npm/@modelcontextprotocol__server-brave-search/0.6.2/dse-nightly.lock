@@ -1,0 +1,177 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-brave-search",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-brave-search/node_modules",
+      "BRAVE_API_KEY=DUMMY",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-brave-search/node_modules/.bin/mcp-server-brave-search"
+    ],
+    "url": null,
+    "command_digest": "sha256:8e7ab240e953d2d235e78494ea3985f461e1d7a61cca87842afb593381988ca3"
+  },
+  "tools": [
+    {
+      "name": "brave_local_search",
+      "description_hash": "sha256:eda0c37b6a13e5c17d8d8d9a53152d46df8987337071482bff7e4aa3826414e5",
+      "input_schema_hash": "sha256:0b8cdb053a84e29606617aec3889b6b85742c546ff1adafbd6d18ed577aa4d89",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "count": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:9d53d29791e43f384d53030bd853a4c9b079e1e52f94731c6369d0222d62e2b8"
+    },
+    {
+      "name": "brave_web_search",
+      "description_hash": "sha256:f75de1ae4b52e1734495111b51a6b31fe1fa4bce5b2c8a3899029fae8fb309f8",
+      "input_schema_hash": "sha256:33a5016eb1992c105c657d7cd43c61a7eade498724ad64a2c9612b03e80d8a77",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "count": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "offset": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:270577180b106aee4521db0eec7d4e47b19c44b7d20f17543d1f2d497ad980d6"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "mode…(len=54)"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/brave_local_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/brave_web_search",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:85c8cbda8d081d0974d0b22d01d3ae028a094e0e6d237a874477ca86e6903272",
+  "pin": {
+    "created_at": "2026-10-24T09:26:53Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2024-11-05",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:26:56Z",
+        "bound_digest": "sha256:85c8cbda8d081d0974d0b22d01d3ae028a094e0e6d237a874477ca86e6903272",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

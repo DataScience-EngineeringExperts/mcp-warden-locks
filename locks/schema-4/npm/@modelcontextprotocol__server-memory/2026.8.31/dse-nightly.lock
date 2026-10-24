@@ -1,0 +1,1264 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@modelcontextprotocol__server-memory",
+      "NODE_PATH=/cache/npm/@modelcontextprotocol__server-memory/node_modules",
+      "MEMORY_FILE_PATH=/tmp/memory.json",
+      "node",
+      "/cache/npm/@modelcontextprotocol__server-memory/node_modules/.bin/mcp-server-memory"
+    ],
+    "url": null,
+    "command_digest": "sha256:e32351efeae59e5ef8bf63921ce334ae7ce507e6d7eea30a0337ef1a61568333"
+  },
+  "tools": [
+    {
+      "name": "add_observations",
+      "description_hash": "sha256:ff2fb5d38c2442cc2f1eb423b633d93c034141f318cf3f4cfdf5a9cad184c5cc",
+      "input_schema_hash": "sha256:73c9d2bfd98581b3be93976c78e44389209f2f9ec63e8652fd9e84795616842b",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "observations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "observations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "observations[].contents": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "observations[].contents[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "observations[].entityName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d72d3cb182e3d7fcf0b1c6782251eee772cdf2a99470e1a4bd6a006b5c8f4e25",
+      "output_schema_hash": "sha256:c0a91d3961f360b126a83ba1e51ecb9bfe45d3b9f1e5105fc441b655575e8d60",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "results": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "results[].addedObservations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[].addedObservations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[].entityName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c43f0631804209bfd8f4002764fc915db479c21e044cd411ddb5ef61efed3f8b"
+    },
+    {
+      "name": "create_entities",
+      "description_hash": "sha256:502640e4817eba2b7025203b2ee63924bf57792d29a21f9403618227bb6a5d65",
+      "input_schema_hash": "sha256:c54813f3fc7a076c950320c90489cec6add7482d695e23e43f2b30b8f2b9f083",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].entityType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d72d3cb182e3d7fcf0b1c6782251eee772cdf2a99470e1a4bd6a006b5c8f4e25",
+      "output_schema_hash": "sha256:69d0a98c9c47b02782d7e7933246ab1e0608b6394f93a862e81f9bf1a0e4491c",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities[].entityType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:ded27fd83aa1dbb8cc0400833e9c6906a653c4a709bd93c21ea59c54e20dbdf6"
+    },
+    {
+      "name": "create_relations",
+      "description_hash": "sha256:e2dd4540b9030148fe495bef81941f9524224115944a44a27a1b24c7b22054c1",
+      "input_schema_hash": "sha256:5df4fdc93cbf199dff73ccc802d5cca510bd37eb7d99e0949fc0a17b261a65d3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].from": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].relationType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].to": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d72d3cb182e3d7fcf0b1c6782251eee772cdf2a99470e1a4bd6a006b5c8f4e25",
+      "output_schema_hash": "sha256:e08835c944f747c9202c316eb7c8fa583dfd4d9c8a0f29b7d2b64e7ab059daea",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "relations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "relations[].from": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].relationType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].to": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:e93d3b3fff512c3f80dcf32187a615e768b699fcf14010d96013c102659a2ea2"
+    },
+    {
+      "name": "delete_entities",
+      "description_hash": "sha256:086222eb6cb791391cb6ad23a4edca11ec2879f4fa993c079ae8906113fd05a6",
+      "input_schema_hash": "sha256:a1bac527df1c3bd311c9c2bf2e9a9cf8ae5e266b690bd6c97d4a62e4af2dc731",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entityNames": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entityNames[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:eac8ce4ef2f806dc71b6ab74b1b7f45db5d763fc21c243fac665161bb8d6fb60",
+      "output_schema_hash": "sha256:63668c025b3b06891519aa283e0a1a7c29822865cda9308585b4d8a0d72dd553",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "message": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "success": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:645b269e8391fad819ee7e8dd1f6b2c3f8724c6f6f3d31ae997b4c961b5e9d81"
+    },
+    {
+      "name": "delete_observations",
+      "description_hash": "sha256:30ffb2113bd8f0f022ccbb7a31d2ca610b5bb961cfd2677c4ebe492fc8f5fc97",
+      "input_schema_hash": "sha256:6b96624fc9e8cfbb92d8c7672e16fe06218216634815f892c8027cf7162f8ea7",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "deletions": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "deletions[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "deletions[].entityName": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "deletions[].observations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "deletions[].observations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:eac8ce4ef2f806dc71b6ab74b1b7f45db5d763fc21c243fac665161bb8d6fb60",
+      "output_schema_hash": "sha256:63668c025b3b06891519aa283e0a1a7c29822865cda9308585b4d8a0d72dd553",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "message": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "success": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:dfdcb8f9abd8a8fb8f028ce05df97a16f7797b0a3d15b54caa13a72f8595c663"
+    },
+    {
+      "name": "delete_relations",
+      "description_hash": "sha256:ee6a0e5cd6554a9a84afd7fe11f50a474aec5c3fa0e989d431abcaa078144f37",
+      "input_schema_hash": "sha256:17985b44074691e832f8548bf2efc55af3256f9c52d3398c8ddc20141f2b0697",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].from": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].relationType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].to": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:eac8ce4ef2f806dc71b6ab74b1b7f45db5d763fc21c243fac665161bb8d6fb60",
+      "output_schema_hash": "sha256:63668c025b3b06891519aa283e0a1a7c29822865cda9308585b4d8a0d72dd553",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "message": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "success": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:054b2280cdabf4171500a4cc02a4032ec61a5d32ffd0970ed5e7b1fc0a57a2f7"
+    },
+    {
+      "name": "open_nodes",
+      "description_hash": "sha256:d4df7ff09e4b7e42a029d505efe4b8881e10f24f16ca9e33c5f3c3cea6484e48",
+      "input_schema_hash": "sha256:70aeb8f52abf632f4798453c1b731e1b3e0c8f967e1fdbfb4b00a8d193e5a1c0",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "names": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "names[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:b9d498d6e8a81d411860e12b23145781b1487d0f70ac9f20e9ee4e40597dcde5",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities[].entityType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "relations[].from": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].relationType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].to": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c18324a6e25a92c129a137d84d34bd471301547439f52d7f9f81bd3c2ca176c0"
+    },
+    {
+      "name": "read_graph",
+      "description_hash": "sha256:9701aab08ebf30e3248ebf4cfb80b17ff537834c2ccb4edbfeb24a48e5e42875",
+      "input_schema_hash": "sha256:7a014b717a77aac971ea0ab5c0ff47bb13e6cae7ef9442d9dedb15ce36381b15",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:b9d498d6e8a81d411860e12b23145781b1487d0f70ac9f20e9ee4e40597dcde5",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities[].entityType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "relations[].from": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].relationType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].to": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:537b8b5795ec8cf43cf24f85648a08f3bb069d3b704c48883c55a8515a6cd681"
+    },
+    {
+      "name": "search_nodes",
+      "description_hash": "sha256:17d75cae4af864a9fcc3adf96f9d209af1f758cf6849e3cb4088b3f1786b6631",
+      "input_schema_hash": "sha256:71205bf235256b270ba5b0e20bdc6729c241f73ac81828077c76630fbcbaf6b6",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ae78503371695cf7d7b89784165a967b2135219ecf6527f06a2c1c73d05c6ae6",
+      "output_schema_hash": "sha256:b9d498d6e8a81d411860e12b23145781b1487d0f70ac9f20e9ee4e40597dcde5",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "entities[].entityType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "entities[].observations[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "relations[].from": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].relationType": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "relations[].to": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8aef9f686db647026471482d7e1b785f5edb5c05d7655ab4ab9d917d19cf19c6"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "memory://knowledge-graph",
+      "name": "knowledge-graph",
+      "description_hash": "sha256:63c28ef2629e5478af326b6747545bad6dea3ea0f188dd5ac661233d4ad8cfab",
+      "mime_type": "application/json",
+      "entry_digest": "sha256:8c54da4fb431641fc3725cae52134e6b2fadbf3a269dc5aebf5f5c1c2190aa1e"
+    }
+  ],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search_nodes",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    }
+  ],
+  "overall_digest": "sha256:fd557738e1ddb4098671cccc07d3216d69108ababfbdf8cb67a77a67e12527c9",
+  "pin": {
+    "created_at": "2026-10-24T09:26:12Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:26:14Z",
+        "bound_digest": "sha256:fd557738e1ddb4098671cccc07d3216d69108ababfbdf8cb67a77a67e12527c9",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

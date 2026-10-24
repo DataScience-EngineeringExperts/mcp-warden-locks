@@ -1,0 +1,1463 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@playwright__mcp",
+      "NODE_PATH=/cache/npm/@playwright__mcp/node_modules",
+      "node",
+      "/cache/npm/@playwright__mcp/node_modules/.bin/playwright-mcp"
+    ],
+    "url": null,
+    "command_digest": "sha256:c475795e0b9858c1c6381d5ba2fbf27d81dfadc7bdaf1a04cf1861166c96a01a"
+  },
+  "tools": [
+    {
+      "name": "browser_click",
+      "description_hash": "sha256:7d464021edd2ee01b2e8beb7b7abd3ca32ee3d91e4bc6e8b3c59b4dde91c5aed",
+      "input_schema_hash": "sha256:7fed82f52ae7018670d967e4429b63501948c80de2df2e9279ce4c103694d0d3",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "button": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "left",
+              "middle",
+              "right"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "doubleClick": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "modifiers": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "modifiers[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "Alt",
+              "Control",
+              "ControlOrMeta",
+              "Meta",
+              "Shift"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:4cc350108b75a17a5d76e46d7bb08cc2bc7d88e92e09f12c3d341a4a71f2a803",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:6ade97a465912db8dfe618fb68b8c0a85ecab046473a94496f5bf10121dcbb81"
+    },
+    {
+      "name": "browser_close",
+      "description_hash": "sha256:ffec1bd2ccca32938176cb8ea383abffdefa1dc99b6ac485ef737de273af1f83",
+      "input_schema_hash": "sha256:71fc596a20f27da3dec80050e5d1f553eba34aea24c2853b853488a811e6b892",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:5231a82b280c813686ad37e6063a2cdabbf667e5f363426f2f1647830d82e284",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:299658f64babb698abb3bedd4e4f29801ad085f11c775624f38bee99ab3c3052"
+    },
+    {
+      "name": "browser_console_messages",
+      "description_hash": "sha256:2a0262a2876e6e49bf544d3f6171a93b5fefd89520ccbae26241cd1068613404",
+      "input_schema_hash": "sha256:d503685c2c343d3f67d58e4e72ecd680e5b452d1e7905f3aa40dd0f5e6093853",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "all": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "level": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "debug",
+              "error",
+              "info",
+              "warning"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:718687d5707268ab923c7ae9590f5f05cfe2e88f1d5b2ebe404164677cb7452c",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:23d8b2cf13b6a2adefa8007c00a1cdb7fb75f31d2f5c475db43ce2d6023f55f1"
+    },
+    {
+      "name": "browser_drag",
+      "description_hash": "sha256:62cae5e529c727db636861f9a2496b41aa114678a6de455b1a611f58f9ceda32",
+      "input_schema_hash": "sha256:3dcca018f0b0e9341fee3c91b5420f82557a59a9d9763699e90970b2bd3ed1cb",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "endElement": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "endTarget": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "startElement": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "startTarget": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:81597b166c3d191c1aab82249a2e437b2d37c7037f3ff38565828fb52b36fa88",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:badfaaea1c01965f4f33de2d5fa1941369fa5ee00937372636f3583be104dea8"
+    },
+    {
+      "name": "browser_drop",
+      "description_hash": "sha256:66607a19d796c944d9664187618a8e1aaa9ee2e11174ea269dbda15ef3b97ee4",
+      "input_schema_hash": "sha256:2f2a2c904744c935fc66547031c43b43466e86043f6c306624b536867b18d8e8",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "data": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:9caff4715e7874b48a8d8de47e263b56d3442d7abf1c1040fb6d38e08e14d484",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:7d3e7d72846470d82876c4c0824ad41ed62b401267b95a5364f2b302bde7f054"
+    },
+    {
+      "name": "browser_evaluate",
+      "description_hash": "sha256:04247cdeb33f691278fc55f138d15149bc2fbc15972c5f2b6f4c043a3b1270bb",
+      "input_schema_hash": "sha256:323e6acbb66440dd71d398d4f2acdbddc8af0714ed36da0e01eb35fede62e5eb",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "function": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:1e9c7900dcfca784e083c849cf144e2fc201c1f211fbed63c33ab399c1ab332a",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:d6e042c325fec30036d4ffde0b2f5496a9f358681ad4d469640ae33df08d8ea8"
+    },
+    {
+      "name": "browser_file_upload",
+      "description_hash": "sha256:914a6c1a65a65487ec06041b8f405b281f4cfa656342f0c9c38a3c3e31213687",
+      "input_schema_hash": "sha256:c76aede191ef1e3bdd09ff177419a1e77a0e1f3f676bdd7c8053ac78e6a80086",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "paths": {
+            "type": [
+              "array"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "paths[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:cf3d8b2243d1151248c9a3b80f9c702515f9857dbba7880000c5b136222b7764",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:ad4073f8b09ca0c7fc032410e492905fcd23daa3fec2e55789e7ff9b9beba088"
+    },
+    {
+      "name": "browser_fill_form",
+      "description_hash": "sha256:771d85163e8e8994d00922881c58346a2951c0085beb11fff9da4ff5930f39eb",
+      "input_schema_hash": "sha256:c991223a68247bd517c0fa1b61db444178ff6ad546e7214936d29b8de4c2f2ee",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fields": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "fields[].element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].type": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "checkbox",
+              "combobox",
+              "radio",
+              "slider",
+              "textbox"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields[].value": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:5e85e2cce102b7475b26a0d0beca727c380bae8560d1c300f8198e1981e9d051",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:2d46d4c7e44f06c8df7b40a9064709f2da87261b92551deae73a5678d7f47404"
+    },
+    {
+      "name": "browser_find",
+      "description_hash": "sha256:e8bdb86d96e0429028a07ba7ff062194d4f0dc1c63f5cf2ed88b7341e7d18fec",
+      "input_schema_hash": "sha256:204f595563881a96f3f3830af62668b73678fd42dd04a57100fc55a3f39c8979",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "regex": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:5c837a25562243e2b6297f91bf87295c656de23bed3564b6f612beef1f489d73",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:9dadac82cf82d10112f6537d4fbd18803010bdad727ff6bf1a23f4ed38017489"
+    },
+    {
+      "name": "browser_handle_dialog",
+      "description_hash": "sha256:f3a6532912c5a270c56b130bc9bbfb1900f47a1139fdda0c092c3edc4d8b2cc8",
+      "input_schema_hash": "sha256:2d4cacf71e9fd7f902bebbc84f106614b891c2654de32b71b1f0d629a10d8b5c",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "accept": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "promptText": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:0c91e1788684005bf9dfc178ff35d2b671a649efaa28f36b6a76d491e8dc6a6b",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:a22b12531cb66f6ee776cd45f1a56151b44b3a515230122ae13dd396a394e83a"
+    },
+    {
+      "name": "browser_hover",
+      "description_hash": "sha256:e8324a0a522bca4d40bc10854ebabd806676abf765313bcb48d3923d3e0a1cc0",
+      "input_schema_hash": "sha256:3b0a5a3333d051dba9f6b023c341eef00f0e5264bef37bc0a11f83156937e803",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:31da5825e75da1ef12f4cc6fb6173aa33ca6fc453f978323386c6efa559ab84e",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:db04337f6cd27b1b20b450775588c77de31c59f9121c5f5bf7eff74c44580b6e"
+    },
+    {
+      "name": "browser_navigate",
+      "description_hash": "sha256:c47ab66fe06057eac7d17f9233c88a8293d91f4c7c1bc92c233d08de01bb5ad6",
+      "input_schema_hash": "sha256:2165538e098634780eec628947d795a2619b4d2e3cef0e36d3084ac46abb94f7",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:3f0dfe9614e54b9e586702fcfaf457e8a8402563c6f10d2583e6993f31a4cc02",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:f03819d18329cb57899b7d00a5884ddee34fe4daa17807f416b7bcbc620267cd"
+    },
+    {
+      "name": "browser_navigate_back",
+      "description_hash": "sha256:e2df2fafb8ca0a695b2bcef478ca29898e1c5ee46cd9e1214d09052737ad9bf1",
+      "input_schema_hash": "sha256:71fc596a20f27da3dec80050e5d1f553eba34aea24c2853b853488a811e6b892",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:8072d1143001bfb8edfc276c1e51b7470db39f7dc04a776975525585ade7023e",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:c89cc2d0720228323215fdbf14d17048b5aadf2897298c2dbb710a41e16c3970"
+    },
+    {
+      "name": "browser_network_request",
+      "description_hash": "sha256:275a3c1fb570d85aae6643feee176b829e275ed78755e232ef60338b273eddb2",
+      "input_schema_hash": "sha256:d041ab91391ddbdb960c9a5b10f741af3baabdad5137a41c5f3111cce14b2872",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "index": {
+            "type": [
+              "integer"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991,
+              "minimum": 1
+            }
+          },
+          "part": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "request-body",
+              "request-headers",
+              "response-body",
+              "response-headers"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:d93fc98a6cea864575e7767478c561daef48774417820ec710f2b6724c842c28",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:bf2f32a4c7ba796bc025dc842f1ac999b22d253163b53b1c37ffd5b5b56bc19f"
+    },
+    {
+      "name": "browser_network_requests",
+      "description_hash": "sha256:b82cacad2791246ae875f7be18c5a432970a24f9469bcc7763c56f3957b162d6",
+      "input_schema_hash": "sha256:86d566ed7630b826e22f89987152935cd5963d5d31cf04e90c33f7918389646a",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filter": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "static": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ee0b1071bfb6809fd34cb4c8961e7e0b067f8d91efd35a152f21a2b9e4b43ef0",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:7e9f8d1bbc160b0b21bd94294cbeb7ff6c39c13790001f6ad8fa88ee7568c28d"
+    },
+    {
+      "name": "browser_press_key",
+      "description_hash": "sha256:86b62b7dfb1d29cb849d8c599faf04b1f531dbbea31c5a9e58020a3fd9b4d4c4",
+      "input_schema_hash": "sha256:57a7f701ebf865e5a7a759c15e8d04bca12cb756c2e3f4ae7280070bb6e310e2",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "key": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:8c5af010b8ae183ed62442f3d0edc3ae8b91c9fb7a9ef18c4fe2e91c12eabe17",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:a1a3da284ab128c7708750ecef6c3797eae15f5f698cf111f5fb896134c29aeb"
+    },
+    {
+      "name": "browser_resize",
+      "description_hash": "sha256:2532274341b2ef4716cc5a0e1c782c14f6a3dee2fe716e7f2a3a0ce80ddddd32",
+      "input_schema_hash": "sha256:4a80d1f511092cf5e94b689f81afd36ec42b0ac74a510f7220a7c9987af00b84",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "height": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "width": {
+            "type": [
+              "number"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:c0d0bb7f24f0fec1ece68fbc85cf794dc42956ef049cb342eaf877f0f07888b9",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:5077abe79693b9693ec8c5377bf90f10ea9f8cdfa927f6608dacbefededd7c4f"
+    },
+    {
+      "name": "browser_run_code_unsafe",
+      "description_hash": "sha256:f04f2520590c706a774fb2bfb1556f81047ea302d8c709d93facdd061f262580",
+      "input_schema_hash": "sha256:900ecef9fc7ac8229624f8faee37b95d5353ec2b0479edca1b92e12a816558dd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "code": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:33b5a25088e00e63cd8ccfbe9a5f11f17767dbe816cfdf568e44758d307f8600",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:a5458fd3a34c5180fc3dc957b125e0613c87505abedf3688e03183546fd7027f"
+    },
+    {
+      "name": "browser_select_option",
+      "description_hash": "sha256:eb1a78927b0c9c55913b027799dccf321c758d370d0dc9fcf33c3e1901a057c9",
+      "input_schema_hash": "sha256:03b097752bdb41817ec0a6a259062598e5c85c1a8c7106d0f2fde506321096bd",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "values": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "values[]": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:b033f48d681ce0c6f27e2654c92b1192cea864cf0a638dd9cd7921cd5d4ab66a",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:507b428d2dc5760b725bd5016743a941897465456e0b29bffc124b333e2e0a60"
+    },
+    {
+      "name": "browser_snapshot",
+      "description_hash": "sha256:22833ef78f0c2789c081d77d28adce060395b354a6dbcb3fdc324b8b6ab98274",
+      "input_schema_hash": "sha256:36ee5bbb5798a52e26015635e1f6015b8f4b62f44119d53ad2516837667fcd61",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "boxes": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "depth": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:7000a2e346393e14eb663306e4fcc598e9b5837ec3dc89cc8c02b371246d44c2",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:8791a267085b657c174a5b7450086378c085e4429cd7e973f57ce91af4c2b2c0"
+    },
+    {
+      "name": "browser_tabs",
+      "description_hash": "sha256:8da21efae81d7dc8075fcaea1fdb3cb17dd4f571d2cbae421b6312312e93314b",
+      "input_schema_hash": "sha256:268e0f3eca6295e0fef99d2ef85adfbd3d843c054087817fe96e02ccd8145711",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "action": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "close",
+              "list",
+              "new",
+              "select"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "index": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:c31bbe46db85c35ba4411949c8e37d0dbd1ffeeff23691f7e559e26f771ce9bc",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:55045c80363ff77467b41ce8c489d01ead9adbc2c29f2a9df4472acb3de4343c"
+    },
+    {
+      "name": "browser_take_screenshot",
+      "description_hash": "sha256:f6b6ec720971f93e707340ae7bd2ea22899c5f27b0ea6b16c3b6920083ca7e6d",
+      "input_schema_hash": "sha256:8862e5da1b5030fc1a927c9ead00f2690872f24f282bc0d4cc3dbf017e041b34",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "filename": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fullPage": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "scale": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": [
+              "css",
+              "device"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "type": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "jpeg",
+              "png",
+              "webp"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:cb526610d6e6050dba4c1e0d6984cd54401d3e58bd6f35966332478f7f0e3386",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:3e9a5a5953e1b41e3c5373c255c148b3779924c56f19cc18d90b62b7cd0fb391"
+    },
+    {
+      "name": "browser_type",
+      "description_hash": "sha256:ec69f99a6bd0b8c2faa171c824d8791677e45878742babf62161e5c77c8158e9",
+      "input_schema_hash": "sha256:ed892740ebc14bb2a49467c08b8bb02717d50f1f3ef8ed06d51abf5ebb3249da",
+      "capabilities": [
+        "fs-write"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "element": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "slowly": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "submit": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "target": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:ff12e8cca77db8124b6a2b187f720817ead706c847a075354b1cac58f7ef3bbe",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:04edfb731f969579741fbca55536ef85ca1e974cdb1035215d511aaf59de82d1"
+    },
+    {
+      "name": "browser_wait_for",
+      "description_hash": "sha256:1a33fccf390170eccd5f98080fb7b25cbf9fa108a07003c254e6418eecbb6521",
+      "input_schema_hash": "sha256:004b7fd9ce085dd4bb13f67caa6d23a23078ef24342e31c552a377a010e36d5d",
+      "capabilities": [],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "text": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "textGone": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "time": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:be488b5a34f4ab5cc4e2f0c873986a0b59f2db3f1d61d336a2ceada8c58d1ecc",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:963ac6fe340c5e5d4ff92d99dbc7fbc3f77eafe2b8ffae30e2714e87e3c49526"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-SEC-ENTROPY",
+      "severity": "high",
+      "target": "launch/command",
+      "message": "WRD-SEC-ENTROPY: high-entropy token (possible secret)",
+      "snippet": "play…(len=28)"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/browser_drop",
+      "message": "Tool derives capability 'fs-write' (property 'target')",
+      "snippet": "property 'target'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/browser_navigate",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/browser_network_request",
+      "message": "Tool derives capability 'http-request' (name token 'request')",
+      "snippet": "name token 'request'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/browser_tabs",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-FS-WRITE",
+      "severity": "high",
+      "target": "tools/browser_type",
+      "message": "Tool derives capability 'fs-write' (property 'target')",
+      "snippet": "property 'target'"
+    }
+  ],
+  "overall_digest": "sha256:80fda7e85a4bb1e7c1fddb7be9b0c093c6a08932b0fbc06a6af1a074d54b91e3",
+  "pin": {
+    "created_at": "2026-10-24T09:27:55Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:27:58Z",
+        "bound_digest": "sha256:80fda7e85a4bb1e7c1fddb7be9b0c093c6a08932b0fbc06a6af1a074d54b91e3",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}

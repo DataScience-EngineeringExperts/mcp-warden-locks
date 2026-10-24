@@ -1,0 +1,1145 @@
+{
+  "schema_version": 4,
+  "warden_version": "2.1.0",
+  "server": {
+    "command": "env",
+    "args": [
+      "HOME=/tmp",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH=/cache/pypi/@sentry__mcp-server",
+      "NODE_PATH=/cache/npm/@sentry__mcp-server/node_modules",
+      "SENTRY_ACCESS_TOKEN=DUMMY",
+      "SENTRY_HOST=sentry.example.com",
+      "node",
+      "/cache/npm/@sentry__mcp-server/node_modules/.bin/sentry-mcp"
+    ],
+    "url": null,
+    "command_digest": "sha256:fc4b49134181212167a2a456b414b5daa764b7f60cd8c03c072574bb1d04c021"
+  },
+  "tools": [
+    {
+      "name": "analyze_issue_with_seer",
+      "description_hash": "sha256:b146c35b4f4e12ce68fda10f6c6e2101d23a2c6a8a57d578b24034167d9a3ea9",
+      "input_schema_hash": "sha256:eb73c6b997cf241fe953d1ef9b7fcff2b341494337fa50dcd365ebeefa0df2b9",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "instruction": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issueId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issueUrl": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          },
+          "organizationSlug": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "regionUrl": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:3301728bca98d3841e8017fb138c460a1297ae1a9f8fdfb4d82e5a4cb4f5ee95",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:47e37e79867362823cfb2ce9d476dab661d106e8bf70c43070cf60b669c5b0b2"
+    },
+    {
+      "name": "execute_sentry_tool",
+      "description_hash": "sha256:64db4d27bd23b4f3eb706d7639aed16b2b64844fa467f4c94f47a4d8a46fc70d",
+      "input_schema_hash": "sha256:9fb2f5bc3474be9f982165b6f52c10cc258f54cca38e2214bbf74d907fb20f77",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "arguments": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {}
+            }
+          },
+          "name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:1d60208321039f91980e2de9aa19fe0a12464974f50385c87aa20fc66c7e9cb4",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:785e1525b762c85e54c8abe64b061edbcdecaf0bf5b518df6704d51e122c967a"
+    },
+    {
+      "name": "find_organizations",
+      "description_hash": "sha256:e43f4c3127e87e4c24614a4412fca139ebac9b5aedc02c78c52a95ca61e14d6a",
+      "input_schema_hash": "sha256:53e28a62c82ba1ec441b38386be7e75707d1f6db0a7e1dc846d7d56b4cb09097",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:294baf9a03fe50cbf43576f5314c1e545706c4409b56a053bbda81757e284f10",
+      "output_schema_hash": "sha256:08d214e44f6172c2e7edc9bb905276247405a092d72bbe1120de63e0e0fc02f1",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "hasMore": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "organizations": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "organizations[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "organizations[].regionUrl": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "organizations[].slug": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "organizations[].webUrl": {
+            "type": null,
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:8db91ebfefe46d62ec102bbbd43fd5a812a2e63de65566f2f178f0d94b0817c7"
+    },
+    {
+      "name": "find_projects",
+      "description_hash": "sha256:e778db7c3274b9e2020fa6356f4717f6c8a28fce71d3fbb9db1e84f0bd7ad958",
+      "input_schema_hash": "sha256:160c4d17910c9840a10b5be3e200453df5c40c99e78567c6a68142108fd8a19c",
+      "capabilities": [
+        "http-request",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "organizationSlug": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "regionUrl": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:294baf9a03fe50cbf43576f5314c1e545706c4409b56a053bbda81757e284f10",
+      "output_schema_hash": "sha256:f5bfeacebf9108cf5d19a59b4ea8206506de5c62fc7fe55f99110ca5ebe560f8",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "hasMore": {
+            "type": [
+              "boolean"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "projects": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "projects[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "projects[].slug": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:22153ababd0e16bbc551eb69acdd924bf0ac547d9cff542ab3db81c84c39cf6a"
+    },
+    {
+      "name": "get_sentry_resource",
+      "description_hash": "sha256:af7cf3121e1eb465902ec6ade54128088a32c7f502da2e70828824bcc6656f1e",
+      "input_schema_hash": "sha256:584d3dcf6e52f0e9f2deb7dba0dbffb308a5b12a2cab5070ca0ca2156b174b0d",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "organizationSlug": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "resourceId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "resourceType": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "ai_conversation",
+              "event",
+              "issue",
+              "monitor",
+              "replay",
+              "snapshot",
+              "trace"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "url": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:294baf9a03fe50cbf43576f5314c1e545706c4409b56a053bbda81757e284f10",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:7e105d9a94df23bd769a9d9ed306bc3d7db6bc9ad6cc5d7088c942922fa38caf"
+    },
+    {
+      "name": "search_events",
+      "description_hash": "sha256:70bb1cf7f88d8a8de5225c1a1a962d433f24d3775c13bda78226ff5bf2b05419",
+      "input_schema_hash": "sha256:9e8e674c6a9082ec6c457341fc326713613c3fb5ba429f11062f261d37271fcf",
+      "capabilities": [
+        "http-request",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "dataset": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "errors",
+              "logs",
+              "metrics",
+              "profiles",
+              "replays",
+              "spans"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "environment": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "fields": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeExplanation": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "organizationSlug": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "period": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "pattern": "^\\d+[hdw]$"
+            }
+          },
+          "projectSlug": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "regionUrl": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:294baf9a03fe50cbf43576f5314c1e545706c4409b56a053bbda81757e284f10",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:5a65aea3f8cacdf2a67ee71898e062a7a5f33b357b2d8bd7923d04729fe43cf4"
+    },
+    {
+      "name": "search_issues",
+      "description_hash": "sha256:938c171edba4a42144aab9547c21e175b5eaad84678ee3fb4977ffe98a19f161",
+      "input_schema_hash": "sha256:bfbb85b733a76b6959d4f118ae1fbfa4bdc605ce12fc456109f0daf4667224c4",
+      "capabilities": [
+        "http-request",
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "includeExplanation": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": [
+              "number"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          "organizationSlug": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "period": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "14d",
+              "24h",
+              "30d",
+              "7d",
+              "90d"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "projectSlugOrId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "regionUrl": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "sort": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "date",
+              "freq",
+              "new",
+              "recommended",
+              "user"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:294baf9a03fe50cbf43576f5314c1e545706c4409b56a053bbda81757e284f10",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:f43bb2eb55c70a297a0d7fdd562bcb63bbe4b1536154d9029e0707e34ef6b2e7"
+    },
+    {
+      "name": "search_sentry_tools",
+      "description_hash": "sha256:8691c64ff27d5e89ddd5ba7802913a5fadc79d8dc64bd11582a0f3f66cb5976f",
+      "input_schema_hash": "sha256:7bf0564d812c69bba6d71128daa8e13f68a8240d979afbc97f91a18272e71139",
+      "capabilities": [
+        "sql-query"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "limit": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:b85f31ecc2581a2ad1d163e54abebb69d31e072969ae6e45f69bb72686c69ecc",
+      "output_schema_hash": "sha256:f235b8be611ee1f2765086922710ab685d5d47657ea8efbfaf37d22615c10380",
+      "output_schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "query": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results": {
+            "type": [
+              "array"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[]": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "results[].annotations": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": false
+            }
+          },
+          "results[].annotations.destructiveHint": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[].annotations.idempotentHint": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[].annotations.openWorldHint": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[].annotations.readOnlyHint": {
+            "type": [
+              "boolean"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[].description": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "results[].inputSchema": {
+            "type": [
+              "object"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": {}
+            }
+          },
+          "results[].name": {
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "entry_digest": "sha256:c1ed16b16cb7239aa91519f1fd6388f90ef6574a5eb77b4c90921e1947597f8d"
+    },
+    {
+      "name": "update_issue",
+      "description_hash": "sha256:6b219f2b2189cbba5fb401c80bf546ca2dc8a7dcaa200b6a129edbbea813c89d",
+      "input_schema_hash": "sha256:466c0514335e214af9c51a161fb2323f833af4b450908d962a5697b965f5da9f",
+      "capabilities": [
+        "http-request"
+      ],
+      "schema_skeleton": {
+        "props": {
+          "$root": {
+            "type": [
+              "object"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "assignedTo": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ignoreCount": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991
+            }
+          },
+          "ignoreDurationMinutes": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991
+            }
+          },
+          "ignoreMode": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "forDuration",
+              "forever",
+              "untilEscalating",
+              "untilOccurrenceCount",
+              "untilUserCount"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "ignoreUserCount": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 9007199254740991
+            }
+          },
+          "ignoreUserWindowMinutes": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10080
+            }
+          },
+          "ignoreWindowMinutes": {
+            "type": [
+              "integer"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "maximum": 10080
+            }
+          },
+          "issueId": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "issueUrl": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "format": "uri"
+            }
+          },
+          "organizationSlug": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "reason": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true,
+              "minLength": 1
+            }
+          },
+          "regionUrl": {
+            "type": null,
+            "required": false,
+            "enum": null,
+            "constraints": {
+              "additionalProperties": true
+            }
+          },
+          "status": {
+            "type": [
+              "string"
+            ],
+            "required": false,
+            "enum": [
+              "ignored",
+              "resolved",
+              "resolvedInNextRelease",
+              "unresolved"
+            ],
+            "constraints": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "annotations_hash": "sha256:bbca3f90a8f37a2e09188309470b131134c395dbc4eccad15de06d2c2f94f06a",
+      "output_schema_hash": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "output_schema_skeleton": null,
+      "entry_digest": "sha256:d5f3c05f7d4564c8c835d9049abffc349716b1a1af11728177a06afac56749b7"
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/analyze_issue_with_seer",
+      "message": "Tool derives capability 'http-request' (property 'regionUrl')",
+      "snippet": "property 'regionUrl'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/execute_sentry_tool",
+      "message": "Tool derives capability 'sql-query' (name token 'execute')",
+      "snippet": "name token 'execute'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/find_organizations",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/find_projects",
+      "message": "Tool derives capability 'http-request' (property 'regionUrl')",
+      "snippet": "property 'regionUrl'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/find_projects",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/get_sentry_resource",
+      "message": "Tool derives capability 'http-request' (property 'url')",
+      "snippet": "property 'url'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/search_events",
+      "message": "Tool derives capability 'http-request' (property 'regionUrl')",
+      "snippet": "property 'regionUrl'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search_events",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/search_issues",
+      "message": "Tool derives capability 'http-request' (property 'regionUrl')",
+      "snippet": "property 'regionUrl'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search_issues",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-SQL",
+      "severity": "high",
+      "target": "tools/search_sentry_tools",
+      "message": "Tool derives capability 'sql-query' (property 'query')",
+      "snippet": "property 'query'"
+    },
+    {
+      "rule_id": "WRD-CAP-HTTP",
+      "severity": "high",
+      "target": "tools/update_issue",
+      "message": "Tool derives capability 'http-request' (property 'regionUrl')",
+      "snippet": "property 'regionUrl'"
+    }
+  ],
+  "overall_digest": "sha256:b254785c8f809fcb65d39e6a817d41d160b35249b3c93bdb3f3295e349525d89",
+  "pin": {
+    "created_at": "2026-10-24T09:29:03Z",
+    "warden_version": "2.1.0",
+    "mcp_protocol_version": "2025-11-25",
+    "approved": false,
+    "approver": null,
+    "approved_at": null,
+    "approved_digest": null,
+    "provenance_version": 2,
+    "pinner": {
+      "tool": "mcp-warden",
+      "tool_version": "2.1.0",
+      "actor": null,
+      "environment": null
+    },
+    "attestations": [
+      {
+        "actor": "sigstore-keyless",
+        "role": "signer",
+        "method": "sigstore-keyless",
+        "created_at": "2026-10-24T09:29:05Z",
+        "bound_digest": "sha256:b254785c8f809fcb65d39e6a817d41d160b35249b3c93bdb3f3295e349525d89",
+        "note": null,
+        "signature_bundle": "dse-nightly.lock.sigstore"
+      }
+    ],
+    "rotated_at": null,
+    "rotation_count": 0
+  }
+}
