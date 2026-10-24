@@ -90,5 +90,11 @@ Phase 2 of [DSE-1515](https://linear.app/dseofficial/issue/DSE-1515) (mcp-warden
 side shipped in mcp-warden `c0fd858` (`check --against-community`). Requests, second
 attesters, and target additions: open an issue or PR here.
 
+**Lock schema.** Locks attested before 2026-10-24 are lock schema 3 and verify only
+with mcp-warden 1.x; mcp-warden 2.x requires schema 4 and refuses them
+(`schema_version 3 != implemented 4`). The attester now runs mcp-warden 2.1.0, so
+new locks are schema 4. Migration of the existing schema-3 entries is tracked in
+[DSE-2143](https://linear.app/dseofficial/issue/DSE-2143).
+
 License: MIT (tooling and docs). Lock files are factual records of published package
 metadata.
